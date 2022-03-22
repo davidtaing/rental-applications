@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+form {
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+form > * {
+  display: block;
+  width: 100%;
+}
