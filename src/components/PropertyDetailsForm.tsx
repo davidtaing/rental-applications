@@ -6,7 +6,7 @@ function PropertyDetailsForm() {
       address: "",
       rent: 0,
       startDate: Date(),
-      leasePeriod: 0,
+      leasePeriod: 12,
     },
     onSubmit: (values) => console.log(values),
   });
@@ -42,7 +42,7 @@ function PropertyDetailsForm() {
         name="leasePeriod"
         type="number"
         min="0"
-        defaultValue="0"
+        defaultValue="12"
         onChange={formik.handleChange}
       />
       <button type="submit">Submit</button>
