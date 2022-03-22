@@ -14,8 +14,28 @@ function TenantDetailsForm() {
       phone: "",
       mobile: "",
       email: "",
-      rentalHistory: {},
-      employment: {},
+      rentalHistory: {
+        address: "",
+        status: "",
+        reference: {
+          name: "",
+          position: "",
+          email: "",
+          phone: "",
+        },
+      },
+      employment: {
+        title: "",
+        type: "",
+        netIncome: 0,
+        payPeriod: "",
+        reference: {
+          name: "",
+          position: "",
+          email: "",
+          phone: "",
+        },
+      },
     },
     onSubmit: (values) => console.log(values),
   });
