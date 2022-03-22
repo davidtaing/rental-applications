@@ -1,10 +1,10 @@
 import { useFormik } from "formik";
 
 /**
- * Form for Other Adults,
- * i.e. Non-Rent Paying Tenants
+ * Form for Other Adults and Children,
+ * i.e. Non-Rent Paying Adults and Children
  */
-function OtherAdultsForm() {
+function OtherOccupantDetailsForm() {
   const formik = useFormik({
     initialValues: {
       preferredName: "",
@@ -22,4 +22,4 @@ function OtherAdultsForm() {
   );
 }
 
-export default OtherAdultsForm;
+export default OtherOccupantDetailsForm;
