@@ -10,7 +10,7 @@ function OtherOccupantDetailsForm() {
       preferredName: "",
       fullname: "",
       gender: "",
-      dob: "", //TODO: convert to date
+      age: 0,
     },
     onSubmit: (values) => console.log(values),
   });
