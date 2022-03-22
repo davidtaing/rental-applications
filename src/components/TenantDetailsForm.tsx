@@ -26,3 +26,5 @@ function TenantDetailsForm() {
     </form>
   );
 }
+
+export default TenantDetailsForm;
