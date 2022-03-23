@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from "react";
+import { Field } from "formik";
 
 interface LabelledInputProps extends InputHTMLAttributes<HTMLInputElement> {
   labelText: string;
@@ -10,7 +11,7 @@ function LabelledInput({ labelText, id, ...otherProps }: LabelledInputProps) {
       <label className="form-label" htmlFor={id}>
         {labelText}
       </label>
-      <input className="text-input" id={id} {...otherProps} />
+      <Field className="text-input" id={id} {...otherProps} />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { SelectHTMLAttributes } from "react";
+import { Field } from "formik";
 
 interface LabelledSelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   labelText: string;
@@ -16,14 +17,14 @@ function LabelledSelect({
       <label className="form-label" htmlFor={id}>
         {labelText}
       </label>
-      <select className="dropdown" id={id} {...otherProps}>
+      <Field as="select" className="dropdown" id={id} {...otherProps}>
         <option value="">Select a Value</option>
         {values.map((item) => (
           <option key={item} value={item}>
             {item}
           </option>
         ))}
-      </select>
+      </Field>
     </div>
   );
 }
