@@ -63,7 +63,11 @@ function TenantDetailsForm() {
             labelText="Full Name:"
             onChange={formik.handleChange}
           />
-          <GenderSelect onChange={formik.handleChange} />
+          <GenderSelect
+            id="gender"
+            name="gender"
+            onChange={formik.handleChange}
+          />
           <LabelledInput
             id="dob"
             name="dob"

@@ -36,7 +36,11 @@ function OtherOccupantDetailsForm() {
                         labelText="Full Name:"
                         onChange={formik.handleChange}
                       />
-                      <GenderSelect onChange={formik.handleChange} />
+                      <GenderSelect
+                        id="gender"
+                        name={`occupants[${index}].gender`}
+                        onChange={formik.handleChange}
+                      />
                       <LabelledInput
                         id="age"
                         name={`occupants[${index}].age`}
