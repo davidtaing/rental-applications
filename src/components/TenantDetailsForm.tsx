@@ -48,7 +48,6 @@ function TenantDetailsForm() {
     <form onSubmit={formik.handleSubmit}>
       <h1>Tenant</h1>
       <LabelledInput
-        className="text-input"
         id="preferredName"
         name="preferredName"
         type="text"
@@ -56,7 +55,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="fullname"
         name="fullname"
         type="text"
@@ -65,7 +63,6 @@ function TenantDetailsForm() {
       />
       <GenderSelect onChange={formik.handleChange} />
       <LabelledInput
-        className="date-input"
         id="dob"
         name="dob"
         type="date"
@@ -73,7 +70,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="phone"
         name="phone"
         type="text"
@@ -81,7 +77,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="mobile"
         name="mobile"
         type="text"
@@ -89,7 +84,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="email-input"
         id="email"
         name="email"
         type="email"
@@ -98,7 +92,6 @@ function TenantDetailsForm() {
       />
       <h2>Rental History</h2>
       <LabelledInput
-        className="text-input"
         id="property-address"
         name="property.address"
         type="text"
@@ -112,7 +105,6 @@ function TenantDetailsForm() {
       />
       <h3>Reference</h3>
       <LabelledInput
-        className="text-input"
         id="property-reference-name"
         name="property.reference.name"
         type="text"
@@ -120,7 +112,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="property-reference-email"
         name="property.reference.email"
         type="email"
@@ -128,7 +119,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="property-reference-phone"
         name="property.reference.phone"
         type="text"
@@ -138,7 +128,6 @@ function TenantDetailsForm() {
 
       <h2>Employment</h2>
       <LabelledInput
-        className="text-input"
         id="employment-title"
         name="employment.title"
         type="text"
@@ -151,7 +140,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="employment-net-income"
         name="employment.netIncome"
         type="number"
@@ -165,7 +153,6 @@ function TenantDetailsForm() {
       />
       <h3>Reference</h3>
       <LabelledInput
-        className="text-input"
         id="employment-reference-name"
         name="employment.reference.name"
         type="text"
@@ -173,7 +160,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="employment-reference-position"
         name="employment.reference.position"
         type="text"
@@ -181,7 +167,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="employment-reference-email"
         name="employment.reference.email"
         type="email"
@@ -189,7 +174,6 @@ function TenantDetailsForm() {
         onChange={formik.handleChange}
       />
       <LabelledInput
-        className="text-input"
         id="employment-reference-phone"
         name="employment.reference.phone"
         type="text"
