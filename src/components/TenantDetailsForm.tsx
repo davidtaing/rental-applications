@@ -45,24 +45,77 @@ function TenantDetailsForm() {
       <label className="form-label" htmlFor="preferredName">
         Preferred Name:
       </label>
+      <input
+        className="text-input"
+        id="preferredName"
+        name="preferredName"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="fullname">
         Full Name:
       </label>
+      <input
+        className="text-input"
+        id="fullname"
+        name="fullname"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="gender">
         Gender:
       </label>
+      <select
+        className="dropdown"
+        id="gender"
+        name="gender"
+        onChange={formik.handleChange}
+      >
+        <option value="">Select a Value</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
       <label className="form-label" htmlFor="dob">
         Date Of Birth:
       </label>
+      <input
+        className="date-input"
+        id="dob"
+        name="dob"
+        type="date"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="phone">
         Phone:
       </label>
+      <input
+        className="text-input"
+        id="phone"
+        name="phone"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="mobile">
         Mobile:
       </label>
+      <input
+        className="text-input"
+        id="mobile"
+        name="mobile"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="email">
         Email:
       </label>
+      <input
+        className="email-input"
+        id="email"
+        name="email"
+        type="email"
+        onChange={formik.handleChange}
+      />
 
       <h2>Rental History</h2>
       <label className="form-label" htmlFor="address">
