@@ -1,0 +1,159 @@
+import { ChangeEventHandler, MouseEventHandler } from "react";
+
+import LabelledInput from "../../components/common/LabelledInput";
+import GenderSelect from "../../components/GenderSelect";
+import RentalStatusSelect from "../../components/RentalStatusSelect";
+import EmploymentTypeSelect from "../../components/EmploymentTypeSelect";
+import PayPeriodSelect from "../../components/PayPeriodSelect";
+
+interface TenantItemProps {
+  index: number;
+  handleChange: ChangeEventHandler;
+  onRemoveHandler: MouseEventHandler<HTMLButtonElement>;
+}
+
+function TenantItem({ index, handleChange, onRemoveHandler }: TenantItemProps) {
+  return (
+    <div className="tenant-item">
+      <h2>Tenant</h2>
+      <LabelledInput
+        id="preferredName"
+        name="preferredName"
+        type="text"
+        labelText="Preferred Name:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="fullname"
+        name="fullname"
+        type="text"
+        labelText="Full Name:"
+        onChange={handleChange}
+      />
+      <GenderSelect id="gender" name="gender" onChange={handleChange} />
+      <LabelledInput
+        id="dob"
+        name="dob"
+        type="date"
+        labelText="Date Of Birth:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="phone"
+        name="phone"
+        type="text"
+        labelText="Phone:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="mobile"
+        name="mobile"
+        type="text"
+        labelText="Mobile:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="email"
+        name="email"
+        type="email"
+        labelText="Email:"
+        onChange={handleChange}
+      />
+      <h2>Rental History</h2>
+      <LabelledInput
+        id="property-address"
+        name="property.address"
+        type="text"
+        labelText="Address:"
+        onChange={handleChange}
+      />
+      <RentalStatusSelect
+        id="property-status"
+        name="property.status"
+        onChange={handleChange}
+      />
+      <h3>Reference</h3>
+      <LabelledInput
+        id="property-reference-name"
+        name="property.reference.name"
+        type="text"
+        labelText="Name:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="property-reference-email"
+        name="property.reference.email"
+        type="email"
+        labelText="Email:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="property-reference-phone"
+        name="property.reference.phone"
+        type="text"
+        labelText="Phone:"
+        onChange={handleChange}
+      />
+
+      <h2>Employment</h2>
+      <LabelledInput
+        id="employment-title"
+        name="employment.title"
+        type="text"
+        labelText="Job Title:"
+        onChange={handleChange}
+      />
+      <EmploymentTypeSelect
+        id="employment-type"
+        name="employment.type"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="employment-net-income"
+        name="employment.netIncome"
+        type="number"
+        labelText="Net Income:"
+        onChange={handleChange}
+      />
+      <PayPeriodSelect
+        id="employment-pay-period"
+        name="employment.payPeriod"
+        onChange={handleChange}
+      />
+      <h3>Reference</h3>
+      <LabelledInput
+        id="employment-reference-name"
+        name="employment.reference.name"
+        type="text"
+        labelText="Name:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="employment-reference-position"
+        name="employment.reference.position"
+        type="text"
+        labelText="Position:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="employment-reference-email"
+        name="employment.reference.email"
+        type="email"
+        labelText="Email:"
+        onChange={handleChange}
+      />
+      <LabelledInput
+        id="employment-reference-phone"
+        name="employment.reference.phone"
+        type="text"
+        labelText="Phone:"
+        onChange={handleChange}
+      />
+      {index > 0 ? (
+        <button onClick={onRemoveHandler}>Remove Tenant</button>
+      ) : null}
+    </div>
+  );
+}
+
+export default TenantItem;
