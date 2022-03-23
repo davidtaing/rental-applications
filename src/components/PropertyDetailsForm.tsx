@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import LabelledInput from "./common/LabelledInput";
 
 function PropertyDetailsForm() {
   const formik = useFormik({
@@ -14,33 +15,33 @@ function PropertyDetailsForm() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <h1>Property Details</h1>
-      <label htmlFor="address">Address: </label>
-      <input
+      <LabelledInput
         id="address"
         name="address"
         type="text"
+        labelText="Address:"
         onChange={formik.handleChange}
       />
-      <label htmlFor="rent">Rent Amount (Per Week):</label>
-      <input
+      <LabelledInput
         id="rent"
         name="rent"
         type="number"
+        labelText="Rent Amount (Per Week):"
         min="0"
         onChange={formik.handleChange}
       />
-      <label htmlFor="startDate">Start Date:</label>
-      <input
+      <LabelledInput
         id="startDate"
         name="startDate"
         type="date"
+        labelText="Start Date:"
         onChange={formik.handleChange}
       />
-      <label htmlFor="leasePeriod">Lease Period (Months):</label>
-      <input
+      <LabelledInput
         id="leasePeriod"
         name="leasePeriod"
         type="number"
+        labelText="Lease Period (Months):"
         min="0"
         defaultValue="12"
         onChange={formik.handleChange}

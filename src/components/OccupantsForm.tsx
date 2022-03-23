@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import LabelledInput from "./common/LabelledInput";
 
 function OccupantsForm() {
   const formik = useFormik({
@@ -15,47 +16,47 @@ function OccupantsForm() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <h1>Occupants</h1>
-      <label htmlFor="adults">Adults:</label>
-      <input
+      <LabelledInput
         id="adults"
         name="adults"
         type="number"
+        labelText="Adults:"
         min="0"
         defaultValue="0"
         onChange={formik.handleChange}
       />
-      <label htmlFor="children">Children:</label>
-      <input
+      <LabelledInput
         id="children"
         name="chidlren"
         type="number"
+        labelText="Children:"
         min="0"
         defaultValue="0"
         onChange={formik.handleChange}
       />
-      <label htmlFor="dogs">Dogs:</label>
-      <input
+      <LabelledInput
         id="dogs"
         name="dogs"
         type="number"
+        labelText="Dogs:"
         min="0"
         defaultValue="0"
         onChange={formik.handleChange}
       />
-      <label htmlFor="cat">Cats:</label>
-      <input
+      <LabelledInput
         id="cat"
         name="cats"
         type="number"
+        labelText="Cats:"
         min="0"
         defaultValue="0"
         onChange={formik.handleChange}
       />
-      <label htmlFor="otherPets">Other Pets:</label>
-      <input
+      <LabelledInput
         id="otherPets"
         name="otherPets"
         type="number"
+        labelText="Other Pets:"
         min="0"
         defaultValue="0"
         onChange={formik.handleChange}
