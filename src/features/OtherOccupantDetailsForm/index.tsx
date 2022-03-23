@@ -2,7 +2,8 @@ import { Formik, Form, FieldArray } from "formik";
 import LabelledInput from "../../components/common/LabelledInput";
 import GenderSelect from "../../components/GenderSelect";
 
-const initialValues = { occupants: [{ fullname: "", gender: "", age: 0 }] };
+const newOccupant = () => ({ fullname: "", gender: "", age: 0 });
+const initialValues = { occupants: [newOccupant()] };
 
 /**
  * Form for Other Adults and Children,
@@ -46,11 +47,7 @@ function OtherOccupantDetailsForm() {
                       />
                     </div>
                   ))}
-                  <button
-                    onClick={() =>
-                      arrayHelpers.push({ fullname: "", gender: "", age: 0 })
-                    }
-                  >
+                  <button onClick={() => arrayHelpers.push(newOccupant())}>
                     Add Occupant
                   </button>
                 </div>
