@@ -1,7 +1,7 @@
 import OccupantsForm from "../OccupantsForm";
 import PropertyDetailsForm from "../PropertyDetailsForm";
 import TenantDetailsForm from "../TenantDetailsForm";
-import OtherOccupantDetailsForm from "../OtherOccupantDetailsForm";
+import OtherOccupantsForm from "../OtherOccupantsForm";
 
 function ApplicationForm() {
   return (
@@ -9,7 +9,7 @@ function ApplicationForm() {
       <PropertyDetailsForm />
       <OccupantsForm />
       <TenantDetailsForm />
-      <OtherOccupantDetailsForm />
+      <OtherOccupantsForm />
     </div>
   );
 }
