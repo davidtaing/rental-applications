@@ -180,32 +180,94 @@ function TenantDetailsForm() {
         type="text"
         onChange={formik.handleChange}
       />
+
       <h2>Employment</h2>
       <label className="form-label" htmlFor="employment-title">
         Job Title:
       </label>
+      <input
+        className="text-input"
+        id="employment-title"
+        name="employment.title"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="employment-type">
         Type:
       </label>
+      <select
+        className="dropdown"
+        id="employment-type"
+        name="employment.type"
+        onChange={formik.handleChange}
+      >
+        <option value="">Select a Value</option>
+        <option value="Full Time">Full Time</option>
+        <option value="Part Time">Part Time</option>
+        <option value="Casual">Casual</option>
+        <option value="Self-Employed">Self-Employed</option>
+      </select>
       <label className="form-label" htmlFor="employment-net-income">
         Net Income:
       </label>
+      <input
+        className="text-input"
+        id="employment-net-income"
+        name="employment.netIncome"
+        type="number"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="employment-pay-period">
         Pay Period:
       </label>
+      <input
+        className="text-input"
+        id="employment-pay-period"
+        name="employment.payPeriod"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <h3>Reference</h3>
       <label className="form-label" htmlFor="employment-reference-name">
         Name:
       </label>
+      <input
+        className="text-input"
+        id="employment-reference-name"
+        name="employment.reference.name"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="employment-reference-position">
         Position:
       </label>
+      <input
+        className="text-input"
+        id="employment-reference-position"
+        name="employment.reference.position"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="employment-reference-email">
         Email:
       </label>
+      <input
+        className="text-input"
+        id="employment-reference-email"
+        name="employment.reference.email"
+        type="email"
+        onChange={formik.handleChange}
+      />
       <label className="form-label" htmlFor="employment-reference-phone">
         Phone:
       </label>
+      <input
+        className="text-input"
+        id="employment-reference-phone"
+        name="employment.reference.phone"
+        type="text"
+        onChange={formik.handleChange}
+      />
       <button type="submit">Submit</button>
     </form>
   );
