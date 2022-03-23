@@ -220,13 +220,17 @@ function TenantDetailsForm() {
       <label className="form-label" htmlFor="employment-pay-period">
         Pay Period:
       </label>
-      <input
-        className="text-input"
+      <select
+        className="dropdown"
         id="employment-pay-period"
         name="employment.payPeriod"
-        type="text"
         onChange={formik.handleChange}
-      />
+      >
+        <option value="">Select a Value</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Fortnightly">Fortnightly</option>
+        <option value="Monthly">Monthly</option>
+      </select>
       <h3>Reference</h3>
       <label className="form-label" htmlFor="employment-reference-name">
         Name:
