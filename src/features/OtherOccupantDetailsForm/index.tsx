@@ -1,8 +1,8 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, FieldArray } from "formik";
 import LabelledInput from "../../components/common/LabelledInput";
 import GenderSelect from "../../components/GenderSelect";
 
-const initialValues = { fullname: "", gender: "", age: 0 };
+const initialValues = { occupants: [{ fullname: "", gender: "", age: 0 }] };
 
 /**
  * Form for Other Adults and Children,
@@ -14,28 +14,53 @@ function OtherOccupantDetailsForm() {
       initialValues={initialValues}
       onSubmit={(values) => console.log(values)}
     >
-      {(formik) => (
-        <Form>
-          <h1>Other Occupants</h1>
-          <LabelledInput
-            id="fullname"
-            name="fullname"
-            type="text"
-            labelText="Full Name:"
-            onChange={formik.handleChange}
-          />
-          <GenderSelect onChange={formik.handleChange} />
-          <LabelledInput
-            id="age"
-            name="age"
-            type="number"
-            min="0"
-            labelText="Age:"
-            onChange={formik.handleChange}
-          />
-          <button type="submit">Submit</button>
-        </Form>
-      )}
+      {(formik) => {
+        const { values } = formik;
+
+        return (
+          <Form>
+            <h1>Other Occupants</h1>
+            <FieldArray name="occupants">
+              {(arrayHelpers) => (
+                <div>
+                  {values.occupants.map((item, index) => (
+                    <div
+                      key={`occupants[${index}].fullname`}
+                      className="occupant-details"
+                    >
+                      <LabelledInput
+                        id="fullname"
+                        name={`occupants[${index}].fullname`}
+                        type="text"
+                        labelText="Full Name:"
+                        onChange={formik.handleChange}
+                      />
+                      <GenderSelect onChange={formik.handleChange} />
+                      <LabelledInput
+                        id="age"
+                        name={`occupants[${index}].age`}
+                        type="number"
+                        min="0"
+                        labelText="Age:"
+                        onChange={formik.handleChange}
+                      />
+                    </div>
+                  ))}
+                  <button
+                    onClick={() =>
+                      arrayHelpers.push({ fullname: "", gender: "", age: 0 })
+                    }
+                  >
+                    Add Occupant
+                  </button>
+                </div>
+              )}
+            </FieldArray>
+
+            <button type="submit">Submit</button>
+          </Form>
+        );
+      }}
     </Formik>
   );
 }
