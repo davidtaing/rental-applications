@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import LabledInput from "./common/LabledInput";
+import LabelledInput from "./common/LabelledInput";
 import GenderSelect from "./GenderSelect";
 
 /**
@@ -19,7 +19,7 @@ function OtherOccupantDetailsForm() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <h1>Other Occupants</h1>
-      <LabledInput
+      <LabelledInput
         id="fullname"
         name="fullname"
         type="text"
@@ -27,7 +27,7 @@ function OtherOccupantDetailsForm() {
         onChange={formik.handleChange}
       />
       <GenderSelect onChange={formik.handleChange} />
-      <LabledInput
+      <LabelledInput
         id="age"
         name="age"
         type="number"

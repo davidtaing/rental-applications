@@ -1,10 +1,10 @@
 import { InputHTMLAttributes } from "react";
 
-interface LabledInputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface LabelledInputProps extends InputHTMLAttributes<HTMLInputElement> {
   labelText: string;
 }
 
-function LabledInput({ labelText, id, ...otherProps }: LabledInputProps) {
+function LabelledInput({ labelText, id, ...otherProps }: LabelledInputProps) {
   return (
     <div className="labed-input">
       <label className="form-label" htmlFor={id}>
@@ -15,4 +15,4 @@ function LabledInput({ labelText, id, ...otherProps }: LabledInputProps) {
   );
 }
 
-export default LabledInput;
+export default LabelledInput;
