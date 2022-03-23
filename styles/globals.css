@@ -20,7 +20,9 @@ form {
   margin: 0 auto;
 }
 
-form > * {
+input,
+label,
+select {
   display: block;
   width: 100%;
 }
