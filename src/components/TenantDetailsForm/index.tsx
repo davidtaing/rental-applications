@@ -1,9 +1,9 @@
 import { useFormik } from "formik";
-import LabelledInput from "./common/LabelledInput";
-import EmploymentTypeSelect from "./EmploymentTypeSelect";
-import GenderSelect from "./GenderSelect";
-import PayPeriodSelect from "./PayPeriodSelect";
-import RentalStatusSelect from "./RentalStatusSelect";
+import LabelledInput from "../common/LabelledInput";
+import EmploymentTypeSelect from "../EmploymentTypeSelect";
+import GenderSelect from "../GenderSelect";
+import PayPeriodSelect from "../PayPeriodSelect";
+import RentalStatusSelect from "../RentalStatusSelect";
 
 /**
  * Form for Named Tenants,

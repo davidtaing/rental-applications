@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import LabelledInput from "./common/LabelledInput";
+import LabelledInput from "../common/LabelledInput";
 
 function PropertyDetailsForm() {
   const formik = useFormik({

@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
-import LabelledInput from "./common/LabelledInput";
-import GenderSelect from "./GenderSelect";
+import LabelledInput from "../common/LabelledInput";
+import GenderSelect from "../GenderSelect";
 
 /**
  * Form for Other Adults and Children,
