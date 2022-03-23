@@ -1,6 +1,8 @@
 import { Formik, Form, FieldArray } from "formik";
-import OtherOccupantItem from "./OtherOccupantItem";
 import OtherOccupant from "../../types/OtherOccupantInterface";
+import dynamic from "next/dynamic";
+
+const OtherOccupantItem = dynamic(() => import("./OtherOccupantItem"));
 
 const newOccupant = (): OtherOccupant => ({ fullname: "", gender: "", age: 0 });
 const initialValues = { occupants: new Array<OtherOccupant>() };
