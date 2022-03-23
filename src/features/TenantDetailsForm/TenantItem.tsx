@@ -18,14 +18,14 @@ function TenantItem({ index, handleChange, onRemoveHandler }: TenantItemProps) {
       <h2>Tenant</h2>
       <LabelledInput
         id="preferredName"
-        name="preferredName"
+        name={`tenants[${index}].preferredName`}
         type="text"
         labelText="Preferred Name:"
         onChange={handleChange}
       />
       <LabelledInput
         id="fullname"
-        name="fullname"
+        name={`tenants[${index}].fullname`}
         type="text"
         labelText="Full Name:"
         onChange={handleChange}
@@ -33,28 +33,28 @@ function TenantItem({ index, handleChange, onRemoveHandler }: TenantItemProps) {
       <GenderSelect id="gender" name="gender" onChange={handleChange} />
       <LabelledInput
         id="dob"
-        name="dob"
+        name={`tenants[${index}].dob`}
         type="date"
         labelText="Date Of Birth:"
         onChange={handleChange}
       />
       <LabelledInput
         id="phone"
-        name="phone"
+        name={`tenants[${index}].phone`}
         type="text"
         labelText="Phone:"
         onChange={handleChange}
       />
       <LabelledInput
         id="mobile"
-        name="mobile"
+        name={`tenants[${index}].mobile`}
         type="text"
         labelText="Mobile:"
         onChange={handleChange}
       />
       <LabelledInput
         id="email"
-        name="email"
+        name={`tenants[${index}].email`}
         type="email"
         labelText="Email:"
         onChange={handleChange}
@@ -62,34 +62,34 @@ function TenantItem({ index, handleChange, onRemoveHandler }: TenantItemProps) {
       <h2>Rental History</h2>
       <LabelledInput
         id="property-address"
-        name="property.address"
+        name={`tenants[${index}].property.address`}
         type="text"
         labelText="Address:"
         onChange={handleChange}
       />
       <RentalStatusSelect
         id="property-status"
-        name="property.status"
+        name={`tenants[${index}].property.status`}
         onChange={handleChange}
       />
       <h3>Reference</h3>
       <LabelledInput
         id="property-reference-name"
-        name="property.reference.name"
+        name={`tenants[${index}].property.reference.name`}
         type="text"
         labelText="Name:"
         onChange={handleChange}
       />
       <LabelledInput
         id="property-reference-email"
-        name="property.reference.email"
+        name={`tenants[${index}].property.reference.email`}
         type="email"
         labelText="Email:"
         onChange={handleChange}
       />
       <LabelledInput
         id="property-reference-phone"
-        name="property.reference.phone"
+        name={`tenants[${index}].property.reference.phone`}
         type="text"
         labelText="Phone:"
         onChange={handleChange}
@@ -98,53 +98,53 @@ function TenantItem({ index, handleChange, onRemoveHandler }: TenantItemProps) {
       <h2>Employment</h2>
       <LabelledInput
         id="employment-title"
-        name="employment.title"
+        name={`tenants[${index}].employment.title`}
         type="text"
         labelText="Job Title:"
         onChange={handleChange}
       />
       <EmploymentTypeSelect
         id="employment-type"
-        name="employment.type"
+        name={`tenants[${index}].employment.type`}
         onChange={handleChange}
       />
       <LabelledInput
         id="employment-net-income"
-        name="employment.netIncome"
+        name={`tenants[${index}].employment.netIncome`}
         type="number"
         labelText="Net Income:"
         onChange={handleChange}
       />
       <PayPeriodSelect
         id="employment-pay-period"
-        name="employment.payPeriod"
+        name={`tenants[${index}].employment.payPeriod`}
         onChange={handleChange}
       />
       <h3>Reference</h3>
       <LabelledInput
         id="employment-reference-name"
-        name="employment.reference.name"
+        name={`tenants[${index}].employment.reference.name`}
         type="text"
         labelText="Name:"
         onChange={handleChange}
       />
       <LabelledInput
         id="employment-reference-position"
-        name="employment.reference.position"
+        name={`tenants[${index}].employment.reference.position`}
         type="text"
         labelText="Position:"
         onChange={handleChange}
       />
       <LabelledInput
         id="employment-reference-email"
-        name="employment.reference.email"
+        name={`tenants[${index}].employment.reference.email`}
         type="email"
         labelText="Email:"
         onChange={handleChange}
       />
       <LabelledInput
         id="employment-reference-phone"
-        name="employment.reference.phone"
+        name={`tenants[${index}].employment.reference.phone`}
         type="text"
         labelText="Phone:"
         onChange={handleChange}
