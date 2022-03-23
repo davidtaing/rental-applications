@@ -2,8 +2,10 @@ import { Formik, Form, FieldArray } from "formik";
 import LabelledInput from "../../components/common/LabelledInput";
 import GenderSelect from "../../components/GenderSelect";
 
-const newOccupant = () => ({ fullname: "", gender: "", age: 0 });
-const initialValues = { occupants: [newOccupant()] };
+import OtherOccupant from "../../types/OtherOccupantInterface";
+
+const newOccupant = (): OtherOccupant => ({ fullname: "", gender: "", age: 0 });
+const initialValues = { occupants: new Array<OtherOccupant>() };
 
 /**
  * Form for Other Adults and Children,
@@ -25,10 +27,7 @@ function OtherOccupantDetailsForm() {
               {(arrayHelpers) => (
                 <div>
                   {values.occupants.map((item, index) => (
-                    <div
-                      key={`occupants[${index}].fullname`}
-                      className="occupant-details"
-                    >
+                    <div key={item.fullname} className="occupant-details">
                       <LabelledInput
                         id="fullname"
                         name={`occupants[${index}].fullname`}
@@ -49,6 +48,9 @@ function OtherOccupantDetailsForm() {
                         labelText="Age:"
                         onChange={formik.handleChange}
                       />
+                      <button onClick={() => arrayHelpers.remove(index)}>
+                        Remove Occupant
+                      </button>
                     </div>
                   ))}
                   <button onClick={() => arrayHelpers.push(newOccupant())}>
