@@ -1,6 +1,9 @@
 import { useFormik } from "formik";
 import LabelledInput from "./common/LabelledInput";
+import EmploymentTypeSelect from "./EmploymentTypeSelect";
 import GenderSelect from "./GenderSelect";
+import PayPeriodSelect from "./PayPeriodSelect";
+import RentalStatusSelect from "./RentalStatusSelect";
 
 /**
  * Form for Named Tenants,
@@ -102,28 +105,11 @@ function TenantDetailsForm() {
         labelText="Address:"
         onChange={formik.handleChange}
       />
-      <label className="form-label" htmlFor="property-status">
-        Rental Status:
-      </label>
-      <select
-        className="dropdown"
+      <RentalStatusSelect
         id="property-status"
         name="property.status"
         onChange={formik.handleChange}
-      >
-        <option value="">Select a Value</option>
-        <option value="Renting with Agency">Renting with Agency</option>
-        <option value="Renting with Private Landlord">
-          Renting with Private Landlord
-        </option>
-        <option value="House/Room Share">House/Room Share</option>
-        <option value="Living with Parents">Living with Parents</option>
-        <option value="Living in Own Property">Living in Own Property</option>
-        <option value="Just Arrived From Overseas">
-          Just Arrived From Overseas
-        </option>
-        <option value="Living Overseas">Living Overseas</option>
-      </select>
+      />
       <h3>Reference</h3>
       <LabelledInput
         className="text-input"
@@ -159,21 +145,11 @@ function TenantDetailsForm() {
         labelText="Job Title:"
         onChange={formik.handleChange}
       />
-      <label className="form-label" htmlFor="employment-type">
-        Type:
-      </label>
-      <select
-        className="dropdown"
+      <EmploymentTypeSelect
         id="employment-type"
         name="employment.type"
         onChange={formik.handleChange}
-      >
-        <option value="">Select a Value</option>
-        <option value="Full Time">Full Time</option>
-        <option value="Part Time">Part Time</option>
-        <option value="Casual">Casual</option>
-        <option value="Self-Employed">Self-Employed</option>
-      </select>
+      />
       <LabelledInput
         className="text-input"
         id="employment-net-income"
@@ -182,20 +158,11 @@ function TenantDetailsForm() {
         labelText="Net Income:"
         onChange={formik.handleChange}
       />
-      <label className="form-label" htmlFor="employment-pay-period">
-        Pay Period:
-      </label>
-      <select
-        className="dropdown"
+      <PayPeriodSelect
         id="employment-pay-period"
         name="employment.payPeriod"
         onChange={formik.handleChange}
-      >
-        <option value="">Select a Value</option>
-        <option value="Weekly">Weekly</option>
-        <option value="Fortnightly">Fortnightly</option>
-        <option value="Monthly">Monthly</option>
-      </select>
+      />
       <h3>Reference</h3>
       <LabelledInput
         className="text-input"

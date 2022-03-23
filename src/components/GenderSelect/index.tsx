@@ -1,26 +1,12 @@
-import { ChangeEventHandler } from "react";
+import { SelectHTMLAttributes } from "react";
+import LabelledSelect from "../common/LabelledSelect";
 
-interface Props {
-  onChange: ChangeEventHandler<HTMLSelectElement>;
-}
+const selectValues = ["Male", "Female", "Other"];
 
-function GenderSelect({ onChange }: Props) {
+function GenderSelect(props: SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <div className="gender-select">
-      <label className="form-label" htmlFor="gender">
-        Gender:
-      </label>
-      <select
-        className="dropdown"
-        id="gender"
-        name="gender"
-        onChange={onChange}
-      >
-        <option value="">Select a Value</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
+      <LabelledSelect labelText="Gender:" values={selectValues} {...props} />
     </div>
   );
 }
