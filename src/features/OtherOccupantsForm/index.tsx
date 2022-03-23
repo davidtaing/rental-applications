@@ -4,7 +4,11 @@ import dynamic from "next/dynamic";
 
 const OtherOccupantItem = dynamic(() => import("./OtherOccupantItem"));
 
-const newOccupant = (): OtherOccupant => ({ fullname: "", gender: "", age: 0 });
+const createNewOccupant = (): OtherOccupant => ({
+  fullname: "",
+  gender: "",
+  age: 0,
+});
 const initialValues = { occupants: new Array<OtherOccupant>() };
 
 /**
@@ -34,7 +38,9 @@ function OtherOccupantsForm() {
                       index={index}
                     />
                   ))}
-                  <button onClick={() => arrayHelpers.push(newOccupant())}>
+                  <button
+                    onClick={() => arrayHelpers.push(createNewOccupant())}
+                  >
                     Add Occupant
                   </button>
                 </div>
