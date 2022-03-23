@@ -7,7 +7,7 @@ interface LabledInputProps {
   handleChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-function LabledInput({ id, name, text, handleChange }: LabledInputProps) {
+function LabledTextInput({ id, name, text, handleChange }: LabledInputProps) {
   return (
     <div className="labed-input">
       <label className="form-label" htmlFor={id}>
@@ -24,4 +24,4 @@ function LabledInput({ id, name, text, handleChange }: LabledInputProps) {
   );
 }
 
-export default LabledInput;
+export default LabledTextInput;
