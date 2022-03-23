@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 import LabelledInput from "../../components/common/LabelledInput";
 
 const initialValues = {
@@ -16,7 +16,7 @@ function OccupantsForm() {
       onSubmit={(values) => console.log(values)}
     >
       {(formik) => (
-        <form onSubmit={formik.handleSubmit}>
+        <Form>
           <h1>Occupants</h1>
           <LabelledInput
             id="adults"
@@ -64,7 +64,7 @@ function OccupantsForm() {
             onChange={formik.handleChange}
           />
           <button type="submit">Submit</button>
-        </form>
+        </Form>
       )}
     </Formik>
   );

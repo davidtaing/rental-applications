@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 import LabelledInput from "../../components/common/LabelledInput";
 import EmploymentTypeSelect from "../../components/EmploymentTypeSelect";
 import GenderSelect from "../../components/GenderSelect";
@@ -47,7 +47,7 @@ function TenantDetailsForm() {
       onSubmit={(values) => console.log(values)}
     >
       {(formik) => (
-        <form onSubmit={formik.handleSubmit}>
+        <Form>
           <h1>Tenant</h1>
           <LabelledInput
             id="preferredName"
@@ -183,7 +183,7 @@ function TenantDetailsForm() {
             onChange={formik.handleChange}
           />
           <button type="submit">Submit</button>
-        </form>
+        </Form>
       )}
     </Formik>
   );

@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 import LabelledInput from "../../components/common/LabelledInput";
 
 const initialValues = {
@@ -15,7 +15,7 @@ function PropertyDetailsForm() {
       onSubmit={(values) => console.log(values)}
     >
       {(formik) => (
-        <form onSubmit={formik.handleSubmit}>
+        <Form>
           <h1>Property Details</h1>
           <LabelledInput
             id="address"
@@ -49,7 +49,7 @@ function PropertyDetailsForm() {
             onChange={formik.handleChange}
           />
           <button type="submit">Submit</button>
-        </form>
+        </Form>
       )}
     </Formik>
   );
