@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import LabledInput from "./common/LabledInput";
+import GenderSelect from "./GenderSelect";
 
 /**
  * Form for Other Adults and Children,
@@ -25,20 +26,7 @@ function OtherOccupantDetailsForm() {
         labelText="Full Name:"
         onChange={formik.handleChange}
       />
-      <label className="form-label" htmlFor="gender">
-        Gender:
-      </label>
-      <select
-        className="dropdown"
-        id="gender"
-        name="gender"
-        onChange={formik.handleChange}
-      >
-        <option value="">Select a Value</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
+      <GenderSelect onChange={formik.handleChange} />
       <LabledInput
         id="age"
         name="age"
