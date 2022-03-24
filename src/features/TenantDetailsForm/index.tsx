@@ -62,7 +62,7 @@ function TenantDetailsForm() {
                 <div className="tenants-container">
                   {values.tenants.map((item, index) => (
                     <TenantItem
-                      key={item.fullname}
+                      key={index}
                       onRemoveHandler={() => arrayHelpers.remove(index)}
                       handleChange={formik.handleChange}
                       index={index}
