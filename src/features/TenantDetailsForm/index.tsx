@@ -27,12 +27,9 @@ function TenantDetailsForm() {
         const { values } = formik;
 
         return (
-          <Form>
+          <Form className="form tenant-details-form">
             <h1>Tenant</h1>
-            <TenantsList
-              values={values.tenants}
-              onChangeHandler={formik.handleChange}
-            />
+            <TenantsList values={values.tenants} />
             <button type="submit">Submit</button>
           </Form>
         );

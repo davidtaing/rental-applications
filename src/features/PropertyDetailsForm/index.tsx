@@ -22,7 +22,6 @@ function PropertyDetailsForm() {
             name="address"
             type="text"
             labelText="Address:"
-            onChange={formik.handleChange}
           />
           <LabelledInput
             id="rent"
@@ -30,14 +29,12 @@ function PropertyDetailsForm() {
             type="number"
             labelText="Rent Amount (Per Week):"
             min="0"
-            onChange={formik.handleChange}
           />
           <LabelledInput
             id="startDate"
             name="startDate"
             type="date"
             labelText="Start Date:"
-            onChange={formik.handleChange}
           />
           <LabelledInput
             id="leasePeriod"
@@ -46,7 +43,6 @@ function PropertyDetailsForm() {
             labelText="Lease Period (Months):"
             min="0"
             defaultValue="12"
-            onChange={formik.handleChange}
           />
           <button type="submit">Submit</button>
         </Form>

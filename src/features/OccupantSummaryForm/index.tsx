@@ -25,7 +25,6 @@ function OccupantSummaryForm() {
             labelText="Adults:"
             min="0"
             defaultValue="0"
-            onChange={formik.handleChange}
           />
           <LabelledInput
             id="children"
@@ -34,7 +33,6 @@ function OccupantSummaryForm() {
             labelText="Children:"
             min="0"
             defaultValue="0"
-            onChange={formik.handleChange}
           />
           <LabelledInput
             id="dogs"
@@ -43,7 +41,6 @@ function OccupantSummaryForm() {
             labelText="Dogs:"
             min="0"
             defaultValue="0"
-            onChange={formik.handleChange}
           />
           <LabelledInput
             id="cat"
@@ -52,7 +49,6 @@ function OccupantSummaryForm() {
             labelText="Cats:"
             min="0"
             defaultValue="0"
-            onChange={formik.handleChange}
           />
           <LabelledInput
             id="otherPets"
@@ -61,7 +57,6 @@ function OccupantSummaryForm() {
             labelText="Other Pets:"
             min="0"
             defaultValue="0"
-            onChange={formik.handleChange}
           />
           <button type="submit">Submit</button>
         </Form>

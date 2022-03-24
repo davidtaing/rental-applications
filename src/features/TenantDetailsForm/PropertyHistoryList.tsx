@@ -8,33 +8,36 @@ import { PropertyHistoryItem } from "./PropertyHistoryItem";
 interface PropertyHistoryListProps {
   tenantIndex: number;
   propertyHistory: Array<PropertyHistory>;
-  onChangeHandler: ChangeEventHandler;
 }
 
+/**
+ * Form Segment for List of Property Histories,
+ * i.e. Places of Residences
+ */
 function PropertyHistoryList({
   tenantIndex,
   propertyHistory,
-  onChangeHandler,
 }: PropertyHistoryListProps) {
   return (
-    <FieldArray name={`tenants[${tenantIndex}].propertyHistory`}>
-      {(arrayHelpers) => (
-        <div className="property-history-list">
-          {propertyHistory.map((item, index) => (
-            <PropertyHistoryItem
-              key={index}
-              tenantIndex={tenantIndex}
-              index={index}
-              onChangeHandler={onChangeHandler}
-              onRemoveHandler={() => arrayHelpers.remove(index)}
-            />
-          ))}
-          <button onClick={() => arrayHelpers.push(createPropertyHistory())}>
-            Add History
-          </button>
-        </div>
-      )}
-    </FieldArray>
+    <div className="property-history--list">
+      <FieldArray name={`tenants[${tenantIndex}].propertyHistory`}>
+        {(arrayHelpers) => (
+          <>
+            {propertyHistory.map((item, index) => (
+              <PropertyHistoryItem
+                key={index}
+                tenantIndex={tenantIndex}
+                index={index}
+                onRemoveHandler={() => arrayHelpers.remove(index)}
+              />
+            ))}
+            <button onClick={() => arrayHelpers.push(createPropertyHistory())}>
+              Add History
+            </button>
+          </>
+        )}
+      </FieldArray>
+    </div>
   );
 }
 

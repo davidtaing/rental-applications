@@ -1,17 +1,23 @@
 import { InputHTMLAttributes } from "react";
-import { Field } from "formik";
+import { Field, useFormikContext } from "formik";
 
 interface LabelledInputProps extends InputHTMLAttributes<HTMLInputElement> {
   labelText: string;
 }
 
 function LabelledInput({ labelText, id, ...otherProps }: LabelledInputProps) {
+  const { handleChange } = useFormikContext();
   return (
     <div className="labed-input">
       <label className="form-label" htmlFor={id}>
         {labelText}
       </label>
-      <Field className="text-input" id={id} {...otherProps} />
+      <Field
+        className="text-input"
+        id={id}
+        onChange={handleChange}
+        {...otherProps}
+      />
     </div>
   );
 }

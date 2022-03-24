@@ -8,10 +8,12 @@ import Tenant from "../../types/TenantInterface";
 
 interface TenantListProps {
   values: Array<Tenant>;
-  onChangeHandler: ChangeEventHandler;
 }
 
-function TenantsList({ values, onChangeHandler }: TenantListProps) {
+/**
+ * Form Segment for All Tenants
+ */
+function TenantsList({ values }: TenantListProps) {
   return (
     <div className="tenants-list--container">
       <FieldArray name="tenants">
@@ -23,7 +25,6 @@ function TenantsList({ values, onChangeHandler }: TenantListProps) {
                 index={index}
                 propertyHistory={item.propertyHistory}
                 onRemoveHandler={() => arrayHelpers.remove(index)}
-                handleChange={onChangeHandler}
               />
             ))}
             <button onClick={() => arrayHelpers.push(createTenant())}>
