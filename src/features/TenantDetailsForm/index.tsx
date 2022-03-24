@@ -1,5 +1,5 @@
 import { Formik, Form, FieldArray } from "formik";
-import TenantDetails from "../../types/TenantDetailsInterface";
+import TenantDetails from "../../types/TenantInterface";
 import TenantItem from "./TenantItem";
 
 import { createTenant } from "../../utils";

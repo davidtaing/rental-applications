@@ -1,5 +1,5 @@
 import PropertyHistory from "../types/PropertyHistory";
-import TenantDetails from "../types/TenantDetailsInterface";
+import TenantDetails from "../types/TenantInterface";
 
 export const createPropertyHistory = (): PropertyHistory => ({
   address: "",

@@ -1,6 +1,6 @@
 import PropertyHistory from "./PropertyHistory";
 
-interface TenantDetails {
+interface Tenant {
   preferredName: string;
   fullname: string;
   gender: string;
@@ -23,4 +23,4 @@ interface TenantDetails {
   };
 }
 
-export default TenantDetails;
+export default Tenant;
