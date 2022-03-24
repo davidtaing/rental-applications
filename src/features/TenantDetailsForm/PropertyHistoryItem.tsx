@@ -1,4 +1,3 @@
-import { useFormikContext } from "formik";
 import { MouseEventHandler } from "react";
 import LabelledInput from "../../components/common/LabelledInput";
 import RentalStatusSelect from "../../components/RentalStatusSelect";

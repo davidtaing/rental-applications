@@ -1,5 +1,4 @@
 import { FieldArray } from "formik";
-import { ChangeEventHandler } from "react";
 
 import TenantItem from "./TenantItem";
 
