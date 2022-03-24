@@ -2,43 +2,14 @@ import { Formik, Form, FieldArray } from "formik";
 import TenantDetails from "../../types/TenantDetailsInterface";
 import TenantItem from "./TenantItem";
 
-const createNewTenant = () => ({
-  preferredName: "",
-  fullname: "",
-  gender: "",
-  dob: new Date(), //TODO: convert to date
-  phone: "",
-  mobile: "",
-  email: "",
-  rentalHistory: {
-    address: "",
-    status: "",
-    reference: {
-      name: "",
-      email: "",
-      phone: "",
-    },
-  },
-  employment: {
-    title: "",
-    type: "",
-    netIncome: 0,
-    payPeriod: "",
-    reference: {
-      name: "",
-      position: "",
-      email: "",
-      phone: "",
-    },
-  },
-});
+import { createTenant } from "../../utils";
 
 interface InitialValues {
   tenants: Array<TenantDetails>;
 }
 
 const initialValues: InitialValues = {
-  tenants: [createNewTenant()],
+  tenants: [createTenant()],
 };
 
 /**
@@ -63,12 +34,13 @@ function TenantDetailsForm() {
                   {values.tenants.map((item, index) => (
                     <TenantItem
                       key={index}
+                      index={index}
+                      propertyHistory={item.propertyHistory}
                       onRemoveHandler={() => arrayHelpers.remove(index)}
                       handleChange={formik.handleChange}
-                      index={index}
                     />
                   ))}
-                  <button onClick={() => arrayHelpers.push(createNewTenant())}>
+                  <button onClick={() => arrayHelpers.push(createTenant())}>
                     Add Co-Tenant
                   </button>
                 </div>

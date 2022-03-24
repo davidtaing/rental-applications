@@ -1,3 +1,5 @@
+import PropertyHistory from "./PropertyHistory";
+
 interface TenantDetails {
   preferredName: string;
   fullname: string;
@@ -6,15 +8,7 @@ interface TenantDetails {
   phone: string;
   mobile: string;
   email: string;
-  rentalHistory: {
-    address: string;
-    status: string;
-    reference: {
-      name: string;
-      email: string;
-      phone: string;
-    };
-  };
+  propertyHistory: Array<PropertyHistory>;
   employment: {
     title: string;
     type: string;

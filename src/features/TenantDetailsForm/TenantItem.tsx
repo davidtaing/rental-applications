@@ -2,17 +2,24 @@ import { ChangeEventHandler, MouseEventHandler } from "react";
 
 import LabelledInput from "../../components/common/LabelledInput";
 import GenderSelect from "../../components/GenderSelect";
-import RentalStatusSelect from "../../components/RentalStatusSelect";
 import EmploymentTypeSelect from "../../components/EmploymentTypeSelect";
 import PayPeriodSelect from "../../components/PayPeriodSelect";
+import PropertyHistoryList from "./PropertyHistoryList";
+import PropertyHistory from "../../types/PropertyHistory";
 
 interface TenantItemProps {
   index: number;
+  propertyHistory: Array<PropertyHistory>;
   handleChange: ChangeEventHandler;
   onRemoveHandler: MouseEventHandler<HTMLButtonElement>;
 }
 
-function TenantItem({ index, handleChange, onRemoveHandler }: TenantItemProps) {
+function TenantItem({
+  index,
+  propertyHistory,
+  handleChange,
+  onRemoveHandler,
+}: TenantItemProps) {
   return (
     <div className="tenant-item">
       <h2>Tenant</h2>
@@ -60,39 +67,10 @@ function TenantItem({ index, handleChange, onRemoveHandler }: TenantItemProps) {
         onChange={handleChange}
       />
       <h2>Rental History</h2>
-      <LabelledInput
-        id="property-address"
-        name={`tenants[${index}].property.address`}
-        type="text"
-        labelText="Address:"
-        onChange={handleChange}
-      />
-      <RentalStatusSelect
-        id="property-status"
-        name={`tenants[${index}].property.status`}
-        onChange={handleChange}
-      />
-      <h3>Reference</h3>
-      <LabelledInput
-        id="property-reference-name"
-        name={`tenants[${index}].property.reference.name`}
-        type="text"
-        labelText="Name:"
-        onChange={handleChange}
-      />
-      <LabelledInput
-        id="property-reference-email"
-        name={`tenants[${index}].property.reference.email`}
-        type="email"
-        labelText="Email:"
-        onChange={handleChange}
-      />
-      <LabelledInput
-        id="property-reference-phone"
-        name={`tenants[${index}].property.reference.phone`}
-        type="text"
-        labelText="Phone:"
-        onChange={handleChange}
+      <PropertyHistoryList
+        tenantIndex={index}
+        propertyHistory={propertyHistory}
+        onChangeHandler={handleChange}
       />
 
       <h2>Employment</h2>
