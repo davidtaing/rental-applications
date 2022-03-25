@@ -1,6 +1,6 @@
 import { FieldArray } from "formik";
 
-import PropertyHistory from "../../types/PropertyHistory";
+import PropertyHistory from "../../types/PropertyHistoryInterface";
 import { createPropertyHistory } from "../../utils";
 import { PropertyHistoryItem } from "./PropertyHistoryItem";
 

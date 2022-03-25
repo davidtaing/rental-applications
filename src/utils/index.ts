@@ -1,4 +1,4 @@
-import PropertyHistory from "../types/PropertyHistory";
+import PropertyHistory from "../types/PropertyHistoryInterface";
 import TenantDetails from "../types/TenantInterface";
 
 export const createPropertyHistory = (): PropertyHistory => ({

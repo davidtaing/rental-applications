@@ -5,7 +5,7 @@ import GenderSelect from "../../components/GenderSelect";
 import EmploymentTypeSelect from "../../components/EmploymentTypeSelect";
 import PayPeriodSelect from "../../components/PayPeriodSelect";
 import PropertyHistoryList from "./PropertyHistoryList";
-import PropertyHistory from "../../types/PropertyHistory";
+import PropertyHistory from "../../types/PropertyHistoryInterface";
 
 interface TenantItemProps {
   index: number;
