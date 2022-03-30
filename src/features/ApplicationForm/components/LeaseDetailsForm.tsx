@@ -1,8 +1,9 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
-import LeaseDetails from "../types/LeaseDetails";
-import { Actions } from "../types/Actions";
+
+import { LeaseDetails } from "../types/State";
 import { ApplicationFormDispatch } from "../types/dispatch";
+import { Actions } from "../types/Actions";
 
 interface LeaseDetailsFormProps {
   initialValues: LeaseDetails;

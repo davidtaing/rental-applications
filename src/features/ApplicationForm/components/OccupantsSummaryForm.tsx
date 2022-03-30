@@ -1,15 +1,17 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
+import { ApplicationFormDispatch } from "../types/dispatch";
+import { OccupantsSummary } from "../types/State";
 
-const initialValues = {
-  adults: 0,
-  children: 0,
-  dogs: 0,
-  cats: 0,
-  otherPets: 0,
-};
+interface OccupantsSummaryFormProps {
+  initialValues: OccupantsSummary;
+  dispatch: ApplicationFormDispatch;
+}
 
-function OccupantsSummaryForm() {
+function OccupantsSummaryForm({
+  initialValues,
+  dispatch,
+}: OccupantsSummaryFormProps) {
   return (
     <Formik
       initialValues={initialValues}

@@ -1,21 +1,25 @@
 import dynamic from "next/dynamic";
 import { Formik, Form, FieldArray } from "formik";
 import OtherOccupant from "../types/OtherOccupant";
+import { createOtherOccupant } from "../utils";
+import { OtherOccupantsDetails } from "../types/State";
+import { ApplicationFormDispatch } from "../types/dispatch";
 
 const OtherOccupantItem = dynamic(() => import("./OtherOccupantItem"));
 
-const createNewOccupant = (): OtherOccupant => ({
-  fullname: "",
-  gender: "",
-  age: 0,
-});
-const initialValues = { occupants: new Array<OtherOccupant>() };
+interface OtherOccupantsFormProps {
+  initialValues: OtherOccupantsDetails;
+  dispatch: ApplicationFormDispatch;
+}
 
 /**
  * Form for Other Adults and Children,
  * i.e. Non-Rent Paying Adults and Children
  */
-function OtherOccupantsForm() {
+function OtherOccupantsForm({
+  initialValues,
+  dispatch,
+}: OtherOccupantsFormProps) {
   return (
     <Formik
       initialValues={initialValues}
@@ -39,7 +43,7 @@ function OtherOccupantsForm() {
                     />
                   ))}
                   <button
-                    onClick={() => arrayHelpers.push(createNewOccupant())}
+                    onClick={() => arrayHelpers.push(createOtherOccupant())}
                   >
                     Add Occupant
                   </button>

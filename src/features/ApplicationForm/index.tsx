@@ -18,9 +18,15 @@ function ApplicationForm() {
   return (
     <div>
       <LeaseDetailsForm initialValues={leaseDetails} dispatch={dispatch} />
-      <OccupantsSummaryForm />
-      <TenantDetailsForm />
-      <OtherOccupantsForm />
+      <OccupantsSummaryForm
+        initialValues={occupantsSummary}
+        dispatch={dispatch}
+      />
+      <TenantDetailsForm initialValues={tenantDetails} dispatch={dispatch} />
+      <OtherOccupantsForm
+        initialValues={otherOccupantsDetails}
+        dispatch={dispatch}
+      />
     </div>
   );
 }

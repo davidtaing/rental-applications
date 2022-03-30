@@ -3,21 +3,21 @@ import { Formik, Form } from "formik";
 import TenantsList from "./TenantsList";
 
 import Tenant from "../types/Tenant";
-import { createTenant } from "../utils";
+import { ApplicationFormDispatch } from "../types/dispatch";
 
-interface InitialValues {
-  tenants: Array<Tenant>;
+interface TenantDetailsFormProps {
+  initialValues: { tenants: Array<Tenant> };
+  dispatch: ApplicationFormDispatch;
 }
-
-const initialValues: InitialValues = {
-  tenants: [createTenant()],
-};
 
 /**
  * Form for Named Tenants,
  * i.e. Rent Paying Tenants
  */
-function TenantDetailsForm() {
+function TenantDetailsForm({
+  initialValues,
+  dispatch,
+}: TenantDetailsFormProps) {
   return (
     <Formik
       initialValues={initialValues}
