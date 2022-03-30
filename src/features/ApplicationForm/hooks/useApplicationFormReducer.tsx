@@ -4,8 +4,6 @@ import { initializeState } from "../utils";
 import { Actions, ActionType } from "../types/Actions";
 import { InitialState } from "../types/State";
 
-const initialState: InitialState = initializeState();
-
 function applicationFormReducer(state: InitialState, action: ActionType) {
   switch (action.type) {
     case Actions.update:
@@ -15,8 +13,8 @@ function applicationFormReducer(state: InitialState, action: ActionType) {
   }
 }
 
-function useApplicationFormReducer() {
-  return useReducer(applicationFormReducer, initialState);
+function useApplicationFormReducer(initialState?: InitialState) {
+  return useReducer(applicationFormReducer, initialState ?? initializeState());
 }
 
 export default useApplicationFormReducer;
