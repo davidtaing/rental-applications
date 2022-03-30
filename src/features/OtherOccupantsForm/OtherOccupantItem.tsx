@@ -11,8 +11,6 @@ interface OtherOccupantItemProps {
 /**
  * Represents the individual occupant,
  * i.e. Non-rent paying adults & children
- * @param index number
- * @returns
  */
 function OtherOccupantItem({
   index,
