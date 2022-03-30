@@ -1,15 +1,21 @@
 import { useReducer } from "react";
 
-import { createLeaseDetails } from "../utils";
+import {
+  createLeaseDetails,
+  createOccupantsSummary,
+  createTenant,
+} from "../utils";
 import { Actions, ActionType } from "../types/Actions";
 import { InitialState } from "../types/InitialState";
+import Pet from "../types/Pet";
+import OtherOccupant from "../types/OtherOccupant";
 
 const initialState: InitialState = {
   leaseDetails: createLeaseDetails(),
-  occupantSummary: {},
-  tenantDetails: {},
-  otherOccupantDetails: {},
-  petDetails: {},
+  occupantsSummary: createOccupantsSummary(),
+  tenantDetails: [createTenant()],
+  otherOccupantsDetails: new Array<OtherOccupant>(),
+  petDetails: new Array<Pet>(),
 };
 
 function applicationFormReducer(
