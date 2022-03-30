@@ -41,3 +41,13 @@ export const createTenant = (): Tenant => ({
     },
   },
 });
+
+export const createOccupantsSummary = () => {
+  return {
+    adults: 0,
+    children: 0,
+    dogs: 0,
+    cats: 0,
+    otherPets: 0,
+  };
+};
