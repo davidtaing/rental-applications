@@ -1,5 +1,6 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../components/common/LabelledInput";
+import { Actions } from "../ApplicationForm";
 
 const initialValues = {
   address: "",
@@ -8,11 +9,13 @@ const initialValues = {
   leasePeriod: 12,
 };
 
-function LeaseDetailsForm() {
+function LeaseDetailsForm({ initialValues, dispatch }: any) {
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values) =>
+        dispatch({ type: Actions.update, payload: { leaseDetails: values } })
+      }
     >
       {(formik) => (
         <Form>
