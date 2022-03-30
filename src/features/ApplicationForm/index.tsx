@@ -9,7 +9,7 @@ function ApplicationForm() {
   const [state, dispatch] = useApplicationFormReducer();
   const {
     leaseDetails,
-    occupantSummary,
+    occupantsSummary,
     tenantDetails,
     otherOccupantDetails,
     petDetails,
