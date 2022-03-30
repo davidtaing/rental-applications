@@ -74,6 +74,10 @@ export const createPetDetails = () => ({
   pets: new Array<Pet>(),
 });
 
+/**
+ * Initializes state.
+ * @returns InitialState for useApplicationFormReducer
+ */
 export const initializeState = (): InitialState => {
   return {
     leaseDetails: createLeaseDetails(),
