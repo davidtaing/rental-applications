@@ -1,7 +1,8 @@
-import OccupantSummaryForm from "../OccupantSummaryForm";
-import LeaseDetailsForm from "../LeaseDetailsForm";
-import TenantDetailsForm from "../TenantDetailsForm";
-import OtherOccupantsForm from "../OtherOccupantsForm";
+import OccupantSummaryForm from "./components/OccupantSummaryForm";
+import LeaseDetailsForm from "./components/LeaseDetailsForm";
+import TenantDetailsForm from "./components/TenantDetailsForm";
+import OtherOccupantsForm from "./components/OtherOccupantsForm";
+
 import useApplicationFormReducer from "./hooks/useApplicationFormReducer";
 
 function ApplicationForm() {

@@ -1,6 +1,6 @@
 import { ChangeEventHandler, MouseEventHandler } from "react";
-import LabelledInput from "../../components/common/LabelledInput";
-import GenderSelect from "../../components/GenderSelect";
+import LabelledInput from "../../../components/common/LabelledInput";
+import GenderSelect from "../../../components/GenderSelect";
 
 interface OtherOccupantItemProps {
   index: number;

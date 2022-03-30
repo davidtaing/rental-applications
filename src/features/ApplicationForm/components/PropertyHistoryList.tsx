@@ -1,8 +1,9 @@
 import { FieldArray } from "formik";
 
-import PropertyHistory from "../../types/PropertyHistoryInterface";
-import { createPropertyHistory } from "../../utils";
 import { PropertyHistoryItem } from "./PropertyHistoryItem";
+
+import PropertyHistory from "../../../types/PropertyHistoryInterface";
+import { createPropertyHistory } from "../utils";
 
 interface PropertyHistoryListProps {
   tenantIndex: number;

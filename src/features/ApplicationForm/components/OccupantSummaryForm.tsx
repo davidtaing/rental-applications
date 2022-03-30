@@ -1,5 +1,5 @@
 import { Formik, Form } from "formik";
-import LabelledInput from "../../components/common/LabelledInput";
+import LabelledInput from "../../../components/common/LabelledInput";
 
 const initialValues = {
   adults: 0,

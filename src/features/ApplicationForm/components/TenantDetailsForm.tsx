@@ -1,7 +1,6 @@
 import { Formik, Form } from "formik";
-import TenantDetails from "../../types/TenantInterface";
-
-import { createTenant } from "../../utils";
+import { createTenant } from "../utils";
+import Tenant
 import TenantsList from "./TenantsList";
 
 interface InitialValues {

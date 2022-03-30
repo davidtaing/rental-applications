@@ -1,7 +1,8 @@
 import { useReducer } from "react";
 
-import { createLeaseDetails } from "../../../utils";
-import { Actions, ActionType, InitialState } from "../types";
+import { createLeaseDetails } from "../utils";
+import { Actions, ActionType } from "../types/Actions";
+import { InitialState } from "../types/InitialState";
 
 const initialState: InitialState = {
   leaseDetails: createLeaseDetails(),

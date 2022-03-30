@@ -1,4 +1,4 @@
-import PropertyHistory from "./PropertyHistoryInterface";
+import PropertyHistory from "./PropertyHistory";
 
 interface Tenant {
   preferredName: string;

@@ -1,6 +1,6 @@
 import LeaseDetails from "../types/LeaseDetails";
-import PropertyHistory from "../types/PropertyHistoryInterface";
-import TenantDetails from "../types/TenantInterface";
+import PropertyHistory from "../types/PropertyHistory";
+import Tenant from "../types/Tenant";
 
 export const createLeaseDetails = (): LeaseDetails => ({
   address: "",
@@ -19,7 +19,7 @@ export const createPropertyHistory = (): PropertyHistory => ({
   },
 });
 
-export const createTenant = (): TenantDetails => ({
+export const createTenant = (): Tenant => ({
   preferredName: "",
   fullname: "",
   gender: "",
