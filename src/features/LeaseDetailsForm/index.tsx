@@ -1,15 +1,14 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../components/common/LabelledInput";
-import { Actions } from "../ApplicationForm";
+import { Actions, ApplicationFormDispatch } from "../ApplicationForm";
+import LeaseDetails from "../../types/LeaseDetails";
 
-const initialValues = {
-  address: "",
-  rent: 0,
-  startDate: Date(),
-  leasePeriod: 12,
-};
+interface LeaseDetailsFormProps {
+  initialValues: LeaseDetails;
+  dispatch: ApplicationFormDispatch;
+}
 
-function LeaseDetailsForm({ initialValues, dispatch }: any) {
+function LeaseDetailsForm({ initialValues, dispatch }: LeaseDetailsFormProps) {
   return (
     <Formik
       initialValues={initialValues}

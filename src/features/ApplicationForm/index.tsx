@@ -2,15 +2,20 @@ import OccupantSummaryForm from "../OccupantSummaryForm";
 import LeaseDetailsForm from "../LeaseDetailsForm";
 import TenantDetailsForm from "../TenantDetailsForm";
 import OtherOccupantsForm from "../OtherOccupantsForm";
-import { useReducer } from "react";
+import { Dispatch, useReducer } from "react";
+import LeaseDetails from "../../types/LeaseDetails";
+import { createLeaseDetails } from "../../utils";
 
-const initialState = {
-  leaseDetails: {
-    address: "",
-    rent: 0,
-    startDate: Date(),
-    leasePeriod: 12,
-  },
+interface InitialState {
+  leaseDetails: LeaseDetails;
+  occupantSummary: {};
+  tenantDetails: {};
+  otherOccupantDetails: {};
+  petDetails: {};
+}
+
+const initialState: InitialState = {
+  leaseDetails: createLeaseDetails(),
   occupantSummary: {},
   tenantDetails: {},
   otherOccupantDetails: {},
@@ -39,6 +44,8 @@ function applicationFormReducer(
       throw Error;
   }
 }
+
+export type ApplicationFormDispatch = Dispatch<ActionType>;
 
 function ApplicationForm() {
   const [state, dispatch] = useReducer(applicationFormReducer, initialState);

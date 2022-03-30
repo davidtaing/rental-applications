@@ -1,5 +1,13 @@
+import LeaseDetails from "../types/LeaseDetails";
 import PropertyHistory from "../types/PropertyHistoryInterface";
 import TenantDetails from "../types/TenantInterface";
+
+export const createLeaseDetails = (): LeaseDetails => ({
+  address: "",
+  rent: 0,
+  startDate: new Date(),
+  leasePeriod: 12,
+});
 
 export const createPropertyHistory = (): PropertyHistory => ({
   address: "",
