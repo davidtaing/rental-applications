@@ -1,9 +1,8 @@
 import { FieldArray } from "formik";
-
 import TenantItem from "./TenantItem";
 
-import { createTenant } from "../../utils";
-import Tenant from "../../types/TenantInterface";
+import Tenant from "../types/Tenant";
+import { createTenant } from "../utils";
 
 interface TenantListProps {
   values: Array<Tenant>;

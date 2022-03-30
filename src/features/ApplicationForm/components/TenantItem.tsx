@@ -1,11 +1,10 @@
 import { MouseEventHandler } from "react";
-
-import LabelledInput from "../../components/common/LabelledInput";
-import GenderSelect from "../../components/GenderSelect";
-import EmploymentTypeSelect from "../../components/EmploymentTypeSelect";
-import PayPeriodSelect from "../../components/PayPeriodSelect";
+import LabelledInput from "../../../components/common/LabelledInput";
+import EmploymentTypeSelect from "../../../components/EmploymentTypeSelect";
+import GenderSelect from "../../../components/GenderSelect";
+import PayPeriodSelect from "../../../components/PayPeriodSelect";
+import PropertyHistory from "../types/PropertyHistory";
 import PropertyHistoryList from "./PropertyHistoryList";
-import PropertyHistory from "../../types/PropertyHistoryInterface";
 
 interface TenantItemProps {
   index: number;

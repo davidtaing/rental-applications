@@ -1,10 +1,12 @@
 import { Formik, Form } from "formik";
-import { createTenant } from "../utils";
-import Tenant
+
 import TenantsList from "./TenantsList";
 
+import Tenant from "../types/Tenant";
+import { createTenant } from "../utils";
+
 interface InitialValues {
-  tenants: Array<TenantDetails>;
+  tenants: Array<Tenant>;
 }
 
 const initialValues: InitialValues = {
