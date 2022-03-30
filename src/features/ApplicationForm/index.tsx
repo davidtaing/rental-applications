@@ -1,12 +1,12 @@
 import OccupantSummaryForm from "../OccupantSummaryForm";
-import PropertyDetailsForm from "../PropertyDetailsForm";
+import LeaseDetailsForm from "../LeaseDetailsForm";
 import TenantDetailsForm from "../TenantDetailsForm";
 import OtherOccupantsForm from "../OtherOccupantsForm";
 
 function ApplicationForm() {
   return (
     <div>
-      <PropertyDetailsForm />
+      <LeaseDetailsForm />
       <OccupantSummaryForm />
       <TenantDetailsForm />
       <OtherOccupantsForm />

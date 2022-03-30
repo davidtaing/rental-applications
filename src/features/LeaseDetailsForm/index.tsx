@@ -8,7 +8,7 @@ const initialValues = {
   leasePeriod: 12,
 };
 
-function PropertyDetailsForm() {
+function LeaseDetailsForm() {
   return (
     <Formik
       initialValues={initialValues}
@@ -51,4 +51,4 @@ function PropertyDetailsForm() {
   );
 }
 
-export default PropertyDetailsForm;
+export default LeaseDetailsForm;
