@@ -1,4 +1,4 @@
-import OccupantSummaryForm from "./components/OccupantSummaryForm";
+import OccupantsSummaryForm from "./components/OccupantsSummaryForm";
 import LeaseDetailsForm from "./components/LeaseDetailsForm";
 import TenantDetailsForm from "./components/TenantDetailsForm";
 import OtherOccupantsForm from "./components/OtherOccupantsForm";
@@ -11,14 +11,14 @@ function ApplicationForm() {
     leaseDetails,
     occupantsSummary,
     tenantDetails,
-    otherOccupantDetails,
+    otherOccupantsDetails,
     petDetails,
   } = state;
 
   return (
     <div>
       <LeaseDetailsForm initialValues={leaseDetails} dispatch={dispatch} />
-      <OccupantSummaryForm />
+      <OccupantsSummaryForm />
       <TenantDetailsForm />
       <OtherOccupantsForm />
     </div>

@@ -1,6 +1,6 @@
-import { Formik, Form, FieldArray } from "formik";
 import dynamic from "next/dynamic";
-import OtherOccupant from "../../../types/OtherOccupantInterface";
+import { Formik, Form, FieldArray } from "formik";
+import OtherOccupant from "../types/OtherOccupant";
 
 const OtherOccupantItem = dynamic(() => import("./OtherOccupantItem"));
 

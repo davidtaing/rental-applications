@@ -8,6 +8,6 @@ export interface InitialState {
   leaseDetails: LeaseDetails;
   occupantsSummary: OccupantsSummary;
   tenantDetails: Array<Tenant>;
-  otherOccupantDetails: Array<OtherOccupant>;
+  otherOccupantsDetails: Array<OtherOccupant>;
   petDetails: Array<Pet>;
 }

@@ -9,7 +9,7 @@ const initialValues = {
   otherPets: 0,
 };
 
-function OccupantSummaryForm() {
+function OccupantsSummaryForm() {
   return (
     <Formik
       initialValues={initialValues}
@@ -65,4 +65,4 @@ function OccupantSummaryForm() {
   );
 }
 
-export default OccupantSummaryForm;
+export default OccupantsSummaryForm;
