@@ -1,27 +1,12 @@
 import { useReducer } from "react";
 
-import {
-  createLeaseDetails,
-  createOccupantsSummary,
-  createTenant,
-} from "../utils";
+import { initializeState } from "../utils";
 import { Actions, ActionType } from "../types/Actions";
-import { InitialState } from "../types/InitialState";
-import Pet from "../types/Pet";
-import OtherOccupant from "../types/OtherOccupant";
+import { InitialState } from "../types/State";
 
-const initialState: InitialState = {
-  leaseDetails: createLeaseDetails(),
-  occupantsSummary: createOccupantsSummary(),
-  tenantDetails: [createTenant()],
-  otherOccupantsDetails: new Array<OtherOccupant>(),
-  petDetails: new Array<Pet>(),
-};
+const initialState: InitialState = initializeState();
 
-function applicationFormReducer(
-  state: typeof initialState,
-  action: ActionType
-) {
+function applicationFormReducer(state: InitialState, action: ActionType) {
   switch (action.type) {
     case Actions.update:
       return { ...state, ...action.payload };

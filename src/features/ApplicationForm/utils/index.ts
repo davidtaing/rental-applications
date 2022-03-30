@@ -1,5 +1,7 @@
-import LeaseDetails from "../types/LeaseDetails";
+import OtherOccupant from "../types/OtherOccupant";
 import PropertyHistory from "../types/PropertyHistory";
+import { InitialState, LeaseDetails } from "../types/State";
+import Pet from "../types/Pet";
 import Tenant from "../types/Tenant";
 
 export const createLeaseDetails = (): LeaseDetails => ({
@@ -9,15 +11,15 @@ export const createLeaseDetails = (): LeaseDetails => ({
   leasePeriod: 12,
 });
 
-export const createPropertyHistory = (): PropertyHistory => ({
-  address: "",
-  status: "",
-  reference: {
-    name: "",
-    email: "",
-    phone: "",
-  },
-});
+export const createOccupantsSummary = () => {
+  return {
+    adults: 0,
+    children: 0,
+    dogs: 0,
+    cats: 0,
+    otherPets: 0,
+  };
+};
 
 export const createTenant = (): Tenant => ({
   preferredName: "",
@@ -42,12 +44,42 @@ export const createTenant = (): Tenant => ({
   },
 });
 
-export const createOccupantsSummary = () => {
+export const createPropertyHistory = (): PropertyHistory => ({
+  address: "",
+  status: "",
+  reference: {
+    name: "",
+    email: "",
+    phone: "",
+  },
+});
+
+export const createOtherOccupant = (): OtherOccupant => ({
+  fullname: "",
+  gender: "",
+  age: 0,
+});
+
+export const createPet = (): Pet => ({ type: "", breed: "", description: "" });
+
+export const createTenantDetails = () => ({
+  tenants: [createTenant()],
+});
+
+export const createOtherOccupantDetails = () => ({
+  occupants: [createOtherOccupant()],
+});
+
+export const createPetDetails = () => ({
+  pets: [createPet()],
+});
+
+export const initializeState = (): InitialState => {
   return {
-    adults: 0,
-    children: 0,
-    dogs: 0,
-    cats: 0,
-    otherPets: 0,
+    leaseDetails: createLeaseDetails(),
+    occupantsSummary: createOccupantsSummary(),
+    tenantDetails: createTenantDetails(),
+    otherOccupantsDetails: createOtherOccupantDetails(),
+    petDetails: createPetDetails(),
   };
 };
