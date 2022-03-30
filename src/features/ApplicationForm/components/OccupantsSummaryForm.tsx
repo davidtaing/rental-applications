@@ -1,5 +1,6 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
+import { Actions } from "../types/Actions";
 import { ApplicationFormDispatch } from "../types/dispatch";
 import { OccupantsSummary } from "../types/State";
 
@@ -12,11 +13,11 @@ function OccupantsSummaryForm({
   initialValues,
   dispatch,
 }: OccupantsSummaryFormProps) {
+  const onSubmitHandler = (values: OccupantsSummary) =>
+    dispatch({ type: Actions.update, payload: { occupantsSummary: values } });
+
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={(values) => console.log(values)}
-    >
+    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
       {(formik) => (
         <Form>
           <h1>Occupants</h1>

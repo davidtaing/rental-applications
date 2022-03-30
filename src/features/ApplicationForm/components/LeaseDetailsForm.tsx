@@ -11,13 +11,11 @@ interface LeaseDetailsFormProps {
 }
 
 function LeaseDetailsForm({ initialValues, dispatch }: LeaseDetailsFormProps) {
+  const onSubmitHandler = (values: LeaseDetails) =>
+    dispatch({ type: Actions.update, payload: { leaseDetails: values } });
+
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={(values) =>
-        dispatch({ type: Actions.update, payload: { leaseDetails: values } })
-      }
-    >
+    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
       {(formik) => (
         <Form>
           <h1>Property Details</h1>

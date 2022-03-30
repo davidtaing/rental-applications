@@ -4,6 +4,7 @@ import OtherOccupant from "../types/OtherOccupant";
 import { createOtherOccupant } from "../utils";
 import { OtherOccupantsDetails } from "../types/State";
 import { ApplicationFormDispatch } from "../types/dispatch";
+import { Actions } from "../types/Actions";
 
 const OtherOccupantItem = dynamic(() => import("./OtherOccupantItem"));
 
@@ -20,11 +21,14 @@ function OtherOccupantsForm({
   initialValues,
   dispatch,
 }: OtherOccupantsFormProps) {
+  const onSubmitHandler = (values: OtherOccupantsDetails) =>
+    dispatch({
+      type: Actions.update,
+      payload: { otherOccupantsDetails: values },
+    });
+
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={(values) => console.log(values)}
-    >
+    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
       {(formik) => {
         const { values } = formik;
 

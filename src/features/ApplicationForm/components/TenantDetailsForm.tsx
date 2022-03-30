@@ -4,6 +4,8 @@ import TenantsList from "./TenantsList";
 
 import Tenant from "../types/Tenant";
 import { ApplicationFormDispatch } from "../types/dispatch";
+import { TenantDetails } from "../types/State";
+import { Actions } from "../types/Actions";
 
 interface TenantDetailsFormProps {
   initialValues: { tenants: Array<Tenant> };
@@ -25,6 +27,11 @@ function TenantDetailsForm({
     >
       {(formik) => {
         const { values } = formik;
+        const onSubmitHandler = (values: TenantDetails) =>
+          dispatch({
+            type: Actions.update,
+            payload: { tenantDetails: values },
+          });
 
         return (
           <Form className="form tenant-details-form">
