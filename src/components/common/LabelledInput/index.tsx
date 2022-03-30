@@ -1,7 +1,6 @@
-import { InputHTMLAttributes } from "react";
-import { Field, useFormikContext } from "formik";
+import { Field, FieldAttributes, useFormikContext } from "formik";
 
-interface LabelledInputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface LabelledInputProps extends FieldAttributes<any> {
   labelText: string;
 }
 
