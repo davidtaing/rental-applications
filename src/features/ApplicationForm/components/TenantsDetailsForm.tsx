@@ -7,7 +7,7 @@ import { ApplicationFormDispatch } from "../types/Dispatch";
 import { TenantDetails } from "../types/State";
 import { Actions } from "../types/Actions";
 
-interface TenantDetailsFormProps {
+interface TenantsDetailsFormProps {
   initialValues: { tenants: Array<Tenant> };
   dispatch: ApplicationFormDispatch;
 }
@@ -16,10 +16,10 @@ interface TenantDetailsFormProps {
  * Form for Named Tenants,
  * i.e. Rent Paying Tenants
  */
-function TenantDetailsForm({
+function TenantsDetailsForm({
   initialValues,
   dispatch,
-}: TenantDetailsFormProps) {
+}: TenantsDetailsFormProps) {
   return (
     <Formik
       initialValues={initialValues}
@@ -45,4 +45,4 @@ function TenantDetailsForm({
   );
 }
 
-export default TenantDetailsForm;
+export default TenantsDetailsForm;

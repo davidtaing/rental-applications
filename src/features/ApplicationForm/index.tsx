@@ -1,6 +1,6 @@
 import OccupantsSummaryForm from "./components/OccupantsSummaryForm";
 import LeaseDetailsForm from "./components/LeaseDetailsForm";
-import TenantDetailsForm from "./components/TenantDetailsForm";
+import TenantDetailsForm from "./components/TenantsDetailsForm";
 import OtherOccupantsForm from "./components/OtherOccupantsForm";
 
 import useApplicationFormReducer from "./hooks/useApplicationFormReducer";
