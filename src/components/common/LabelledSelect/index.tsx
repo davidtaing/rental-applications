@@ -6,6 +6,9 @@ interface LabelledSelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   values: Array<string>;
 }
 
+/**
+ * Wraps Formik's Label Component (as a Select Element) with added Label
+ */
 function LabelledSelect({
   id,
   labelText,

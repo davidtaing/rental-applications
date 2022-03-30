@@ -3,6 +3,10 @@ import LabelledSelect from "../common/LabelledSelect";
 
 const selectValues = ["Weekly", "Fortnightly", "Monthly"];
 
+/**
+ * Select Form Element for Employment Payment Frequency
+ * @param props SelectHTMLAttributes<HTMLSelectElement>
+ */
 function PayPeriodSelect(props: SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <div className="pay-period-select">

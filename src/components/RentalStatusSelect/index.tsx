@@ -11,6 +11,10 @@ const selectValues = [
   "Living Overseas",
 ];
 
+/**
+ * Select Form Element for Current Rental Status
+ * @param props SelectHTMLAttributes<HTMLSelectElement>
+ */
 function RentalStatusSelect(props: SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <div className="rental-status-select">

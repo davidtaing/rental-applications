@@ -4,6 +4,9 @@ interface LabelledInputProps extends FieldAttributes<any> {
   labelText: string;
 }
 
+/**
+ * Wraps Formik's Label Component and adds Label
+ */
 function LabelledInput({
   labelText,
   id,
