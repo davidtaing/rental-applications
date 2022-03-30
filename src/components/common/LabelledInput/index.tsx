@@ -5,7 +5,12 @@ interface LabelledInputProps extends InputHTMLAttributes<HTMLInputElement> {
   labelText: string;
 }
 
-function LabelledInput({ labelText, id, ...otherProps }: LabelledInputProps) {
+function LabelledInput({
+  labelText,
+  id,
+  name,
+  ...otherProps
+}: LabelledInputProps) {
   const { handleChange } = useFormikContext();
   return (
     <div className="labed-input">
@@ -16,6 +21,7 @@ function LabelledInput({ labelText, id, ...otherProps }: LabelledInputProps) {
         className="text-input"
         id={id}
         onChange={handleChange}
+        name={name}
         {...otherProps}
       />
     </div>
