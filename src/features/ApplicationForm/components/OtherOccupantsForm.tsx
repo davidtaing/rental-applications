@@ -3,7 +3,7 @@ import { Formik, Form, FieldArray } from "formik";
 import OtherOccupant from "../types/OtherOccupant";
 import { createOtherOccupant } from "../utils";
 import { OtherOccupantsDetails } from "../types/State";
-import { ApplicationFormDispatch } from "../types/dispatch";
+import { ApplicationFormDispatch } from "../types/Dispatch";
 import { Actions } from "../types/Actions";
 
 const OtherOccupantItem = dynamic(() => import("./OtherOccupantItem"));

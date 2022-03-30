@@ -2,7 +2,7 @@ import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
 
 import { LeaseDetails } from "../types/State";
-import { ApplicationFormDispatch } from "../types/dispatch";
+import { ApplicationFormDispatch } from "../types/Dispatch";
 import { Actions } from "../types/Actions";
 
 interface LeaseDetailsFormProps {

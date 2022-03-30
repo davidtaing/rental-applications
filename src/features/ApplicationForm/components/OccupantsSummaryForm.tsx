@@ -1,7 +1,8 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
 import { Actions } from "../types/Actions";
-import { ApplicationFormDispatch } from "../types/dispatch";
+import { ApplicationFormDispatch } from "../types/Dispatch";
+
 import { OccupantsSummary } from "../types/State";
 
 interface OccupantsSummaryFormProps {

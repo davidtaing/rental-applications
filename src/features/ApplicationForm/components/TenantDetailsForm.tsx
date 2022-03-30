@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 import TenantsList from "./TenantsList";
 
 import Tenant from "../types/Tenant";
-import { ApplicationFormDispatch } from "../types/dispatch";
+import { ApplicationFormDispatch } from "../types/Dispatch";
 import { TenantDetails } from "../types/State";
 import { Actions } from "../types/Actions";
 
