@@ -1,8 +1,8 @@
-import OtherOccupant from "../types/OtherOccupant";
 import PropertyHistory from "../types/PropertyHistory";
 import { InitialState, LeaseDetails } from "../types/State";
 import Pet from "../types/Pet";
 import Tenant from "../types/Tenant";
+import OtherOccupant from "../types/OtherOccupant";
 
 export const createLeaseDetails = (): LeaseDetails => ({
   address: "",
@@ -67,11 +67,11 @@ export const createTenantDetails = () => ({
 });
 
 export const createOtherOccupantDetails = () => ({
-  occupants: [createOtherOccupant()],
+  occupants: new Array<OtherOccupant>(),
 });
 
 export const createPetDetails = () => ({
-  pets: [createPet()],
+  pets: new Array<Pet>(),
 });
 
 export const initializeState = (): InitialState => {
