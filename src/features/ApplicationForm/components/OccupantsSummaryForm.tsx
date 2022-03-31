@@ -1,24 +1,19 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
+import { useApplicationFormCtx } from "../contexts/ApplicationFormContext";
 import { Actions } from "../types/Actions";
 import { ApplicationFormDispatch } from "../types/Dispatch";
 
 import { OccupantsSummary } from "../types/State";
 
-interface OccupantsSummaryFormProps {
-  initialValues: OccupantsSummary;
-  dispatch: ApplicationFormDispatch;
-}
+function OccupantsSummaryForm() {
+  const [{ occupantsSummary }, dispatch] = useApplicationFormCtx();
 
-function OccupantsSummaryForm({
-  initialValues,
-  dispatch,
-}: OccupantsSummaryFormProps) {
   const onSubmitHandler = (values: OccupantsSummary) =>
     dispatch({ type: Actions.update, payload: { occupantsSummary: values } });
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
+    <Formik initialValues={occupantsSummary} onSubmit={onSubmitHandler}>
       {(formik) => (
         <Form>
           <h1>Occupants</h1>

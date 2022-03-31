@@ -6,23 +6,18 @@ import Tenant from "../types/Tenant";
 import { ApplicationFormDispatch } from "../types/Dispatch";
 import { TenantDetails } from "../types/State";
 import { Actions } from "../types/Actions";
-
-interface TenantsDetailsFormProps {
-  initialValues: { tenants: Array<Tenant> };
-  dispatch: ApplicationFormDispatch;
-}
+import { useApplicationFormCtx } from "../contexts/ApplicationFormContext";
 
 /**
  * Form for Named Tenants,
  * i.e. Rent Paying Tenants
  */
-function TenantsDetailsForm({
-  initialValues,
-  dispatch,
-}: TenantsDetailsFormProps) {
+function TenantsDetailsForm() {
+  const [{ tenantDetails }, dispatch] = useApplicationFormCtx();
+
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={tenantDetails}
       onSubmit={(values) => console.log(values)}
     >
       {(formik) => {

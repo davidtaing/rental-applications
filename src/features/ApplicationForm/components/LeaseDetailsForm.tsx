@@ -2,20 +2,17 @@ import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
 
 import { LeaseDetails } from "../types/State";
-import { ApplicationFormDispatch } from "../types/Dispatch";
 import { Actions } from "../types/Actions";
+import { useApplicationFormCtx } from "../contexts/ApplicationFormContext";
 
-interface LeaseDetailsFormProps {
-  initialValues: LeaseDetails;
-  dispatch: ApplicationFormDispatch;
-}
+function LeaseDetailsForm() {
+  const [{ leaseDetails }, dispatch] = useApplicationFormCtx();
 
-function LeaseDetailsForm({ initialValues, dispatch }: LeaseDetailsFormProps) {
   const onSubmitHandler = (values: LeaseDetails) =>
     dispatch({ type: Actions.update, payload: { leaseDetails: values } });
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
+    <Formik initialValues={leaseDetails} onSubmit={onSubmitHandler}>
       {(formik) => (
         <Form>
           <h1>Property Details</h1>

@@ -5,22 +5,16 @@ import { createOtherOccupant } from "../utils";
 import { OtherOccupantsDetails } from "../types/State";
 import { ApplicationFormDispatch } from "../types/Dispatch";
 import { Actions } from "../types/Actions";
+import { useApplicationFormCtx } from "../contexts/ApplicationFormContext";
 
 const OtherOccupantItem = dynamic(() => import("./OtherOccupantItem"));
-
-interface OtherOccupantsFormProps {
-  initialValues: OtherOccupantsDetails;
-  dispatch: ApplicationFormDispatch;
-}
-
 /**
  * Form for Other Adults and Children,
  * i.e. Non-Rent Paying Adults and Children
  */
-function OtherOccupantsForm({
-  initialValues,
-  dispatch,
-}: OtherOccupantsFormProps) {
+function OtherOccupantsForm() {
+  const [{ otherOccupantsDetails }, dispatch] = useApplicationFormCtx();
+
   const onSubmitHandler = (values: OtherOccupantsDetails) =>
     dispatch({
       type: Actions.update,
@@ -28,7 +22,7 @@ function OtherOccupantsForm({
     });
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmitHandler}>
+    <Formik initialValues={otherOccupantsDetails} onSubmit={onSubmitHandler}>
       {(formik) => {
         const { values } = formik;
 
