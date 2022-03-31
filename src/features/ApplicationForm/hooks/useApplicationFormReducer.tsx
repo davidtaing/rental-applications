@@ -2,9 +2,12 @@ import { useReducer } from "react";
 
 import { initializeState } from "../utils";
 import { Actions, ActionType } from "../types/Actions";
-import { InitialState } from "../types/State";
+import { ApplicationFormState } from "../types/State";
 
-function applicationFormReducer(state: InitialState, action: ActionType) {
+function applicationFormReducer(
+  state: ApplicationFormState,
+  action: ActionType
+) {
   switch (action.type) {
     case Actions.update:
       return { ...state, ...action.payload };
@@ -13,7 +16,7 @@ function applicationFormReducer(state: InitialState, action: ActionType) {
   }
 }
 
-function useApplicationFormReducer(initialState?: InitialState) {
+function useApplicationFormReducer(initialState?: ApplicationFormState) {
   return useReducer(applicationFormReducer, initialState ?? initializeState());
 }
 

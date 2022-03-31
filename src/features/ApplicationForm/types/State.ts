@@ -29,7 +29,7 @@ export interface PetDetails {
   pets: Array<Pet>;
 }
 
-export interface InitialState {
+export interface ApplicationFormState {
   leaseDetails: LeaseDetails;
   occupantsSummary: OccupantsSummary;
   tenantDetails: TenantDetails;

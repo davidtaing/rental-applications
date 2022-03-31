@@ -1,5 +1,5 @@
 import PropertyHistory from "../types/PropertyHistory";
-import { InitialState, LeaseDetails } from "../types/State";
+import { ApplicationFormState, LeaseDetails } from "../types/State";
 import Pet from "../types/Pet";
 import Tenant from "../types/Tenant";
 import OtherOccupant from "../types/OtherOccupant";
@@ -78,7 +78,7 @@ export const createPetDetails = () => ({
  * Initializes state.
  * @returns InitialState for useApplicationFormReducer
  */
-export const initializeState = (): InitialState => {
+export const initializeState = (): ApplicationFormState => {
   return {
     leaseDetails: createLeaseDetails(),
     occupantsSummary: createOccupantsSummary(),
