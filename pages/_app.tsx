@@ -1,8 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { ApplicationFormProvider } from "../src/features/ApplicationForm/contexts/ApplicationFormContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ApplicationFormProvider>
+      <Component {...pageProps} />
+    </ApplicationFormProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
