@@ -1,10 +1,8 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
-import { useApplicationFormCtx } from "../contexts/ApplicationFormContext";
-import { Actions } from "../types/Actions";
-import { ApplicationFormDispatch } from "../types/Dispatch";
-
-import { OccupantsSummary } from "../types/State";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormContext";
+import { Actions } from "../../ApplicationForm/types/Actions";
+import { OccupantsSummary } from "../../ApplicationForm/types/State";
 
 function OccupantsSummaryForm() {
   const [{ occupantsSummary }, dispatch] = useApplicationFormCtx();
