@@ -3,7 +3,7 @@ import LabelledInput from "../../../components/common/LabelledInput";
 import EmploymentTypeSelect from "../../../components/EmploymentTypeSelect";
 import GenderSelect from "../../../components/GenderSelect";
 import PayPeriodSelect from "../../../components/PayPeriodSelect";
-import PropertyHistory from "../types/PropertyHistory";
+import PropertyHistory from "../../ApplicationForm/types/PropertyHistory";
 import PropertyHistoryList from "./PropertyHistoryList";
 
 interface TenantItemProps {

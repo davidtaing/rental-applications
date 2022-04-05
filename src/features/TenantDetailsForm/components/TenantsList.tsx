@@ -1,8 +1,7 @@
 import { FieldArray } from "formik";
+import Tenant from "../../ApplicationForm/types/Tenant";
+import { createTenant } from "../../ApplicationForm/utils";
 import TenantItem from "./TenantItem";
-
-import Tenant from "../types/Tenant";
-import { createTenant } from "../utils";
 
 interface TenantListProps {
   values: Array<Tenant>;
