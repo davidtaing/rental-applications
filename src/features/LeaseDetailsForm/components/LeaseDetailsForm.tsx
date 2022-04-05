@@ -41,7 +41,6 @@ function LeaseDetailsForm() {
             type="number"
             labelText="Lease Period (Months):"
             min="0"
-            defaultValue="12"
           />
           <button type="submit">Submit</button>
         </Form>
