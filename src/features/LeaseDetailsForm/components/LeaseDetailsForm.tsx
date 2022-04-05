@@ -1,9 +1,9 @@
 import { Formik, Form } from "formik";
 import LabelledInput from "../../../components/common/LabelledInput";
 
-import { LeaseDetails } from "../types/State";
-import { Actions } from "../types/Actions";
-import { useApplicationFormCtx } from "../contexts/ApplicationFormContext";
+import { LeaseDetails } from "../../ApplicationForm/types/State";
+import { Actions } from "../../ApplicationForm/types/Actions";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormContext";
 
 function LeaseDetailsForm() {
   const [{ leaseDetails }, dispatch] = useApplicationFormCtx();
