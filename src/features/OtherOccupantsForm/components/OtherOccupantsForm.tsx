@@ -1,11 +1,9 @@
 import dynamic from "next/dynamic";
 import { Formik, Form, FieldArray } from "formik";
-import OtherOccupant from "../types/OtherOccupant";
-import { createOtherOccupant } from "../utils";
-import { OtherOccupantsDetails } from "../types/State";
-import { ApplicationFormDispatch } from "../types/Dispatch";
-import { Actions } from "../types/Actions";
-import { useApplicationFormCtx } from "../contexts/ApplicationFormContext";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormContext";
+import { Actions } from "../../ApplicationForm/types/Actions";
+import { OtherOccupantsDetails } from "../../ApplicationForm/types/State";
+import { createOtherOccupant } from "../../ApplicationForm/utils";
 
 const OtherOccupantItem = dynamic(() => import("./OtherOccupantItem"));
 /**
