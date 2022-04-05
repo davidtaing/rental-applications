@@ -1,18 +1,15 @@
 import { Formik, Form } from "formik";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormContext";
+import { Actions } from "../../ApplicationForm/types/Actions";
+import { TenantDetails } from "../../ApplicationForm/types/State";
 
 import TenantsList from "./TenantsList";
-
-import Tenant from "../types/Tenant";
-import { ApplicationFormDispatch } from "../types/Dispatch";
-import { TenantDetails } from "../types/State";
-import { Actions } from "../types/Actions";
-import { useApplicationFormCtx } from "../contexts/ApplicationFormContext";
 
 /**
  * Form for Named Tenants,
  * i.e. Rent Paying Tenants
  */
-function TenantsDetailsForm() {
+function TenantDetailsForm() {
   const [{ tenantDetails }, dispatch] = useApplicationFormCtx();
 
   return (
@@ -40,4 +37,4 @@ function TenantsDetailsForm() {
   );
 }
 
-export default TenantsDetailsForm;
+export default TenantDetailsForm;
