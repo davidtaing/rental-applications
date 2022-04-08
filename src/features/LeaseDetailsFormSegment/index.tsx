@@ -1,5 +1,6 @@
 import LabelledInput from "../../components/common/LabelledInput";
-export * from "./types/state";
+export * from "./types/LeaseDetailsState";
+export * from "./utils";
 
 function LeaseDetailsFormSegment() {
   return (
