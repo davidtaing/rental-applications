@@ -1,11 +1,11 @@
 import { Formik, Form } from "formik";
 
 interface Props {
-  initialValues: any;
+  initialValues?: any;
   children: React.ReactNode;
 }
 
-function ApplicationForm({ initialValues, children }: Props) {
+function ApplicationForm({ initialValues = {}, children }: Props) {
   const handleSubmit = (values: typeof initialValues) =>
     alert(JSON.stringify(values, null, 2));
 
