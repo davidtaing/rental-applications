@@ -3,7 +3,7 @@ import { ApplicationFormState } from "../types";
 import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
 
 interface Props {
-  initialValues: ApplicationFormState;
+  initialValues?: ApplicationFormState;
   children: React.ReactNode;
 }
 
