@@ -1,4 +1,4 @@
-import { LeaseDetailsState } from "../types/LeaseDetailsState";
+import { LeaseDetailsState } from "../types";
 
 export function initLeaseDetailsState({
   address,
