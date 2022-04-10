@@ -1,6 +1,15 @@
+import { useRouter } from "next/router";
 import LabelledInput from "../../../components/common/LabelledInput";
 
 export function LeaseDetailsFormSegment() {
+  const router = useRouter();
+  const onNextClick = () => {
+    // validate form input
+
+    // then change page
+    router.push("/tenant-details");
+  };
+
   return (
     <div className="leaseDetailsFormSegment">
       {/* Property Address */}
@@ -26,6 +35,10 @@ export function LeaseDetailsFormSegment() {
         name="leasePeriod"
         type="number"
       />
+
+      <button onClick={onNextClick} type="button">
+        Next
+      </button>
     </div>
   );
 }
