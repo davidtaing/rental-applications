@@ -1,11 +1,11 @@
 import { LeaseDetailsState } from "../types/LeaseDetailsState";
 
-export function initializeState({
+export function initLeaseDetailsState({
   address,
   rent,
   startDate,
   leasePeriod,
-}: Partial<LeaseDetailsState>): LeaseDetailsState {
+}: Partial<LeaseDetailsState> = {}): LeaseDetailsState {
   return {
     address: address ?? "",
     rent: rent ?? 0,

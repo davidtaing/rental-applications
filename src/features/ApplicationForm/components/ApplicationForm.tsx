@@ -1,11 +1,18 @@
 import { Formik, Form } from "formik";
+import { ApplicationFormState } from "../types";
+import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
 
 interface Props {
-  initialValues?: any;
+  initialValues: ApplicationFormState;
   children: React.ReactNode;
 }
 
-export function ApplicationForm({ initialValues = {}, children }: Props) {
+const initialState = initLeaseDetailsState();
+
+export function ApplicationForm({
+  initialValues = initialState,
+  children,
+}: Props) {
   const handleSubmit = (values: typeof initialValues) =>
     alert(JSON.stringify(values, null, 2));
 
