@@ -1,5 +1,6 @@
 import { Formik, Form } from "formik";
 import { ApplicationFormState } from "../types";
+import { validationSchema } from "../utils";
 import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
 
 interface Props {
@@ -18,7 +19,11 @@ export function ApplicationForm({
 
   return (
     <div>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        validatationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
         {(formik) => <Form>{children}</Form>}
       </Formik>
     </div>
