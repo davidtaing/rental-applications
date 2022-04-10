@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import LeaseDetailsFormSegment from "../src/features/LeaseDetailsFormSegment";
+import { LeaseDetailsFormSegment } from "../src/features/LeaseDetailsFormSegment";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
