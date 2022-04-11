@@ -4,11 +4,9 @@ import { initTenantState } from "../utils";
 import { IndividualTenantFormSegment } from "./IndividualTenantFormSegment";
 
 /**
- * formik values
- *   tenants: Tenants[]
- *    tenant details form segment
+ * TenantDetails Form Segment
+ * Corresponds to the /tenant-details path
  */
-
 export function TenantDetailsFormSegment() {
   const {
     values: { tenants },

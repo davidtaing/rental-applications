@@ -5,6 +5,10 @@ interface Props {
   index: string;
 }
 
+/**
+ * Form Segments for Individual Tenants
+ * @param index reference to formik values in tenant[index]
+ */
 export function IndividualTenantFormSegment({ index }: Props) {
   return (
     <div className="individualTenantFormSegment">

@@ -1,6 +1,10 @@
 import LabelledInput from "../../../components/common/LabelledInput";
 import { FormNavigation } from "../../FormNavigation";
 
+/**
+ * LeaseDetails Form Segment
+ * Corresponds with the /lease-details path
+ */
 export function LeaseDetailsFormSegment() {
   return (
     <div className="leaseDetailsFormSegment">

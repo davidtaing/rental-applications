@@ -9,6 +9,7 @@ interface Props {
   children: React.ReactNode;
 }
 
+// combine individual state initializers
 const initialState = {
   ...initLeaseDetailsState(),
   ...initTenantDetailsState(),
