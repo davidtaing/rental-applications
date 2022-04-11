@@ -2,13 +2,17 @@ import { Formik, Form } from "formik";
 import { ApplicationFormState } from "../types";
 import { validationSchema } from "../utils";
 import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
+import { initTenantDetailsState } from "../../TenantDetailsFormSegment";
 
 interface Props {
   initialValues?: ApplicationFormState;
   children: React.ReactNode;
 }
 
-const initialState = initLeaseDetailsState();
+const initialState = {
+  ...initLeaseDetailsState(),
+  ...initTenantDetailsState(),
+};
 
 export function ApplicationForm({
   initialValues = initialState,
