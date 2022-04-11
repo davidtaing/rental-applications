@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { FormNavigation } from "../../FormNavigation";
 import { initTenantState } from "../utils";
 import { IndividualTenantFormSegment } from "./IndividualTenantFormSegment";
-interface Props {}
 
 /**
  * formik values
@@ -11,7 +10,7 @@ interface Props {}
  *    tenant details form segment
  */
 
-export function TenantDetailsFormSegment({}: Props) {
+export function TenantDetailsFormSegment() {
   const {
     values: { tenants },
   } = useFormikContext();
