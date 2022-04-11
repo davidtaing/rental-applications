@@ -1,5 +1,6 @@
 import { FieldArray, useFormikContext } from "formik";
 import { useRouter } from "next/router";
+import { FormNavigation } from "../../FormNavigation";
 import { initTenantState } from "../utils";
 import { IndividualTenantFormSegment } from "./IndividualTenantFormSegment";
 interface Props {}
@@ -14,19 +15,6 @@ export function TenantDetailsFormSegment({}: Props) {
   const {
     values: { tenants },
   } = useFormikContext();
-  const router = useRouter();
-  const onPrevClick = () => {
-    // validate form input
-
-    // then change page
-    router.push("/lease-details");
-  };
-  const onNextClick = () => {
-    // validate form input
-
-    // then change page
-    router.push("/tenant-details");
-  };
 
   return (
     <div className="tenantDetailsFormSegment">
@@ -48,17 +36,13 @@ export function TenantDetailsFormSegment({}: Props) {
                 Remove Tenant
               </button>
             ) : null}
+            <FormNavigation
+              prevUrl="/lease-details"
+              nextUrl="/other-occupant-details"
+            />
           </>
         )}
       />
-      <div className="formNavigation">
-        <button onClick={onPrevClick} type="button">
-          Prev
-        </button>
-        <button onClick={onNextClick} type="button">
-          Next
-        </button>
-      </div>
     </div>
   );
 }
