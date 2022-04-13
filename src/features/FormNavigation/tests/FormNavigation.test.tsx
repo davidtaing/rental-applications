@@ -3,11 +3,15 @@ import userEvent from "@testing-library/user-event";
 import { FormNavigation } from "../components/FormNavigation";
 import { useRouter } from "next/router";
 
-jest.mock("next/router", () => ({
-  useRouter: jest.fn(() => ({
-    push: jest.fn(),
-  })),
-}));
+jest.mock("next/router", () => {
+  const push = jest.fn();
+
+  return {
+    useRouter: jest.fn(() => ({
+      push: push,
+    })),
+  };
+});
 
 test("prev button does not render when no prevUrl is provided", () => {
   render(<FormNavigation nextUrl="/next" />);
@@ -27,4 +31,22 @@ test("next button does not render when no nextUrl is provided", () => {
 
   expect(prevButton).toBeInTheDocument();
   expect(nextButton).not.toBeInTheDocument();
+});
+
+test("router.push('/next') is called when the Next button is clicked", async () => {
+  render(<FormNavigation nextUrl="/next" />);
+  const nextButton = screen.getByText("Next");
+
+  await userEvent.click(nextButton);
+
+  expect(useRouter().push).toBeCalledWith("/next");
+});
+
+test("router.push('/prev') is called when the Prev button is clicked", async () => {
+  render(<FormNavigation prevUrl="/prev" />);
+  const prevButton = screen.getByText("Prev");
+
+  await userEvent.click(prevButton);
+
+  expect(useRouter().push).toBeCalledWith("/prev");
 });
