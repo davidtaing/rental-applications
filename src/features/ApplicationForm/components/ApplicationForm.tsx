@@ -5,7 +5,7 @@ import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
 import { initTenantDetailsState } from "../../TenantDetailsFormSegment";
 
 interface Props {
-  initialValues?: ApplicationFormState;
+  initialValues?: Partial<ApplicationFormState>;
   children: React.ReactNode;
 }
 
