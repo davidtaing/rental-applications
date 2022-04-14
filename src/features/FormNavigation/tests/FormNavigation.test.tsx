@@ -13,6 +13,10 @@ jest.mock("next/router", () => {
   };
 });
 
+beforeEach(() => {
+  jest.clearAllMocks();
+});
+
 test("prev button does not render when no prevUrl is provided", () => {
   render(<FormNavigation nextUrl="/next" />);
 
