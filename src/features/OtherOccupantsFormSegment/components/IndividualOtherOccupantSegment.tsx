@@ -2,39 +2,38 @@ import LabelledInput from "../../../components/common/LabelledInput";
 import LabelledSelect from "../../../components/common/LabelledSelect";
 
 interface Props {
-  key: string;
-  index: string;
+  formikReference: string;
 }
 
-export function IndividualOtherOccupantSegment({ index }: Props) {
+export function IndividualOtherOccupantSegment({ formikReference }: Props) {
   return (
     <div className="individualOtherOccupant">
       {/* Full Name */}
       <LabelledInput
         labelText="Full Name:"
         id="fullname"
-        name={`otherOccupants[${index}].fullname`}
+        name={`${formikReference}.fullname`}
         type="text"
       />
       {/* Gender */}
       <LabelledSelect
         labelText="Gender: "
         id="gender"
-        name={`otherOccupants[${index}].gender`}
+        name={`${formikReference}.gender`}
         values={["Male", "Female", "Other"]}
       />
       {/* Age */}
       <LabelledInput
         labelText="Age:"
         id="age"
-        name={`otherOccupants[${index}].age`}
+        name={`${formikReference}.age`}
         type="number"
       />
       {/* Relation */}
       <LabelledSelect
         labelText="Relation:"
         id="fullname"
-        name={`otherOccupants[${index}].relation`}
+        name={`${formikReference}.relation`}
         values={[
           "Spouse/Significant Other",
           "Child",

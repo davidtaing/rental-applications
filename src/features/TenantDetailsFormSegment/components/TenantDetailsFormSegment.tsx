@@ -19,7 +19,10 @@ export function TenantDetailsFormSegment() {
         render={(arrayHelpers) => (
           <>
             {tenants.map((item: Tenant, idx: string) => (
-              <IndividualTenantFormSegment key={idx} index={idx} />
+              <IndividualTenantFormSegment
+                key={idx}
+                formikReference={`tenants[${idx}]`}
+              />
             ))}
             <button
               type="button"

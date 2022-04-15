@@ -20,7 +20,10 @@ export function OtherOccupantsFormSegment() {
         render={(arrayHelpers) => (
           <>
             {otherOccupants.map((item: OtherOccupant, idx: string) => (
-              <IndividualOtherOccupantSegment key={idx} index={idx} />
+              <IndividualOtherOccupantSegment
+                key={idx}
+                formikReference={`otherOccupants[${idx}]`}
+              />
             ))}
             <button
               type="button"
