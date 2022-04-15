@@ -5,6 +5,9 @@ interface Props {
   nextUrl?: string;
 }
 
+/**
+ * Allows the user to navigate to the other pages.
+ */
 export function FormNavigation({ prevUrl, nextUrl }: Props) {
   const router = useRouter();
   const onPrevClick = () => {

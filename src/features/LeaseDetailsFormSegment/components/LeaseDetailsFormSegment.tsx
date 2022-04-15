@@ -1,7 +1,6 @@
 import LabelledInput from "../../../components/common/LabelledInput";
 
 /**
- * LeaseDetails Form Segment
  * Corresponds with the /lease-details path
  */
 export function LeaseDetailsFormSegment() {

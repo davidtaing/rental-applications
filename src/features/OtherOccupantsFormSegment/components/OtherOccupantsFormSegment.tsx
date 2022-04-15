@@ -5,7 +5,8 @@ import { initOtherOccupantsState } from "../utils";
 import { IndividualOtherOccupantSegment } from "./IndividualOtherOccupantSegment";
 
 /**
- * Corresponds to the /other-occupants path
+ * Form Segment for non rent-paying occupants.
+ * i.e. children and other adults.
  */
 export function OtherOccupantsFormSegment() {
   const {

@@ -5,8 +5,7 @@ import { initTenantState } from "../utils";
 import { IndividualTenantFormSegment } from "./IndividualTenantFormSegment";
 
 /**
- * TenantDetails Form Segment
- * Corresponds to the /tenant-details path
+ * Form Segment for Rent-Paying Occupants
  */
 export function TenantDetailsFormSegment() {
   const {
