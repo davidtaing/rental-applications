@@ -8,6 +8,7 @@ import { FormNavigation } from "../../FormNavigation";
 export function LeaseDetailsFormSegment() {
   return (
     <div className="leaseDetailsFormSegment">
+      <h2>Lease Details</h2>
       {/* Property Address */}
       <LabelledInput
         labelText="Address:"

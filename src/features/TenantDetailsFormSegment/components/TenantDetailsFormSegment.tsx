@@ -15,6 +15,7 @@ export function TenantDetailsFormSegment() {
 
   return (
     <div className="tenantDetailsFormSegment">
+      <h2>Tenant Details</h2>
       <FieldArray
         name="tenants"
         render={(arrayHelpers) => (

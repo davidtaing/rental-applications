@@ -14,6 +14,7 @@ export function OtherOccupantsFormSegment() {
 
   return (
     <div className="otherOccupantsDetailsFormSegment">
+      <h2>Other Occupants</h2>
       <FieldArray
         name="otherOccupants"
         render={(arrayHelpers) => (
