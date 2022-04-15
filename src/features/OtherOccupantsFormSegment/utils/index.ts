@@ -5,3 +5,12 @@ export function initOtherOccupantsState() {
     otherOccupants: new Array<OtherOccupant>(),
   };
 }
+
+export function initOtherOccupant(): OtherOccupant {
+  return {
+    fullname: "",
+    relation: "",
+    age: 0,
+    gender: "male",
+  };
+}
