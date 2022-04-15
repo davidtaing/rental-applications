@@ -4,7 +4,7 @@ import { validationSchema } from "../utils";
 import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
 import { initTenantDetailsState } from "../../TenantDetailsFormSegment";
 
-interface Props {
+export interface Props {
   initialValues?: Partial<ApplicationFormState>;
   children: React.ReactNode;
 }
