@@ -1,20 +1,7 @@
-import { render, RenderOptions, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { screen } from "@testing-library/react";
 import { TenantDetailsFormSegment } from "../components/TenantDetailsFormSegment";
-import { ApplicationForm, ApplicationFormState } from "../../ApplicationForm";
 import { initTenantDetailsState, initTenantState } from "../utils";
-
-const customRender = (
-  ui: React.ReactElement,
-  initialValues?: Partial<ApplicationFormState>,
-  options?: Omit<RenderOptions, "wrapper">
-) =>
-  render(ui, {
-    wrapper: (props) => (
-      <ApplicationForm {...props} initialValues={initialValues} />
-    ),
-    ...options,
-  });
+import { customRender } from "../../ApplicationForm";
 
 test("Remove Tenant button is not rendered when there is one tenant", () => {
   const initialValues = { ...initTenantDetailsState() };
