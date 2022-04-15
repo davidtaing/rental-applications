@@ -1,5 +1,6 @@
 import LabelledInput from "../../../components/common/LabelledInput";
 import LabelledSelect from "../../../components/common/LabelledSelect";
+import { GenderSelect } from "../../../components/common/GenderSelect";
 
 interface Props {
   formikReference: string;
@@ -16,12 +17,7 @@ export function IndividualOtherOccupantSegment({ formikReference }: Props) {
         type="text"
       />
       {/* Gender */}
-      <LabelledSelect
-        labelText="Gender: "
-        id="gender"
-        name={`${formikReference}.gender`}
-        values={["Male", "Female", "Other"]}
-      />
+      <GenderSelect formikReference={`${formikReference}.gender`} />
       {/* Age */}
       <LabelledInput
         labelText="Age:"

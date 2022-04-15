@@ -1,5 +1,5 @@
+import { GenderSelect } from "../../../components/common/GenderSelect";
 import LabelledInput from "../../../components/common/LabelledInput";
-import LabelledSelect from "../../../components/common/LabelledSelect";
 
 interface Props {
   formikReference: string;
@@ -19,12 +19,7 @@ export function IndividualTenantFormSegment({ formikReference }: Props) {
         type="text"
       />
       {/* Gender */}
-      <LabelledSelect
-        labelText="Gender: "
-        id="gender"
-        name={`${formikReference}.gender`}
-        values={["Male", "Female", "Other"]}
-      />
+      <GenderSelect formikReference={`${formikReference}.gender`} />
       {/* Date of Birth */}
       <LabelledInput
         labelText="Date of Birth:"
