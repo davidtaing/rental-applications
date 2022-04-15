@@ -20,6 +20,7 @@ export function TenantDetailsFormSegment() {
         formikReference="tenants"
         initItem={initTenantState}
         buttonText="Tenant"
+        minItems={1}
       >
         {tenants.map((item: Tenant, idx: string) => (
           <IndividualTenantFormSegment

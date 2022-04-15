@@ -6,6 +6,7 @@ export interface Props {
   initItem: () => {};
   buttonText: string;
   children: React.ReactNode;
+  minItems?: number;
 }
 
 export function FieldArrayFormSegment({
@@ -14,6 +15,7 @@ export function FieldArrayFormSegment({
   initItem,
   buttonText,
   children,
+  minItems = 0,
 }: Props) {
   return (
     <FieldArray
@@ -24,7 +26,7 @@ export function FieldArrayFormSegment({
           <button type="button" onClick={() => arrayHelpers.push(initItem())}>
             Add {buttonText}
           </button>
-          {values.length > 0 ? (
+          {values.length > minItems ? (
             <button type="button" onClick={() => arrayHelpers.pop()}>
               Remove {buttonText}
             </button>
