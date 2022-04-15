@@ -1,5 +1,4 @@
 import { FieldArray, useFormikContext } from "formik";
-import { FormNavigation } from "../../FormNavigation";
 import { Tenant } from "../types";
 import { initTenantState } from "../utils";
 import { IndividualTenantFormSegment } from "./IndividualTenantFormSegment";

@@ -1,5 +1,4 @@
 import { FieldArray, useFormikContext } from "formik";
-import { FormNavigation } from "../../FormNavigation";
 import { OtherOccupant } from "../types";
 import { initOtherOccupantsState } from "../utils";
 import { IndividualOtherOccupantSegment } from "./IndividualOtherOccupantSegment";
