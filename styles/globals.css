@@ -16,8 +16,7 @@ a {
 }
 
 form {
-  max-width: 50em;
-  margin: 0 auto;
+  margin: 0 2rem;
 }
 
 input,
@@ -25,4 +24,11 @@ label,
 select {
   display: block;
   width: 100%;
+}
+
+@media (min-width) {
+  form {
+    max-width: 50em;
+    margin: 0 auto;
+  }
 }
