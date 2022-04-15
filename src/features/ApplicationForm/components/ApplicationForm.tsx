@@ -4,6 +4,7 @@ import { validationSchema } from "../utils";
 import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
 import { initTenantDetailsState } from "../../TenantDetailsFormSegment";
 import { initOtherOccupantsState } from "../../OtherOccupantsFormSegment";
+import { initPetsFormState } from "../../PetsFormSegment";
 
 export interface Props {
   initialValues?: Partial<ApplicationFormState>;
@@ -15,6 +16,7 @@ const initialState = {
   ...initLeaseDetailsState(),
   ...initTenantDetailsState(),
   ...initOtherOccupantsState(),
+  ...initPetsFormState(),
 };
 
 export function ApplicationForm({
