@@ -35,7 +35,7 @@ export function TenantDetailsFormSegment() {
             ) : null}
             <FormNavigation
               prevUrl="/lease-details"
-              nextUrl="/other-occupant-details"
+              nextUrl="/other-occupants"
             />
           </>
         )}

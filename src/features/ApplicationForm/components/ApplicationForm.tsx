@@ -3,6 +3,7 @@ import { ApplicationFormState } from "../types";
 import { validationSchema } from "../utils";
 import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
 import { initTenantDetailsState } from "../../TenantDetailsFormSegment";
+import { initOtherOccupantsState } from "../../OtherOccupantsFormSegment";
 
 export interface Props {
   initialValues?: Partial<ApplicationFormState>;
@@ -13,6 +14,7 @@ export interface Props {
 const initialState = {
   ...initLeaseDetailsState(),
   ...initTenantDetailsState(),
+  ...initOtherOccupantsState(),
 };
 
 export function ApplicationForm({
