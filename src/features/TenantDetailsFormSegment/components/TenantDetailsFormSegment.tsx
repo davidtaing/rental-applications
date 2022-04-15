@@ -1,5 +1,6 @@
 import { FieldArray, useFormikContext } from "formik";
 import { FormNavigation } from "../../FormNavigation";
+import { Tenant } from "../types";
 import { initTenantState } from "../utils";
 import { IndividualTenantFormSegment } from "./IndividualTenantFormSegment";
 
@@ -18,7 +19,7 @@ export function TenantDetailsFormSegment() {
         name="tenants"
         render={(arrayHelpers) => (
           <>
-            {tenants.map((item: any, idx: string) => (
+            {tenants.map((item: Tenant, idx: string) => (
               <IndividualTenantFormSegment key={idx} index={idx} />
             ))}
             <button
