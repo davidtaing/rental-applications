@@ -33,7 +33,6 @@ export function OtherOccupantsFormSegment() {
                 Remove Occupant
               </button>
             ) : null}
-            <FormNavigation prevUrl="/tenant-details" nextUrl="/pet-details" />
           </>
         )}
       />

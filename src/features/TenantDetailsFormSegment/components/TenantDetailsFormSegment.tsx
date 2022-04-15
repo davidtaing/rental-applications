@@ -34,10 +34,6 @@ export function TenantDetailsFormSegment() {
                 Remove Tenant
               </button>
             ) : null}
-            <FormNavigation
-              prevUrl="/lease-details"
-              nextUrl="/other-occupants"
-            />
           </>
         )}
       />

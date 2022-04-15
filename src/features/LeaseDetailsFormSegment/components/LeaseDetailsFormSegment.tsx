@@ -1,5 +1,4 @@
 import LabelledInput from "../../../components/common/LabelledInput";
-import { FormNavigation } from "../../FormNavigation";
 
 /**
  * LeaseDetails Form Segment
@@ -32,7 +31,6 @@ export function LeaseDetailsFormSegment() {
         name="leasePeriod"
         type="number"
       />
-      <FormNavigation nextUrl="/tenant-details" />
     </div>
   );
 }
