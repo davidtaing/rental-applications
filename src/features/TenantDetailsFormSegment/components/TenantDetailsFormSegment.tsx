@@ -1,4 +1,5 @@
 import { FieldArray, useFormikContext } from "formik";
+import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { Tenant } from "../types";
 import { initTenantState } from "../utils";
 import { IndividualTenantFormSegment } from "./IndividualTenantFormSegment";
@@ -14,30 +15,19 @@ export function TenantDetailsFormSegment() {
   return (
     <div className="tenantDetailsFormSegment">
       <h2>Tenant Details</h2>
-      <FieldArray
-        name="tenants"
-        render={(arrayHelpers) => (
-          <>
-            {tenants.map((item: Tenant, idx: string) => (
-              <IndividualTenantFormSegment
-                key={idx}
-                formikReference={`tenants[${idx}]`}
-              />
-            ))}
-            <button
-              type="button"
-              onClick={() => arrayHelpers.push(initTenantState())}
-            >
-              Add Tenant
-            </button>
-            {tenants.length > 1 ? (
-              <button type="button" onClick={() => arrayHelpers.pop()}>
-                Remove Tenant
-              </button>
-            ) : null}
-          </>
-        )}
-      />
+      <FieldArrayFormSegment
+        values={tenants}
+        formikReference="tenants"
+        initItem={initTenantState}
+        buttonText="Tenant"
+      >
+        {tenants.map((item: Tenant, idx: string) => (
+          <IndividualTenantFormSegment
+            key={idx}
+            formikReference={`tenants[${idx}]`}
+          />
+        ))}
+      </FieldArrayFormSegment>
     </div>
   );
 }
