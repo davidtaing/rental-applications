@@ -12,7 +12,7 @@ export function IndividualOtherOccupantSegment({ formikReference }: Props) {
       {/* Full Name */}
       <LabelledInput
         labelText="Full Name:"
-        id="fullname"
+        id="otherOccupantFullname"
         name={`${formikReference}.fullname`}
         type="text"
       />
@@ -21,14 +21,14 @@ export function IndividualOtherOccupantSegment({ formikReference }: Props) {
       {/* Age */}
       <LabelledInput
         labelText="Age:"
-        id="age"
+        id="otherOccupantAge"
         name={`${formikReference}.age`}
         type="number"
       />
       {/* Relation */}
       <LabelledSelect
         labelText="Relation:"
-        id="fullname"
+        id="otherOccupantRelation"
         name={`${formikReference}.relation`}
         values={[
           "Spouse/Significant Other",

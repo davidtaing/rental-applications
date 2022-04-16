@@ -14,7 +14,7 @@ export function IndividualTenantFormSegment({ formikReference }: Props) {
       {/* Full Name */}
       <LabelledInput
         labelText="Full Name:"
-        id="fullname"
+        id="tenantFullname"
         name={`${formikReference}.fullname`}
         type="text"
       />
@@ -23,28 +23,28 @@ export function IndividualTenantFormSegment({ formikReference }: Props) {
       {/* Date of Birth */}
       <LabelledInput
         labelText="Date of Birth:"
-        id="dob"
+        id="tenantDob"
         name={`${formikReference}.dob`}
         type="date"
       />
       {/* Mobile */}
       <LabelledInput
         labelText="Mobile:"
-        id="mobile"
+        id="tenantMobile"
         name={`${formikReference}.mobile`}
         type="text"
       />
       {/* Phone */}
       <LabelledInput
         labelText="Phone:"
-        id="phone"
+        id="tenantPhone"
         name={`${formikReference}.phone`}
         type="text"
       />
       {/* Email */}
       <LabelledInput
         labelText="Email:"
-        id="email"
+        id="tenantEmail"
         name={`${formikReference}.email`}
         type="email"
       />

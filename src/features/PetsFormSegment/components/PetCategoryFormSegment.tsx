@@ -10,20 +10,20 @@ export function PetCategoryFormSegment({ formikReference }: Props) {
   return (
     <div className="petCategorySegment">
       <LabelledSelect
-        labelText="Pet Type: "
-        id="type"
+        labelText="Pet Type:"
+        id="petType"
         name={`${formikReference}.type`}
         values={[PetTypes.DOG, PetTypes.CAT, PetTypes.BIRD, PetTypes.OTHER]}
       />
       <LabelledInput
         labelText="Amount:"
-        id="amount"
+        id="petAmount"
         name={`${formikReference}.amount`}
         type="number"
       />
       <LabelledInput
         labelText="Comment:"
-        id="comment"
+        id="petComment"
         name={`${formikReference}.comment`}
         type="text"
       />
