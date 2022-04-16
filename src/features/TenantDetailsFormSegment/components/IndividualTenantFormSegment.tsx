@@ -1,6 +1,6 @@
 import { GenderSelect } from "../../../components/common/GenderSelect";
 import LabelledInput from "../../../components/common/LabelledInput";
-import { IncomeFormSegment } from "./IncomeFormSegment";
+import { IncomeFormSegment } from "../../IncomeFormSegment";
 
 interface Props {
   formikReference: string;
