@@ -1,5 +1,6 @@
 import { GenderSelect } from "../../../components/common/GenderSelect";
 import LabelledInput from "../../../components/common/LabelledInput";
+import { IncomeFormSegment } from "./IncomeFormSegment";
 
 interface Props {
   formikReference: string;
@@ -48,6 +49,8 @@ export function IndividualTenantFormSegment({ formikReference }: Props) {
         name={`${formikReference}.email`}
         type="email"
       />
+
+      <IncomeFormSegment formikReference={formikReference} />
     </div>
   );
 }

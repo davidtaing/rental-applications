@@ -7,6 +7,7 @@ interface Props {
 export function EmploymentFormSegment({ formikReference }: Props) {
   return (
     <div className="employmentFormSegment">
+      <h3>Employment</h3>
       <LabelledInput
         labelText="Title:"
         id="employmentTitle"
@@ -38,7 +39,7 @@ export function EmploymentFormSegment({ formikReference }: Props) {
         type="text"
       />
       <div>
-        <p>Reference:</p>
+        <h4>Reference</h4>
         <LabelledInput
           labelText="Name:"
           id="referenceName"

@@ -7,6 +7,7 @@ interface Props {
 export function IncomeSupportFormSegment({ formikReference }: Props) {
   return (
     <div className="incomeSupportFormSegment">
+      <h3>Income Support</h3>
       <LabelledInput
         labelText="Description:"
         id="incomeSupportDescription"
