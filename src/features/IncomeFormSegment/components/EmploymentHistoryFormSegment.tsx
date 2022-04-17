@@ -1,5 +1,4 @@
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
-import LabelledInput from "../../../components/common/LabelledInput";
 import { Employment } from "../types";
 import { createEmployment } from "../utils";
 import { EmploymentFormSegment } from "./EmploymentFormSegment";
@@ -18,7 +17,6 @@ export function EmploymentHistoryFormSegment({ formikReference, data }: Props) {
         formikReference={`${formikReference}.employment`}
         initItem={createEmployment}
         buttonText="Employment"
-        minItems={0}
       >
         {data.map((item, idx) => (
           <EmploymentFormSegment
