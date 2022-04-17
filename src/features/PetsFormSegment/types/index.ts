@@ -1,4 +1,4 @@
-export enum PetTypes {
+export enum PetType {
   DOG = "Dog",
   CAT = "Cat",
   BIRD = "Bird",
@@ -6,7 +6,7 @@ export enum PetTypes {
 }
 
 export interface PetCategory {
-  type: PetTypes;
+  type: PetType;
   amount: number;
   comment: string;
 }

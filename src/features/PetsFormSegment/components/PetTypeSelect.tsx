@@ -1,5 +1,5 @@
 import LabelledSelect from "../../../components/common/LabelledSelect";
-import { PetTypes } from "../types";
+import { PetType } from "../types";
 
 interface Props {
   formikReference: string;
@@ -11,7 +11,7 @@ export function PetTypeSelect({ formikReference }: Props) {
       labelText="Type:"
       id="petType"
       name={formikReference}
-      values={Object.values(PetTypes)}
+      values={Object.values(PetType)}
     />
   );
 }
