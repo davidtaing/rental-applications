@@ -1,5 +1,7 @@
-import LabelledInput from "../../../components/common/LabelledInput";
+import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { IncomeSupport } from "../types";
+import { createIncomeSupport } from "../utils";
+import { IncomeSupportItem } from "./IncomeSupportItem";
 
 interface Props {
   formikReference: string;
@@ -10,24 +12,19 @@ export function IncomeSupportFormSegment({ formikReference, data }: Props) {
   return (
     <div className="incomeSupportFormSegment">
       <h3>Income Support</h3>
-      <LabelledInput
-        labelText="Description:"
-        id="incomeSupportDescription"
-        name={`${formikReference}.incomeSupport.description`}
-        type="text"
-      />
-      <LabelledInput
-        labelText="Amount:"
-        id="incomeSupportAmount"
-        name={`${formikReference}.incomeSupport.amount`}
-        type="number"
-      />
-      <LabelledInput
-        labelText="Frequency:"
-        id="incomeSupportFrequency"
-        name={`${formikReference}.incomeSupport.freequency`}
-        type="text"
-      />
+      <FieldArrayFormSegment
+        values={data}
+        formikReference={`${formikReference}.incomeSupport`}
+        initItem={createIncomeSupport}
+        buttonText="Income Support"
+      >
+        {data.map((item, idx) => (
+          <IncomeSupportItem
+            formikReference={`${formikReference}[${idx}]`}
+            key={idx}
+          />
+        ))}
+      </FieldArrayFormSegment>
     </div>
   );
 }
