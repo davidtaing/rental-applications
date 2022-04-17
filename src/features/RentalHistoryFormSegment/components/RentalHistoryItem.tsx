@@ -42,7 +42,7 @@ export function RentalHistoryItem({ formikReference }: RentalHistoryItemProps) {
       />
       <LabelledInput
         labelText="Phone:"
-        id="rentalHistoryReferencPhone"
+        id="rentalHistoryReferencePhone"
         name={`${formikReference}.rentalHistory.reference.phone`}
         type="text"
       />
