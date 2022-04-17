@@ -1,6 +1,6 @@
 import { render, RenderOptions } from "@testing-library/react";
-import { ApplicationForm } from "../components/ApplicationForm";
-import { ApplicationFormState } from "../types";
+import { ApplicationForm } from "../../components/ApplicationForm";
+import { ApplicationFormState } from "../../types";
 
 export const customRender = (
   ui: React.ReactElement,
