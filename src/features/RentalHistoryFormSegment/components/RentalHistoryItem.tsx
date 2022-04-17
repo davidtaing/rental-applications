@@ -1,4 +1,5 @@
 import LabelledInput from "../../../components/common/LabelledInput";
+import { RentalReferenceTypeSelect } from "./RentalReferenceTypeSelect";
 import { RentalStatusSelect } from "./RentalStatusSelect";
 
 export interface RentalHistoryItemProps {
@@ -36,11 +37,8 @@ export function RentalHistoryItem({ formikReference }: RentalHistoryItemProps) {
         name={`${formikReference}.rentalHistory.reference.name`}
         type="text"
       />
-      <LabelledInput
-        labelText="Type:"
-        id="rentalHistoryReferenceType"
-        name={`${formikReference}.rentalHistory.reference.type`}
-        type="text"
+      <RentalReferenceTypeSelect
+        formikReference={`${formikReference}.rentalHistory.reference.type`}
       />
       <LabelledInput
         labelText="Phone:"

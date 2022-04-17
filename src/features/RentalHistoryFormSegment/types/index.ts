@@ -9,6 +9,13 @@ export enum RentalStatus {
   OTHER = "Other",
 }
 
+export enum RentalReferenceType {
+  AGENT = "Agent",
+  LANDLORD = "Landlord",
+  RELATIVE = "Relative",
+  FRIEND = "Friend",
+}
+
 export interface RentalHistory {
   address: string;
   status: string;
