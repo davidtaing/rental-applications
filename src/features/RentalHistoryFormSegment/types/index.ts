@@ -6,7 +6,7 @@ export enum RentalStatus {
   SHARING = "Sharing",
   CURRENTLY_OVERSEAS = "Currently Overseas",
   JUST_ARRIVED_FROM_OVERSEAS = "Just Arrived from Overseas",
-  OHTER = "Other",
+  OTHER = "Other",
 }
 
 export interface RentalHistory {
