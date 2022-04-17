@@ -1,7 +1,7 @@
 import { FieldArray } from "formik";
 
 export interface Props {
-  values: [];
+  values: unknown[];
   formikReference: string;
   initItem: () => {};
   buttonText: string;
