@@ -1,5 +1,5 @@
 import { Tenant } from "../../TenantDetailsFormSegment";
-import { EmploymentFormSegment } from "./EmploymentFormSegment";
+import { EmploymentHistoryFormSegment } from "./EmploymentHistoryFormSegment";
 import { IncomeSupportFormSegment } from "./IncomeSupportFormSegment";
 import { RealEstateIncomeFormSegment } from "./RealEstateIncomeFormSegment";
 
@@ -13,7 +13,7 @@ export function IncomeFormSegment({ formikReference, tenantData }: Props) {
 
   return (
     <div className="incomeFormSegment">
-      <EmploymentFormSegment
+      <EmploymentHistoryFormSegment
         formikReference={formikReference}
         data={employment}
       />
