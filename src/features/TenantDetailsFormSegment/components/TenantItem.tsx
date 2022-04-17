@@ -1,6 +1,7 @@
 import { GenderSelect } from "../../../components/common/GenderSelect";
 import LabelledInput from "../../../components/common/LabelledInput";
 import { IncomeFormSegment } from "../../IncomeFormSegment";
+import { RentalHistoryFormSegment } from "../../RentalHistoryFormSegment";
 import { Tenant } from "../types";
 
 interface Props {
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export function TenantItem({ formikReference, data }: Props) {
+  const { rentalHistory } = data;
+
   return (
     <div className="tenantItem">
       {/* Full Name */}
@@ -50,6 +53,10 @@ export function TenantItem({ formikReference, data }: Props) {
       />
 
       <IncomeFormSegment formikReference={formikReference} tenantData={data} />
+      <RentalHistoryFormSegment
+        formikReference={formikReference}
+        data={rentalHistory}
+      />
     </div>
   );
 }
