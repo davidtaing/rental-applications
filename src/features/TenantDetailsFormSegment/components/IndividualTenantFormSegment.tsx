@@ -1,15 +1,14 @@
 import { GenderSelect } from "../../../components/common/GenderSelect";
 import LabelledInput from "../../../components/common/LabelledInput";
 import { IncomeFormSegment } from "../../IncomeFormSegment";
+import { Tenant } from "../types";
 
 interface Props {
   formikReference: string;
+  data: Tenant;
 }
 
-/**
- * Form Segments for Individual Tenants
- */
-export function IndividualTenantFormSegment({ formikReference }: Props) {
+export function IndividualTenantFormSegment({ formikReference, data }: Props) {
   return (
     <div className="individualTenantFormSegment">
       {/* Full Name */}
@@ -50,7 +49,7 @@ export function IndividualTenantFormSegment({ formikReference }: Props) {
         type="email"
       />
 
-      <IncomeFormSegment formikReference={formikReference} />
+      <IncomeFormSegment formikReference={formikReference} tenantData={data} />
     </div>
   );
 }
