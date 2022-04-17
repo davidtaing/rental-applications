@@ -15,7 +15,7 @@ function LabelledInput({
 }: LabelledInputProps) {
   const { handleChange } = useFormikContext();
   return (
-    <div className="labed-input">
+    <div className="labelledInput">
       <label className="form-label" htmlFor={id}>
         {labelText}
       </label>

@@ -16,7 +16,7 @@ function LabelledSelect({
   ...otherProps
 }: LabelledSelectProps) {
   return (
-    <div className="labelled-select">
+    <div className="labelledSelect">
       <label className="form-label" htmlFor={id}>
         {labelText}
       </label>

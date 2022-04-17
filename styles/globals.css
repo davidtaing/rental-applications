@@ -30,6 +30,20 @@ form {
 }
 
 input,
+select {
+  height: 2rem;
+}
+
+button {
+  height: 1.5rem;
+}
+
+.labelledSelect,
+.labelledInput {
+  margin: 0.4rem 0;
+}
+
+input,
 label,
 select {
   display: block;
