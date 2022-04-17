@@ -29,3 +29,11 @@ export interface IncomeFormState {
   incomeSupport: Array<IncomeSupport>;
   realEstateIncome: Array<RealEstateIncome>;
 }
+
+export enum EmploymentType {
+  FULL_TIME = "Full-Time",
+  PART_TIME = "Part-Time",
+  CASUAL = "Casual",
+  SELF_EMPLOYED = "Self-Employed",
+  CONTRACTOR = "Contractor",
+}
