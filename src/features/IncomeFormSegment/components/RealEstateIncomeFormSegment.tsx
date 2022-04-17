@@ -1,10 +1,12 @@
 import LabelledInput from "../../../components/common/LabelledInput";
+import { RealEstateIncome } from "../types";
 
 interface Props {
   formikReference: string;
+  data: Array<RealEstateIncome>;
 }
 
-export function RealEstateIncomeFormSegment({ formikReference }: Props) {
+export function RealEstateIncomeFormSegment({ formikReference, data }: Props) {
   return (
     <div className="realEstateIncomeFormSegment">
       <h3>Real Estate Income</h3>

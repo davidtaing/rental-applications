@@ -26,6 +26,7 @@ export function TenantDetailsFormSegment() {
           <IndividualTenantFormSegment
             key={idx}
             formikReference={`tenants[${idx}]`}
+            data={item}
           />
         ))}
       </FieldArrayFormSegment>

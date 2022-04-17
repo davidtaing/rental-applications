@@ -1,10 +1,12 @@
 import LabelledInput from "../../../components/common/LabelledInput";
+import { Employment } from "../types";
 
 interface Props {
   formikReference: string;
+  data: Array<Employment>;
 }
 
-export function EmploymentFormSegment({ formikReference }: Props) {
+export function EmploymentFormSegment({ formikReference, data }: Props) {
   return (
     <div className="employmentFormSegment">
       <h3>Employment</h3>
