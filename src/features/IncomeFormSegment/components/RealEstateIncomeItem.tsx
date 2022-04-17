@@ -10,6 +10,7 @@ export function RealEstateIncomeItem({
 }: RealEstateIncomeItemProps) {
   return (
     <div className="subFormSegment__item">
+      <h3>Property</h3>
       <LabelledInput
         labelText="Address:"
         id="realEstateAddress"

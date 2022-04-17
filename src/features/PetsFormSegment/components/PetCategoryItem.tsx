@@ -9,6 +9,7 @@ interface Props {
 export function PetCategoryItem({ formikReference }: Props) {
   return (
     <div className="petCategoryItem">
+      <h3>Pets</h3>
       <LabelledSelect
         labelText="Pet Type:"
         id="petType"

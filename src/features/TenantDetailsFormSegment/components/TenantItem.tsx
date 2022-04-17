@@ -14,6 +14,7 @@ export function TenantItem({ formikReference, data }: Props) {
 
   return (
     <div className="tenantItem">
+      <h2>Tenant</h2>
       {/* Full Name */}
       <LabelledInput
         labelText="Full Name:"

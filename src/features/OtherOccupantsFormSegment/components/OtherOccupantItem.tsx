@@ -9,6 +9,7 @@ interface Props {
 export function OtherOccupantItem({ formikReference }: Props) {
   return (
     <div className="otherOccupantItem">
+      <h3>Occupant</h3>
       {/* Full Name */}
       <LabelledInput
         labelText="Full Name:"
