@@ -1,10 +1,10 @@
 import LabelledInput from "../../../components/common/LabelledInput";
 
-interface Props {
+export interface IncomeSupportItemProps {
   formikReference: string;
 }
 
-export function IncomeSupportItem({ formikReference }: Props) {
+export function IncomeSupportItem({ formikReference }: IncomeSupportItemProps) {
   return (
     <div className="incomeSupportItem">
       <LabelledInput

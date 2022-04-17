@@ -1,7 +1,12 @@
+import dynamic from "next/dynamic";
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { IncomeSupport } from "../types";
 import { createIncomeSupport } from "../utils";
-import { IncomeSupportItem } from "./IncomeSupportItem";
+import { IncomeSupportItemProps } from "./IncomeSupportItem";
+
+const IncomeSupportItem = dynamic<IncomeSupportItemProps>(() =>
+  import("./IncomeSupportItem").then((mod) => mod.IncomeSupportItem)
+);
 
 interface Props {
   formikReference: string;
