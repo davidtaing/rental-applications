@@ -11,15 +11,7 @@ export function OtherOccupantRelationSelect({ formikReference }: Props) {
       labelText="Relation:"
       id="otherOccupantRelation"
       name={formikReference}
-      values={[
-        OtherOccupantRelation.SPOUSE_OR_SO,
-        OtherOccupantRelation.CHILD,
-        OtherOccupantRelation.PARENT,
-        OtherOccupantRelation.SIBLING,
-        OtherOccupantRelation.GRANDPARENT,
-        OtherOccupantRelation.FRIEND,
-        OtherOccupantRelation.HOUSEMATE_OR_FLATMATE,
-      ]}
+      values={Object.values(OtherOccupantRelation)}
     />
   );
 }
