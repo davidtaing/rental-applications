@@ -11,13 +11,7 @@ export function EmploymentTypeSelect({ formikReference }: Props) {
       labelText="Type: "
       id="employmentType"
       name={formikReference}
-      values={[
-        EmploymentType.FULL_TIME,
-        EmploymentType.PART_TIME,
-        EmploymentType.CASUAL,
-        EmploymentType.SELF_EMPLOYED,
-        EmploymentType.CONTRACTOR,
-      ]}
+      values={Object.values(EmploymentType)}
     />
   );
 }

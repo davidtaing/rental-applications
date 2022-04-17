@@ -11,7 +11,7 @@ export function GenderSelect({ formikReference }: Props) {
       labelText="Gender: "
       id="gender"
       name={formikReference}
-      values={[Gender.MALE, Gender.FEMALE, Gender.OTHER]}
+      values={Object.values(Gender)}
     />
   );
 }

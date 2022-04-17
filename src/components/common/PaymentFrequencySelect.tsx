@@ -10,12 +10,7 @@ export function PaymentFrequencySelect({ formikReference }: Props) {
     <LabelledSelect
       name={formikReference}
       labelText="Frequency:"
-      values={[
-        PaymentFrequency.WEEKLY,
-        PaymentFrequency.FORTNIGHTLY,
-        PaymentFrequency.MONTHLY,
-        PaymentFrequency.ANNUALLY,
-      ]}
+      values={Object.values(PaymentFrequency)}
     />
   );
 }

@@ -11,12 +11,7 @@ export function RentalReferenceTypeSelect({ formikReference }: Props) {
       id="rentalHistoryReferenceType"
       labelText="Type:"
       name={formikReference}
-      values={[
-        RentalReferenceType.AGENT,
-        RentalReferenceType.LANDLORD,
-        RentalReferenceType.RELATIVE,
-        RentalReferenceType.FRIEND,
-      ]}
+      values={Object.values(RentalReferenceType)}
     />
   );
 }
