@@ -1,3 +1,4 @@
+import { Gender } from "../../types/Gender";
 import LabelledSelect from "./LabelledSelect";
 
 interface Props {
@@ -10,7 +11,7 @@ export function GenderSelect({ formikReference }: Props) {
       labelText="Gender: "
       id="gender"
       name={formikReference}
-      values={["Male", "Female", "Other"]}
+      values={[Gender.MALE, Gender.FEMALE, Gender.OTHER]}
     />
   );
 }
