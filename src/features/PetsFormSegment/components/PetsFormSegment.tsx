@@ -10,7 +10,7 @@ export function PetsFormSegment() {
 
   return (
     <div className="petDetailsForm formSegment">
-      <h2>Pet Details</h2>
+      <h1>Pet Details</h1>
       <FieldArrayFormSegment
         formikReference="pets"
         values={pets}

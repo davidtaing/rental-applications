@@ -14,7 +14,7 @@ export function TenantDetailsFormSegment() {
 
   return (
     <div className="tenantDetailsForm formSegment">
-      <h2>Tenant Details</h2>
+      <h1>Tenant Details</h1>
       <FieldArrayFormSegment
         values={tenants}
         formikReference="tenants"
