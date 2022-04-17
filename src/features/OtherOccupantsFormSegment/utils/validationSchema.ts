@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 import { OtherOccupantRelation } from "../types";
 
-export const validationSchema = Yup.object().shape({
+export const otherOccupantsSchema = Yup.object().shape({
   otherOccupants: Yup.array().of(
     Yup.object().shape({
       fullname: Yup.string().required(),

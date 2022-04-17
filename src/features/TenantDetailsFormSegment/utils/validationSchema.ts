@@ -6,7 +6,7 @@ import {
   realEstateIncomeItemSchema,
 } from "../../IncomeFormSegment";
 
-export const validationSchema = Yup.object().shape({
+export const tenantDetailsSchema = Yup.object().shape({
   fullname: Yup.string().required(),
   gender: Yup.mixed<Gender>().oneOf(Object.values(Gender)),
   dob: Yup.string().required(),
