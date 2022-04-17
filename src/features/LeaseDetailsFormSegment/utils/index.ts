@@ -1,4 +1,4 @@
-import * as Yup from "yup";
+export * from "./validationSchema";
 import { LeaseDetailsState } from "../types";
 
 export function initLeaseDetailsFormState({
@@ -14,10 +14,3 @@ export function initLeaseDetailsFormState({
     leasePeriod: leasePeriod ?? 0,
   };
 }
-
-export const validationSchema = Yup.object({
-  address: Yup.string().required(),
-  rent: Yup.number().required().positive().integer(),
-  startDate: Yup.date().required(),
-  leasePeriod: Yup.number().required().positive().integer(),
-});
