@@ -1,4 +1,4 @@
-import { FieldArray, useFormikContext } from "formik";
+import { useFormikContext } from "formik";
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { OtherOccupant } from "../types";
 import { initOtherOccupantsFormState } from "../utils";
