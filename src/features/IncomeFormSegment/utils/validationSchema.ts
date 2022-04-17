@@ -30,3 +30,9 @@ export const realEstateIncomeItemSchema = Yup.object().shape({
     Object.values(PaymentFrequency)
   ),
 });
+
+export const incomeFormSchema = Yup.object().shape({
+  employment: Yup.array().of(employmentItemSchema),
+  incomeSupport: Yup.array().of(incomeSupportItemSchema),
+  realEstate: Yup.array().of(realEstateIncomeItemSchema),
+});
