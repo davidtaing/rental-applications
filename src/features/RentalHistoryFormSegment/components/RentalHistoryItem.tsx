@@ -1,4 +1,5 @@
 import LabelledInput from "../../../components/common/LabelledInput";
+import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelect";
 import { RentalReferenceTypeSelect } from "./RentalReferenceTypeSelect";
 import { RentalStatusSelect } from "./RentalStatusSelect";
 
@@ -24,11 +25,8 @@ export function RentalHistoryItem({ formikReference }: RentalHistoryItemProps) {
         name={`${formikReference}.rentalHistory.rent`}
         type="text"
       />
-      <LabelledInput
-        labelText="Frequency:"
-        id="rentalHistoryFrequency"
-        name={`${formikReference}.rentalHistory.frequency`}
-        type="text"
+      <PaymentFrequencySelect
+        formikReference={`${formikReference}.rentalHistory.frequency`}
       />
       <h4>Reference</h4>
       <LabelledInput

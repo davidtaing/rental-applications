@@ -1,4 +1,5 @@
 import LabelledInput from "../../../components/common/LabelledInput";
+import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelect";
 
 export interface RealEstateIncomeItemProps {
   formikReference: string;
@@ -21,11 +22,8 @@ export function RealEstateIncomeItem({
         name={`${formikReference}.realEstate.rent`}
         type="number"
       />
-      <LabelledInput
-        labelText="Frequency:"
-        id="realEstateFrequency"
-        name={`${formikReference}.realEstate.frequency`}
-        type="text"
+      <PaymentFrequencySelect
+        formikReference={`${formikReference}.realEstate.frequency`}
       />
     </div>
   );
