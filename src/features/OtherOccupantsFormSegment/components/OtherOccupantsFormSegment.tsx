@@ -19,7 +19,7 @@ export function OtherOccupantsFormSegment() {
       <FieldArrayFormSegment
         values={otherOccupants}
         formikReference="otherOccupants"
-        initItem={initOtherOccupantsFormState}
+        createItemFn={initOtherOccupantsFormState}
         buttonText="Occupant"
       >
         {otherOccupants.map((item: OtherOccupant, idx: string) => (

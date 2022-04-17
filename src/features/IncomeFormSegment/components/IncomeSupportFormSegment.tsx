@@ -20,7 +20,7 @@ export function IncomeSupportFormSegment({ formikReference, data }: Props) {
       <FieldArrayFormSegment
         values={data}
         formikReference={`${formikReference}.incomeSupport`}
-        initItem={createIncomeSupport}
+        createItemFn={createIncomeSupport}
         buttonText="Income Support"
       >
         {data.map((item, idx) => (

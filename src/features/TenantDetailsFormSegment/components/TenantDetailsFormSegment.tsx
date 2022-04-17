@@ -18,7 +18,7 @@ export function TenantDetailsFormSegment() {
       <FieldArrayFormSegment
         values={tenants}
         formikReference="tenants"
-        initItem={createTenant}
+        createItemFn={createTenant}
         buttonText="Tenant"
         minItems={1}
       >

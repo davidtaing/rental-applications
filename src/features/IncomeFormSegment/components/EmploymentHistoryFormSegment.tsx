@@ -20,7 +20,7 @@ export function EmploymentHistoryFormSegment({ formikReference, data }: Props) {
       <FieldArrayFormSegment
         values={data}
         formikReference={`${formikReference}.employment`}
-        initItem={createEmployment}
+        createItemFn={createEmployment}
         buttonText="Employment"
       >
         {data.map((item, idx) => (

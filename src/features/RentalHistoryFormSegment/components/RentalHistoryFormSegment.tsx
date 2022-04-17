@@ -16,7 +16,7 @@ export function RentalHistoryFormSegment({ formikReference, data }: Props) {
       <FieldArrayFormSegment
         values={data}
         formikReference={`${formikReference}.rentalHistory`}
-        initItem={createRentalHistory}
+        createItemFn={createRentalHistory}
         buttonText="Rental History"
         minItems={1}
       >

@@ -14,7 +14,7 @@ export function PetsFormSegment() {
       <FieldArrayFormSegment
         formikReference="pets"
         values={pets}
-        initItem={createPetCategory}
+        createItemFn={createPetCategory}
         buttonText="Pet Type"
       >
         {pets.map((item: any, idx: string) => (

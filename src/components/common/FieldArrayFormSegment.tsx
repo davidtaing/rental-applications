@@ -3,7 +3,7 @@ import { FieldArray } from "formik";
 export interface Props {
   values: unknown[];
   formikReference: string;
-  initItem: () => {};
+  createItemFn: () => {};
   buttonText: string;
   children: React.ReactNode;
   minItems?: number;
@@ -12,7 +12,7 @@ export interface Props {
 export function FieldArrayFormSegment({
   values,
   formikReference,
-  initItem,
+  createItemFn: initItem,
   buttonText,
   children,
   minItems = 0,
