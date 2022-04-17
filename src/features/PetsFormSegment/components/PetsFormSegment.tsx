@@ -9,7 +9,7 @@ export function PetsFormSegment() {
   } = useFormikContext();
 
   return (
-    <div className="petDetailsFormSegment">
+    <div className="petDetailsForm formSegment">
       <h2>Pet Details</h2>
       <FieldArrayFormSegment
         formikReference="pets"

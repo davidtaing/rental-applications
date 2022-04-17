@@ -11,7 +11,7 @@ interface Props {
 
 export function RentalHistoryFormSegment({ formikReference, data }: Props) {
   return (
-    <div className="rentalHistoryFormSegment">
+    <div className="rentalHistoryForm subFormSegment">
       <h3>Rental History</h3>
       <FieldArrayFormSegment
         values={data}

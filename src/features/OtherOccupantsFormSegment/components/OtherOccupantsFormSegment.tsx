@@ -14,7 +14,7 @@ export function OtherOccupantsFormSegment() {
   } = useFormikContext();
 
   return (
-    <div className="otherOccupantsDetailsFormSegment">
+    <div className="otherOccupantsForm formSegment">
       <h2>Other Occupants</h2>
       <FieldArrayFormSegment
         values={otherOccupants}

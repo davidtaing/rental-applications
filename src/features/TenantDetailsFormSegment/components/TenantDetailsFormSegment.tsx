@@ -13,7 +13,7 @@ export function TenantDetailsFormSegment() {
   } = useFormikContext();
 
   return (
-    <div className="tenantDetailsFormSegment">
+    <div className="tenantDetailsForm formSegment">
       <h2>Tenant Details</h2>
       <FieldArrayFormSegment
         values={tenants}

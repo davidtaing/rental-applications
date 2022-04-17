@@ -5,7 +5,7 @@ import LabelledInput from "../../../components/common/LabelledInput";
  */
 export function LeaseDetailsFormSegment() {
   return (
-    <div className="leaseDetailsFormSegment">
+    <div className="leaseDetailsForm formSegment">
       <h2>Lease Details</h2>
       {/* Property Address */}
       <LabelledInput
