@@ -10,3 +10,7 @@ export interface RentalHistory {
     email: string;
   };
 }
+
+export interface RentalHistoryFormState {
+  rentalHistory: Array<RentalHistory>;
+}
