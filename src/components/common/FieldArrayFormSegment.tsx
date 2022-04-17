@@ -23,11 +23,19 @@ export function FieldArrayFormSegment({
       render={(arrayHelpers) => (
         <>
           {children}
-          <button type="button" onClick={() => arrayHelpers.push(initItem())}>
+          <button
+            className="fieldArray__button"
+            type="button"
+            onClick={() => arrayHelpers.push(initItem())}
+          >
             Add {buttonText}
           </button>
           {values.length > minItems ? (
-            <button type="button" onClick={() => arrayHelpers.pop()}>
+            <button
+              className="fieldArray__button"
+              type="button"
+              onClick={() => arrayHelpers.pop()}
+            >
               Remove {buttonText}
             </button>
           ) : null}
