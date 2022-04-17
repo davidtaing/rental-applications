@@ -1,3 +1,4 @@
+export * from "./validationSchema";
 import { PetType, PetCategory, PetsFormState } from "../types";
 
 export const createPetCategory = (): PetCategory => ({

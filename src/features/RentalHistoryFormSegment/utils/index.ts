@@ -1,3 +1,4 @@
+export * from "./validationSchema";
 import { RentalHistory, RentalHistoryFormState } from "../types";
 
 export const createRentalHistory = (): RentalHistory => ({
