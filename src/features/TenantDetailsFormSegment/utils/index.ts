@@ -1,3 +1,4 @@
+import { initIncomeFormState } from "../../IncomeFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
 
 export function initTenantState(): Tenant {
@@ -8,6 +9,7 @@ export function initTenantState(): Tenant {
     mobile: "",
     phone: "",
     email: "",
+    ...initIncomeFormState(),
   };
 }
 
