@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 import { LeaseDetailsState } from "../types";
 
-export function initLeaseDetailsState({
+export function initLeaseDetailsFormState({
   address,
   rent,
   startDate,

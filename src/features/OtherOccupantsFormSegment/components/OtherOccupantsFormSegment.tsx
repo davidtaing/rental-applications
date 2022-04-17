@@ -1,7 +1,7 @@
 import { FieldArray, useFormikContext } from "formik";
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { OtherOccupant } from "../types";
-import { initOtherOccupantsState } from "../utils";
+import { initOtherOccupantsFormState } from "../utils";
 import { OtherOccupantItem } from "./OtherOccupantItem";
 
 /**
@@ -19,7 +19,7 @@ export function OtherOccupantsFormSegment() {
       <FieldArrayFormSegment
         values={otherOccupants}
         formikReference="otherOccupants"
-        initItem={initOtherOccupantsState}
+        initItem={initOtherOccupantsFormState}
         buttonText="Occupant"
       >
         {otherOccupants.map((item: OtherOccupant, idx: string) => (

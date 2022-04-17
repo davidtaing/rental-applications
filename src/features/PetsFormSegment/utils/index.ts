@@ -1,6 +1,6 @@
 import { PetTypes, PetCategory, PetsFormState } from "../types";
 
-export const initPetState = (): PetCategory => ({
+export const createPetCategory = (): PetCategory => ({
   type: PetTypes.DOG,
   amount: 1,
   comment: "",

@@ -1,9 +1,9 @@
 import { Formik, Form } from "formik";
 import { ApplicationFormState } from "../types";
 import { validationSchema } from "../utils";
-import { initLeaseDetailsState } from "../../LeaseDetailsFormSegment/utils";
-import { initTenantDetailsState } from "../../TenantDetailsFormSegment";
-import { initOtherOccupantsState } from "../../OtherOccupantsFormSegment";
+import { initLeaseDetailsFormState } from "../../LeaseDetailsFormSegment/utils";
+import { initTenantDetailsFormState } from "../../TenantDetailsFormSegment";
+import { initOtherOccupantsFormState } from "../../OtherOccupantsFormSegment";
 import { initPetsFormState } from "../../PetsFormSegment";
 
 export interface Props {
@@ -13,9 +13,9 @@ export interface Props {
 
 // combine individual state initializers
 const initialState = {
-  ...initLeaseDetailsState(),
-  ...initTenantDetailsState(),
-  ...initOtherOccupantsState(),
+  ...initLeaseDetailsFormState(),
+  ...initTenantDetailsFormState(),
+  ...initOtherOccupantsFormState(),
   ...initPetsFormState(),
 };
 

@@ -1,7 +1,7 @@
 import { initIncomeFormState } from "../../IncomeFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
 
-export function initTenantState(): Tenant {
+export function createTenant(): Tenant {
   return {
     fullname: "",
     gender: "",
@@ -13,8 +13,8 @@ export function initTenantState(): Tenant {
   };
 }
 
-export function initTenantDetailsState(): TenantDetailsFormState {
+export function initTenantDetailsFormState(): TenantDetailsFormState {
   return {
-    tenants: new Array<Tenant>(initTenantState()),
+    tenants: new Array<Tenant>(createTenant()),
   };
 }

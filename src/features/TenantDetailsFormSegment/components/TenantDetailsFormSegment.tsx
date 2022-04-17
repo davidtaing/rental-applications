@@ -1,7 +1,7 @@
 import { FieldArray, useFormikContext } from "formik";
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { Tenant } from "../types";
-import { initTenantState } from "../utils";
+import { createTenant } from "../utils";
 import { TenantItem } from "./TenantItem";
 
 /**
@@ -18,7 +18,7 @@ export function TenantDetailsFormSegment() {
       <FieldArrayFormSegment
         values={tenants}
         formikReference="tenants"
-        initItem={initTenantState}
+        initItem={createTenant}
         buttonText="Tenant"
         minItems={1}
       >

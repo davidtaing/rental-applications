@@ -1,12 +1,12 @@
 import { OtherOccupant } from "../types";
 
-export function initOtherOccupantsState() {
+export function initOtherOccupantsFormState() {
   return {
     otherOccupants: new Array<OtherOccupant>(),
   };
 }
 
-export function initOtherOccupant(): OtherOccupant {
+export function createOtherOccupant(): OtherOccupant {
   return {
     fullname: "",
     relation: "",
