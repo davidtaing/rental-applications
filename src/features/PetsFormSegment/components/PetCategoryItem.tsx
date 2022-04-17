@@ -1,6 +1,5 @@
 import LabelledInput from "../../../components/common/LabelledInput";
-import LabelledSelect from "../../../components/common/LabelledSelect";
-import { PetTypes } from "../types";
+import { PetTypeSelect } from "./PetTypeSelect";
 
 interface Props {
   formikReference: string;
@@ -10,12 +9,7 @@ export function PetCategoryItem({ formikReference }: Props) {
   return (
     <div className="petCategoryItem">
       <h3>Pets</h3>
-      <LabelledSelect
-        labelText="Type:"
-        id="petType"
-        name={`${formikReference}.type`}
-        values={[PetTypes.DOG, PetTypes.CAT, PetTypes.BIRD, PetTypes.OTHER]}
-      />
+      <PetTypeSelect formikReference={`${formikReference}.type`} />
       <LabelledInput
         labelText="Amount:"
         id="petAmount"
