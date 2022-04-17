@@ -8,7 +8,7 @@ export interface EmploymentItemProps {
 
 export function EmploymentItem({ formikReference }: EmploymentItemProps) {
   return (
-    <div className="individualEmployment">
+    <div className="subFormSegment__item">
       <LabelledInput
         labelText="Title:"
         id="employmentTitle"

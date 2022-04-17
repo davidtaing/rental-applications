@@ -9,7 +9,7 @@ export function RealEstateIncomeItem({
   formikReference,
 }: RealEstateIncomeItemProps) {
   return (
-    <div className="realEstateIncomeItem">
+    <div className="subFormSegment__item">
       <LabelledInput
         labelText="Address:"
         id="realEstateAddress"

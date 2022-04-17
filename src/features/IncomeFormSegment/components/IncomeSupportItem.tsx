@@ -7,7 +7,7 @@ export interface IncomeSupportItemProps {
 
 export function IncomeSupportItem({ formikReference }: IncomeSupportItemProps) {
   return (
-    <div className="incomeSupportItem">
+    <div className="subFormSegment__item">
       <LabelledInput
         labelText="Description:"
         id="incomeSupportDescription"

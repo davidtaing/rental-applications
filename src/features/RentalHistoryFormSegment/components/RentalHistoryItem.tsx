@@ -9,7 +9,7 @@ export interface RentalHistoryItemProps {
 
 export function RentalHistoryItem({ formikReference }: RentalHistoryItemProps) {
   return (
-    <div className="rentalHistoryItem">
+    <div className="subFormSegment__item">
       <LabelledInput
         labelText="Address:"
         id="rentalHistoryAddress"
