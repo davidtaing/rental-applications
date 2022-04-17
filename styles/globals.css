@@ -26,7 +26,16 @@ select {
   width: 100%;
 }
 
-@media (min-width) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
+@media (min-width: 50em) {
   form {
     max-width: 50em;
     margin: 0 auto;
