@@ -6,9 +6,9 @@ interface Props {
   formikReference: string;
 }
 
-export function IndividualOtherOccupantSegment({ formikReference }: Props) {
+export function OtherOccupantItem({ formikReference }: Props) {
   return (
-    <div className="individualOtherOccupant">
+    <div className="otherOccupantItem">
       {/* Full Name */}
       <LabelledInput
         labelText="Full Name:"

@@ -4,7 +4,7 @@ interface Props {
   formikReference: string;
 }
 
-export function EmploymentFormSegment({ formikReference }: Props) {
+export function EmploymentItem({ formikReference }: Props) {
   return (
     <div className="individualEmployment">
       <LabelledInput

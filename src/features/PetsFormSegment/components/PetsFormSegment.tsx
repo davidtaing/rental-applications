@@ -1,5 +1,5 @@
 import { FieldArray, useFormikContext } from "formik";
-import { PetCategoryFormSegment } from "./PetCategoryFormSegment";
+import { PetCategoryItem } from "./PetCategoryItem";
 import { initPetState } from "../utils";
 
 export function PetsFormSegment() {
@@ -15,10 +15,7 @@ export function PetsFormSegment() {
         render={(arrayHelpers) => (
           <>
             {pets.map((item: any, idx: string) => (
-              <PetCategoryFormSegment
-                key={idx}
-                formikReference={`pets[${idx}]`}
-              />
+              <PetCategoryItem key={idx} formikReference={`pets[${idx}]`} />
             ))}
             <button
               type="button"

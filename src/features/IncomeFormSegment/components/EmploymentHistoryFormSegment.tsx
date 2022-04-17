@@ -1,7 +1,7 @@
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { Employment } from "../types";
 import { createEmployment } from "../utils";
-import { EmploymentFormSegment } from "./EmploymentFormSegment";
+import { EmploymentItem } from "./EmploymentItem";
 
 interface Props {
   formikReference: string;
@@ -19,7 +19,7 @@ export function EmploymentHistoryFormSegment({ formikReference, data }: Props) {
         buttonText="Employment"
       >
         {data.map((item, idx) => (
-          <EmploymentFormSegment
+          <EmploymentItem
             formikReference={`${formikReference}[${idx}]`}
             key={idx}
           />

@@ -6,7 +6,7 @@ interface Props {
   formikReference: string;
 }
 
-export function PetCategoryFormSegment({ formikReference }: Props) {
+export function PetCategoryItem({ formikReference }: Props) {
   return (
     <div className="petCategorySegment">
       <LabelledSelect

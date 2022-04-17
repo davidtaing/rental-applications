@@ -8,9 +8,9 @@ interface Props {
   data: Tenant;
 }
 
-export function IndividualTenantFormSegment({ formikReference, data }: Props) {
+export function TenantItem({ formikReference, data }: Props) {
   return (
-    <div className="individualTenantFormSegment">
+    <div className="tenantItem">
       {/* Full Name */}
       <LabelledInput
         labelText="Full Name:"

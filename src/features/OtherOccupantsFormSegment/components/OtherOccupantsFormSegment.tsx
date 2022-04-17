@@ -2,7 +2,7 @@ import { FieldArray, useFormikContext } from "formik";
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { OtherOccupant } from "../types";
 import { initOtherOccupantsState } from "../utils";
-import { IndividualOtherOccupantSegment } from "./IndividualOtherOccupantSegment";
+import { OtherOccupantItem } from "./OtherOccupantItem";
 
 /**
  * Form Segment for non rent-paying occupants.
@@ -23,7 +23,7 @@ export function OtherOccupantsFormSegment() {
         buttonText="Occupant"
       >
         {otherOccupants.map((item: OtherOccupant, idx: string) => (
-          <IndividualOtherOccupantSegment
+          <OtherOccupantItem
             key={idx}
             formikReference={`otherOccupants[${idx}]`}
           />

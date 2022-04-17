@@ -2,7 +2,7 @@ import { FieldArray, useFormikContext } from "formik";
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
 import { Tenant } from "../types";
 import { initTenantState } from "../utils";
-import { IndividualTenantFormSegment } from "./IndividualTenantFormSegment";
+import { TenantItem } from "./TenantItem";
 
 /**
  * Form Segment for Rent-Paying Occupants
@@ -23,7 +23,7 @@ export function TenantDetailsFormSegment() {
         minItems={1}
       >
         {tenants.map((item: Tenant, idx: string) => (
-          <IndividualTenantFormSegment
+          <TenantItem
             key={idx}
             formikReference={`tenants[${idx}]`}
             data={item}
