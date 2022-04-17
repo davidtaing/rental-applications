@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { PaymentFrequency } from "../../../types/PaymentFrequency";
 import { RentalReferenceType, RentalStatus } from "../types";
 
-const rentalHistoryValidationSchema = Yup.object().shape({
+const rentalHistorySchema = Yup.object().shape({
   address: Yup.string().required(),
   status: Yup.mixed<RentalStatus>().oneOf(Object.values(RentalStatus)),
   rent: Yup.number().required().positive().integer(),
@@ -19,6 +19,6 @@ const rentalHistoryValidationSchema = Yup.object().shape({
   }),
 });
 
-export const rentalHistoryFormValidationSchema = Yup.object().shape({
-  rentalHistory: Yup.array().of(rentalHistoryValidationSchema),
+export const rentalHistoryFormSchema = Yup.object().shape({
+  rentalHistory: Yup.array().of(rentalHistorySchema),
 });

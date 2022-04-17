@@ -1,9 +1,9 @@
-import { leaseDetailsValidationSchema } from "../../LeaseDetailsFormSegment";
-import { otherOccupantsSchema } from "../../OtherOccupantsFormSegment/utils/validationSchema";
+import { leaseDetailsFormSchema } from "../../LeaseDetailsFormSegment";
+import { otherOccupantsFormSchema } from "../../OtherOccupantsFormSegment/utils/validationSchema";
 import { petsFormSchema } from "../../PetsFormSegment";
-import { tenantDetailsSchema } from "../../TenantDetailsFormSegment/utils/validationSchema";
+import { tenantDetailsFormSchema } from "../../TenantDetailsFormSegment/utils/validationSchema";
 
-export const validationSchema = leaseDetailsValidationSchema
-  .concat(tenantDetailsSchema)
-  .concat(otherOccupantsSchema)
+export const validationSchema = leaseDetailsFormSchema
+  .concat(tenantDetailsFormSchema)
+  .concat(otherOccupantsFormSchema)
   .concat(petsFormSchema);

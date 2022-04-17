@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { Gender } from "../../../types/Gender";
 import { incomeFormSchema } from "../../IncomeFormSegment";
 
-export const tenantDetailsSchema = Yup.object()
+export const tenantDetailsFormSchema = Yup.object()
   .shape({
     fullname: Yup.string().required(),
     gender: Yup.mixed<Gender>().oneOf(Object.values(Gender)),
