@@ -15,7 +15,7 @@ export function PetsFormSegment() {
         formikReference="pets"
         values={pets}
         createItemFn={createPetCategory}
-        buttonText="Pet Type"
+        buttonText="Pets"
       >
         {pets.map((item: any, idx: string) => (
           <PetCategoryItem key={idx} formikReference={`pets[${idx}]`} />

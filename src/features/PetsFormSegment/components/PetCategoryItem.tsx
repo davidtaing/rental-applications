@@ -11,7 +11,7 @@ export function PetCategoryItem({ formikReference }: Props) {
     <div className="petCategoryItem">
       <h3>Pets</h3>
       <LabelledSelect
-        labelText="Pet Type:"
+        labelText="Type:"
         id="petType"
         name={`${formikReference}.type`}
         values={[PetTypes.DOG, PetTypes.CAT, PetTypes.BIRD, PetTypes.OTHER]}
