@@ -24,12 +24,20 @@ export function FormNavigation({ prevUrl, nextUrl }: Props) {
   return (
     <div className="formNavigation">
       {prevUrl ? (
-        <button onClick={onPrevClick} type="button">
+        <button
+          className="button--large button--primary-outline"
+          onClick={onPrevClick}
+          type="button"
+        >
           Prev
         </button>
       ) : null}
       {nextUrl ? (
-        <button onClick={onNextClick} type="button">
+        <button
+          className="button--large button--primary"
+          onClick={onNextClick}
+          type="button"
+        >
           Next
         </button>
       ) : null}

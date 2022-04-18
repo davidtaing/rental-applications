@@ -2,8 +2,19 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: #efefef;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
 }
 
 h1,
@@ -14,15 +25,6 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 form {
@@ -42,16 +44,46 @@ select {
 }
 
 button {
-  height: 1.5rem;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 1rem 1.5rem 1rem 0;
+}
+
+.button--medium {
+  height: 2.125rem;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+
+.button--large {
+  height: 2.5rem;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+}
+
+.button--primary {
+  border: none;
+  background-color: #219ebc;
+  color: white;
+}
+
+.button--primary-outline {
+  border: solid;
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 50%);
+  color: #219ebc;
+}
+
+.button--danger-outline {
+  border: solid;
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 50%);
+  color: #ff6b6b;
 }
 
 .labelledSelect,
 .labelledInput {
   margin: 0.4rem 0;
-}
-
-.fieldArray__button {
-  margin: 0.5rem 0;
 }
 
 .subFormSegment__item {

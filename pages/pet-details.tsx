@@ -9,7 +9,9 @@ const PetDetails: NextPage = () => {
       <main>
         <PetsFormSegment />
         <FormNavigation prevUrl="/other-occupants" />
-        <button type="submit">Submit</button>
+        <button className="button--large button--primary" type="submit">
+          Submit
+        </button>
       </main>
     </div>
   );
