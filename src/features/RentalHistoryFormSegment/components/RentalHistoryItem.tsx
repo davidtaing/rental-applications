@@ -24,7 +24,7 @@ export function RentalHistoryItem({ formikReference }: RentalHistoryItemProps) {
         labelText="Rent:"
         id="rentalHistoryRent"
         name={`${formikReference}.rentalHistory.rent`}
-        type="text"
+        type="amount"
       />
       <PaymentFrequencySelect
         formikReference={`${formikReference}.rentalHistory.frequency`}
