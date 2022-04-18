@@ -28,6 +28,7 @@ function LabelledSelect({
           </option>
         ))}
       </Field>
+      <span className="input__error-message">Error: Invalid Input</span>
     </div>
   );
 }

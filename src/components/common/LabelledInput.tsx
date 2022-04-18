@@ -26,6 +26,7 @@ function LabelledInput({
         name={name}
         {...otherProps}
       />
+      <span className="input__error-message">Error: Invalid Input</span>
     </div>
   );
 }
