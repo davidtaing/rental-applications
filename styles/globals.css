@@ -3,6 +3,7 @@
   --primary: #219ebc;
   --danger: #ff6b6b;
   --dark: #555b6e;
+  --white: #ffffff;
 }
 
 html,
@@ -48,6 +49,7 @@ select {
 input,
 label,
 select {
+  background-color: var(--white);
   display: block;
   width: 100%;
   border-radius: 5px;
