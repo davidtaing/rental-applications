@@ -3,12 +3,13 @@ import { useRouter } from "next/router";
 interface Props {
   prevUrl?: string;
   nextUrl?: string;
+  submit?: boolean;
 }
 
 /**
  * Allows the user to navigate to the other pages.
  */
-export function FormNavigation({ prevUrl, nextUrl }: Props) {
+export function FormNavigation({ prevUrl, nextUrl, submit }: Props) {
   const router = useRouter();
   const onPrevClick = () => {
     if (prevUrl) {
@@ -39,6 +40,11 @@ export function FormNavigation({ prevUrl, nextUrl }: Props) {
           type="button"
         >
           Next
+        </button>
+      ) : null}
+      {submit ? (
+        <button className="button--large button--primary" type="submit">
+          Submit
         </button>
       ) : null}
     </div>

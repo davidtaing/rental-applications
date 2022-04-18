@@ -8,10 +8,7 @@ const PetDetails: NextPage = () => {
     <div className={styles.container}>
       <main>
         <PetsFormSegment />
-        <FormNavigation prevUrl="/other-occupants" />
-        <button className="button--large button--primary" type="submit">
-          Submit
-        </button>
+        <FormNavigation prevUrl="/other-occupants" submit={true} />
       </main>
     </div>
   );
