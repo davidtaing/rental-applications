@@ -88,6 +88,11 @@ select {
   -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
 }
 
+.labelledSelect,
+.labelledInput {
+  margin: 0.5rem 0 0 0;
+}
+
 input,
 label,
 select {
@@ -147,12 +152,8 @@ button {
 .input__error-message {
   color: var(--danger);
   font-size: 0.8rem;
+  font-weight: 600;
   visibility: hidden;
-}
-
-.labelledSelect,
-.labelledInput {
-  margin: 0.25rem 0;
 }
 
 .subFormSegment__item {
