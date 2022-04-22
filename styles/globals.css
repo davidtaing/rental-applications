@@ -266,3 +266,9 @@ section {
 .formNavigation {
   margin: 1rem 0;
 }
+
+.fieldArray--btn-container,
+.formNavigation {
+  display: flex;
+  gap: 1rem;
+}

@@ -21,26 +21,27 @@ export function FieldArrayFormSegment({
     <FieldArray
       name={formikReference}
       render={(arrayHelpers) => (
-        <>
+        <div className="fieldArray">
           {children}
-
-          <button
-            className="btn--secondary-outline"
-            type="button"
-            onClick={() => arrayHelpers.push(initItem())}
-          >
-            Add {buttonText}
-          </button>
-          {values.length > minItems ? (
+          <div className="fieldArray--btn-container">
             <button
-              className="btn--danger-outline"
+              className="btn--secondary-outline"
               type="button"
-              onClick={() => arrayHelpers.pop()}
+              onClick={() => arrayHelpers.push(initItem())}
             >
-              Remove {buttonText}
+              Add {buttonText}
             </button>
-          ) : null}
-        </>
+            {values.length > minItems ? (
+              <button
+                className="btn--danger-outline"
+                type="button"
+                onClick={() => arrayHelpers.pop()}
+              >
+                Remove {buttonText}
+              </button>
+            ) : null}
+          </div>
+        </div>
       )}
     />
   );
