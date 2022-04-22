@@ -25,7 +25,7 @@ export function FieldArrayFormSegment({
           {children}
 
           <button
-            className="button--medium button--primary-outline"
+            className="btn--secondary-outline"
             type="button"
             onClick={() => arrayHelpers.push(initItem())}
           >
@@ -33,7 +33,7 @@ export function FieldArrayFormSegment({
           </button>
           {values.length > minItems ? (
             <button
-              className="button--medium button--danger-outline"
+              className="btn--danger-outline"
               type="button"
               onClick={() => arrayHelpers.pop()}
             >

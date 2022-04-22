@@ -26,7 +26,7 @@ export function FormNavigation({ prevUrl, nextUrl, submit }: Props) {
     <div className="formNavigation">
       {prevUrl ? (
         <button
-          className="button--large button--primary-outline"
+          className="btn--secondary-outline"
           onClick={onPrevClick}
           type="button"
         >
@@ -34,16 +34,12 @@ export function FormNavigation({ prevUrl, nextUrl, submit }: Props) {
         </button>
       ) : null}
       {nextUrl ? (
-        <button
-          className="button--large button--primary"
-          onClick={onNextClick}
-          type="button"
-        >
+        <button className="btn--primary" onClick={onNextClick} type="button">
           Next
         </button>
       ) : null}
       {submit ? (
-        <button className="button--large button--primary" type="submit">
+        <button className="btn--primary" type="submit">
           Submit
         </button>
       ) : null}
