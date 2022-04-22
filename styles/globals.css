@@ -125,12 +125,28 @@ button:active {
   background-color: var(--primary-200);
 }
 
-.btn--primary-outline {
-  color: var(--primary);
+.btn--primary-outline,
+.btn--secondary-outline,
+.btn--danger-outline {
+  padding: 0.205rem 0.875rem;
   border: solid;
   border-width: 2px;
-  border-color: var(--primary);
   background-color: rgba(255, 255, 255, 0%);
+}
+
+.btn--primary-outline {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn--secondary-outline {
+  color: var(--secondary-500);
+  border-color: var(--secondary-500);
+}
+
+.btn--danger-outline {
+  color: var(--danger-500);
+  border-color: var(--danger-500);
 }
 
 .btn--primary-outline:hover {
@@ -155,14 +171,6 @@ button:active {
   color: var(--secondary-text);
 }
 
-.btn--secondary-outline {
-  color: var(--secondary-500);
-  border: solid;
-  border-width: 2px;
-  border-color: var(--secondary-500);
-  background-color: rgba(255, 255, 255, 0%);
-}
-
 .btn--secondary-outline:hover {
   color: var(--secondary-text);
   background-color: var(--secondary-500);
@@ -183,14 +191,6 @@ button:active {
 .btn--danger:hover {
   background-color: var(--danger-500);
   color: var(--danger-text);
-}
-
-.btn--danger-outline {
-  color: var(--danger-500);
-  border: solid;
-  border-width: 2px;
-  border-color: var(--danger-500);
-  background-color: rgba(255, 255, 255, 0%);
 }
 
 .btn--danger-outline:hover {
