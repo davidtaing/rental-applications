@@ -7,8 +7,10 @@ const OtherOccupants: NextPage = () => {
   return (
     <div className={styles.container}>
       <main>
-        <OtherOccupantsFormSegment />
-        <FormNavigation prevUrl="/tenant-details" nextUrl="/pet-details" />
+        <div className="wrapper">
+          <OtherOccupantsFormSegment />
+          <FormNavigation prevUrl="/tenant-details" nextUrl="/pet-details" />
+        </div>
       </main>
     </div>
   );

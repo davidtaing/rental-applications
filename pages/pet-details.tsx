@@ -7,8 +7,10 @@ const PetDetails: NextPage = () => {
   return (
     <div className={styles.container}>
       <main>
-        <PetsFormSegment />
-        <FormNavigation prevUrl="/other-occupants" submit={true} />
+        <div className="wrapper">
+          <PetsFormSegment />
+          <FormNavigation prevUrl="/other-occupants" submit={true} />
+        </div>
       </main>
     </div>
   );
