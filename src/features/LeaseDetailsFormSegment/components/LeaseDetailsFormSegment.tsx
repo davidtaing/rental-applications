@@ -9,6 +9,7 @@ export function LeaseDetailsFormSegment() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <h1>Lease Details:</h1>
       <label>Address:</label>
       <input {...register("address")} />
       <label>Rent Per Week:</label>
