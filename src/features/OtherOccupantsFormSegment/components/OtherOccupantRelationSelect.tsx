@@ -10,7 +10,7 @@ interface Props {
 export function OtherOccupantRelationSelect({ key, registerReturn }: Props) {
   return (
     <LabelledSelect
-      key={key}
+      fieldId={key}
       registerReturn={registerReturn}
       values={Object.values(OtherOccupantRelation)}
       label={"Relation:"}

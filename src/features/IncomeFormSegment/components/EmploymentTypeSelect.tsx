@@ -3,14 +3,14 @@ import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
 import { EmploymentType } from "../types";
 
 interface Props {
-  key: string;
+  fieldId: string;
   registerReturn: UseFormRegisterReturn;
 }
 
-export function EmploymentTypeSelect({ key, registerReturn }: Props) {
+export function EmploymentTypeSelect({ fieldId, registerReturn }: Props) {
   return (
     <LabelledSelect
-      key={key}
+      fieldId={fieldId}
       registerReturn={registerReturn}
       values={Object.values(EmploymentType)}
       label="Type:"

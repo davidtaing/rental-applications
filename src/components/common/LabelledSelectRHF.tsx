@@ -2,14 +2,14 @@ import { SelectHTMLAttributes } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 
 interface Props extends SelectHTMLAttributes<HTMLSelectElement> {
-  key: string;
+  fieldId: string;
   registerReturn: UseFormRegisterReturn;
   values: string[];
   label: string;
 }
 
 export function LabelledSelect({
-  key,
+  fieldId,
   registerReturn,
   values,
   label,
@@ -18,7 +18,7 @@ export function LabelledSelect({
   return (
     <div className="labelledSelect">
       <label>{label}</label>
-      <select key={key} {...registerReturn} {...otherProps}>
+      <select key={fieldId} {...registerReturn} {...otherProps}>
         <option value="">Select a Value</option>
         {values.map((item, index) => (
           <option key={index} value={item}>

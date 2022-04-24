@@ -10,7 +10,7 @@ interface Props {
 export function GenderSelect({ key, registerReturn }: Props) {
   return (
     <LabelledSelect
-      key={key}
+      fieldId={key}
       registerReturn={registerReturn}
       values={Object.values(Gender)}
       label={"Gender:"}

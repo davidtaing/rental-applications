@@ -21,34 +21,34 @@ export function EmploymentItem({
       <h3>Job</h3>
       <div>
         <LabelledInput
-          key={key}
+          fieldId={key}
           label="Title: "
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.title`
           )}
         />
         <LabelledInput
-          key={key}
+          fieldId={key}
           label="Company:"
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.company`
           )}
         />
         <EmploymentTypeSelect
-          key={key}
+          fieldId={key}
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.type`
           )}
         />
         <LabelledInput
-          key={key}
+          fieldId={key}
           label="Amount:"
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.amount`
           )}
         />
         <LabelledInput
-          key={key}
+          fieldId={key}
           label="Frequency:"
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.frequency`
@@ -56,28 +56,28 @@ export function EmploymentItem({
         />
         <h4>Reference</h4>
         <LabelledInput
-          key={key}
+          fieldId={key}
           label="Name:"
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.reference.name`
           )}
         />
         <LabelledInput
-          key={key}
+          fieldId={key}
           label="Position:"
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.reference.position`
           )}
         />
         <LabelledInput
-          key={key}
+          fieldId={key}
           label="Phone:"
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.reference.phone`
           )}
         />
         <LabelledInput
-          key={key}
+          fieldId={key}
           label="Email:"
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.reference.email`
