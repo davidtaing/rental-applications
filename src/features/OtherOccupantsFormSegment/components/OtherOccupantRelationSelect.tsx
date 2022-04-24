@@ -1,17 +1,19 @@
-import LabelledSelect from "../../../components/common/LabelledSelect";
+import { UseFormRegisterReturn } from "react-hook-form";
+import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
 import { OtherOccupantRelation } from "../types";
 
 interface Props {
-  formikReference: string;
+  key: string;
+  registerReturn: UseFormRegisterReturn;
 }
 
-export function OtherOccupantRelationSelect({ formikReference }: Props) {
+export function OtherOccupantRelationSelect({ key, registerReturn }: Props) {
   return (
     <LabelledSelect
-      labelText="Relation:"
-      id="otherOccupantRelation"
-      name={formikReference}
+      key={key}
+      registerReturn={registerReturn}
       values={Object.values(OtherOccupantRelation)}
+      label={"Relation:"}
     />
   );
 }

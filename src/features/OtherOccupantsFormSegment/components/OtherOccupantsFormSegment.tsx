@@ -1,34 +1,65 @@
-import { useFormikContext } from "formik";
-import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
-import { OtherOccupant } from "../types";
-import { initOtherOccupantsFormState } from "../utils";
-import { OtherOccupantItem } from "./OtherOccupantItem";
+import { useFieldArray, useForm, UseFormRegister } from "react-hook-form";
+import { GenderSelect } from "../../../components/common/GenderSelectRHF";
+import { Gender } from "../../../types/Gender";
+import { OtherOccupantsFormState } from "../types";
+import { createOtherOccupant, initOtherOccupantsFormState } from "../utils";
+import { OtherOccupantRelationSelect } from "./OtherOccupantRelationSelect";
 
 /**
  * Form Segment for non rent-paying occupants.
  * i.e. children and other adults.
  */
 export function OtherOccupantsFormSegment() {
-  const {
-    values: { otherOccupants },
-  } = useFormikContext();
+  const { control, register } = useForm<OtherOccupantsFormState>();
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "otherOccupants",
+  });
 
   return (
     <div className="otherOccupantsForm formSegment">
       <h1>Other Occupants</h1>
-      <FieldArrayFormSegment
-        values={otherOccupants}
-        formikReference="otherOccupants"
-        createItemFn={initOtherOccupantsFormState}
-        buttonText="Occupant"
-      >
-        {otherOccupants.map((item: OtherOccupant, idx: string) => (
-          <OtherOccupantItem
-            key={idx}
-            formikReference={`otherOccupants[${idx}]`}
+      {fields.map((field, index) => (
+        <div key={field.id}>
+          <h2>Occupant</h2>
+          <label>Full Name:</label>
+          <input
+            key={field.id}
+            {...register(`otherOccupants.${index}.fullname`)}
           />
-        ))}
-      </FieldArrayFormSegment>
+          <OtherOccupantRelationSelect
+            key={field.id}
+            registerReturn={register(`otherOccupants.${index}.relation`)}
+          />
+          <label>Age:</label>
+          <input
+            type="number"
+            key={field.id}
+            {...register(`otherOccupants.${index}.age`)}
+          />
+          <GenderSelect
+            key={field.id}
+            registerReturn={register(`otherOccupants.${index}.gender`)}
+          />
+        </div>
+      ))}
+
+      <div className="fieldArray--btn-container">
+        <button
+          className="btn--secondary-outline"
+          type="button"
+          onClick={() => append(createOtherOccupant())}
+        >
+          Add Occupant
+        </button>
+        <button
+          className="btn--danger-outline"
+          type="button"
+          onClick={() => remove(fields.length - 1)}
+        >
+          Remove Occupant
+        </button>
+      </div>
     </div>
   );
 }
