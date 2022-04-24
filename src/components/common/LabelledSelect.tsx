@@ -17,13 +17,20 @@ function LabelledSelect({
 }: LabelledSelectProps) {
   return (
     <div className="labelledSelect">
-      <label className="form-label" htmlFor={id}>
+      <label className="labelledSelect__label" htmlFor={id}>
         {labelText}
       </label>
-      <Field as="select" className="dropdown" id={id} {...otherProps}>
-        <option value="">Select a Value</option>
+      <Field
+        as="select"
+        className="labelledSelect__select"
+        id={id}
+        {...otherProps}
+      >
+        <option className="labelledSelect__option" value="">
+          Select a Value
+        </option>
         {values.map((item) => (
-          <option key={item} value={item}>
+          <option className="labelledSelect__option" key={item} value={item}>
             {item}
           </option>
         ))}
