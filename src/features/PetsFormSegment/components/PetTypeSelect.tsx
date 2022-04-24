@@ -1,17 +1,19 @@
-import LabelledSelect from "../../../components/common/LabelledSelect";
+import { UseFormRegisterReturn } from "react-hook-form";
+import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
 import { PetType } from "../types";
 
 interface Props {
-  formikReference: string;
+  key: string;
+  registerReturn: UseFormRegisterReturn;
 }
 
-export function PetTypeSelect({ formikReference }: Props) {
+export function PetTypeSelect({ key, registerReturn }: Props) {
   return (
     <LabelledSelect
-      labelText="Type:"
-      id="petType"
-      name={formikReference}
+      key={key}
+      registerReturn={registerReturn}
       values={Object.values(PetType)}
+      label="Type:"
     />
   );
 }
