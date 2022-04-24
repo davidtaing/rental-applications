@@ -2,6 +2,7 @@ import { createPetCategory } from "../utils";
 import { useFieldArray, useForm } from "react-hook-form";
 import { PetsFormState } from "../types";
 import { PetTypeSelect } from "./PetTypeSelect";
+import { LabelledInput } from "../../../components/common/LabelledInputRHF";
 
 export function PetsFormSegment() {
   const { control, register } = useForm<PetsFormState>();
@@ -20,14 +21,17 @@ export function PetsFormSegment() {
             key={field.id}
             registerReturn={register(`pets.${index}.type`)}
           />
-          <label>Amount:</label>
-          <input
+          <LabelledInput
             type="number"
             key={field.id}
-            {...register(`pets.${index}.amount`)}
+            label="Amount:"
+            registerReturn={register(`pets.${index}.amount`)}
           />
-          <label>Comment:</label>
-          <input key={field.id} {...register(`pets.${index}.comment`)} />
+          <LabelledInput
+            key={field.id}
+            label="Comment:"
+            registerReturn={register(`pets.${index}.comment`)}
+          />
         </div>
       ))}
       <div className="fieldArray--btn-container">

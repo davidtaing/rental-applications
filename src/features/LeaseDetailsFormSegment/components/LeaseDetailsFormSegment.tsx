@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { LabelledInput } from "../../../components/common/LabelledInputRHF";
 import { LeaseDetailsState } from "../types";
 
 export function LeaseDetailsFormSegment() {
@@ -10,18 +11,22 @@ export function LeaseDetailsFormSegment() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h1>Lease Details:</h1>
-      <label>Address:</label>
-      <input {...register("address")} />
-      <label>Rent Per Week:</label>
-      <input {...register("rent")} />
-      <label>Start Date:</label>
-      <input {...register("startDate")} />
-      <label>Lease Period (Month):</label>
-      <input {...register("leasePeriod")} />
-
-      <button className="btn--primary" type="submit">
-        Submit
-      </button>
+      <LabelledInput label="Address:" registerReturn={register("address")} />
+      <LabelledInput
+        type="number"
+        label="Rent Per Week:"
+        registerReturn={register("rent")}
+      />
+      <LabelledInput
+        type="date"
+        label="Start Date:"
+        registerReturn={register("startDate")}
+      />
+      <LabelledInput
+        type="number"
+        label="Lease Period (Month):"
+        registerReturn={register("leasePeriod")}
+      />
     </form>
   );
 }

@@ -1,5 +1,6 @@
 import { useFieldArray, useForm, UseFormRegister } from "react-hook-form";
 import { GenderSelect } from "../../../components/common/GenderSelectRHF";
+import { LabelledInput } from "../../../components/common/LabelledInputRHF";
 import { Gender } from "../../../types/Gender";
 import { OtherOccupantsFormState } from "../types";
 import { createOtherOccupant, initOtherOccupantsFormState } from "../utils";
@@ -22,20 +23,20 @@ export function OtherOccupantsFormSegment() {
       {fields.map((field, index) => (
         <div key={field.id}>
           <h2>Occupant</h2>
-          <label>Full Name:</label>
-          <input
+          <LabelledInput
             key={field.id}
-            {...register(`otherOccupants.${index}.fullname`)}
+            label="Full Name:"
+            registerReturn={register(`otherOccupants.${index}.fullname`)}
           />
           <OtherOccupantRelationSelect
             key={field.id}
             registerReturn={register(`otherOccupants.${index}.relation`)}
           />
-          <label>Age:</label>
-          <input
+          <LabelledInput
             type="number"
             key={field.id}
-            {...register(`otherOccupants.${index}.age`)}
+            label="Age:"
+            registerReturn={register(`otherOccupants.${index}.age`)}
           />
           <GenderSelect
             key={field.id}
