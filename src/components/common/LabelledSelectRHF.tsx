@@ -17,15 +17,18 @@ export function LabelledSelect({
 }: Props) {
   return (
     <div className="labelledSelect">
-      <label>{label}</label>
+      <label className="input__label">{label}</label>
       <select key={fieldId} {...registerReturn} {...otherProps}>
-        <option value="">Select a Value</option>
+        <option value="" selected>
+          Select a Value
+        </option>
         {values.map((item, index) => (
           <option key={index} value={item}>
             {item}
           </option>
         ))}
       </select>
+      <span className="input__error">Error: Invalid Input</span>
     </div>
   );
 }
