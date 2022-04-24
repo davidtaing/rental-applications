@@ -1,35 +1,26 @@
-import LabelledInput from "../../../components/common/LabelledInput";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { LeaseDetailsState } from "../types";
 
-/**
- * Corresponds with the /lease-details path
- */
 export function LeaseDetailsFormSegment() {
+  const { register, handleSubmit } = useForm<LeaseDetailsState>();
+  const onSubmit: SubmitHandler<LeaseDetailsState> = (data) => {
+    console.log(data);
+  };
+
   return (
-    <div className="leaseDetailsForm formSegment">
-      <h1>Lease Details</h1>
-      {/* Property Address */}
-      <LabelledInput
-        labelText="Address:"
-        id="address"
-        name="address"
-        type="text"
-      />
-      {/* Rent */}
-      <LabelledInput labelText="Rent:" id="rent" name="rent" type="number" />
-      {/* Start Date */}
-      <LabelledInput
-        labelText="Start Date:"
-        id="date"
-        name="startDate"
-        type="date"
-      />
-      {/* Lease Period */}
-      <LabelledInput
-        labelText="Lease Period:"
-        id="leasePeriod"
-        name="leasePeriod"
-        type="number"
-      />
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <label>Address:</label>
+      <input {...register("address")} />
+      <label>Rent Per Week:</label>
+      <input {...register("rent")} />
+      <label>Start Date:</label>
+      <input {...register("startDate")} />
+      <label>Lease Period (Month):</label>
+      <input {...register("leasePeriod")} />
+
+      <button className="btn--primary" type="submit">
+        Submit
+      </button>
+    </form>
   );
 }
