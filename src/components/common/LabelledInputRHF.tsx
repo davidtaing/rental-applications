@@ -8,9 +8,10 @@ interface Props {
 
 export function LabelledInput({ key, registerReturn, label }: Props) {
   return (
-    <div className="labelledSelect">
-      <label>{label}</label>
+    <div className="labelledInput">
+      <label className="input__label">{label}</label>
       <input key={key} {...registerReturn} />
+      <span className="input__error">Error: Invalid Input</span>
     </div>
   );
 }
