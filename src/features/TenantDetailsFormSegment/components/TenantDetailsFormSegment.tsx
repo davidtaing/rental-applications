@@ -1,5 +1,7 @@
 import { useFieldArray, useForm } from "react-hook-form";
-import { TenantDetailsFormState } from "../types";
+import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { EmploymentHistoryFormSegment } from "../../IncomeFormSegment/components/EmploymentHistoryFormSegment";
+import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
 
 /**
@@ -20,24 +22,44 @@ export function TenantDetailsFormSegment() {
       {fields.map((field, index) => (
         <div key={field.id}>
           <h2>Tenant</h2>
-          <label>Fullname:</label>
-          <input key={field.id} {...register(`tenants.${index}.fullname`)} />
-          <label>Gender:</label>
-          <input key={field.id} {...register(`tenants.${index}.gender`)} />
-          <label>Date of Birth:</label>
-          <input
-            type="date"
+          <LabelledInput
             key={field.id}
-            {...register(`tenants.${index}.dob`)}
+            label="Fullname:"
+            registerReturn={register(`tenants.${index}.fullname`)}
           />
-          <label>Mobile:</label>
-          <input key={field.id} {...register(`tenants.${index}.mobile`)} />
-          <label>Phone:</label>
-          <input key={field.id} {...register(`tenants.${index}.phone`)} />
-          <label>Email:</label>
-          <input key={field.id} {...register(`tenants.${index}.email`)} />
+          <LabelledInput
+            key={field.id}
+            label="Gender:"
+            registerReturn={register(`tenants.${index}.gender`)}
+          />
+          <LabelledInput
+            type="date"
+            label="Date of Birth:"
+            key={field.id}
+            registerReturn={register(`tenants.${index}.dob`)}
+          />
+          <LabelledInput
+            key={field.id}
+            label="Mobile:"
+            registerReturn={register(`tenants.${index}.mobile`)}
+          />
+          <LabelledInput
+            key={field.id}
+            label="Phone:"
+            registerReturn={register(`tenants.${index}.phone`)}
+          />
+          <LabelledInput
+            key={field.id}
+            label="Email:"
+            registerReturn={register(`tenants.${index}.email`)}
+          />
 
           <h3>Employment</h3>
+          <EmploymentHistoryFormSegment
+            tenantIndex={index}
+            control={control}
+            register={register}
+          />
           <h3>Income Support Payments</h3>
           <h3>Rental Income</h3>
           <h3>Rental History</h3>
