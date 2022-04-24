@@ -16,17 +16,17 @@ function LabelledInput({
   const { handleChange } = useFormikContext();
   return (
     <div className="labelledInput">
-      <label className="form-label" htmlFor={id}>
+      <label className="labelledInput__label" htmlFor={id}>
         {labelText}
       </label>
       <Field
-        className="text-input"
+        className="labelledInput__input"
         id={id}
         onChange={handleChange}
         name={name}
         {...otherProps}
       />
-      <span className="input__error-message">Error: Invalid Input</span>
+      <span className="labelledInput__error">Error: Invalid Input</span>
     </div>
   );
 }
