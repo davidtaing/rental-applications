@@ -1,64 +1,87 @@
-import LabelledInput from "../../../components/common/LabelledInput";
-import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelect";
+import { UseFormRegister } from "react-hook-form";
+import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 import { EmploymentTypeSelect } from "./EmploymentTypeSelect";
 
 export interface EmploymentItemProps {
-  formikReference: string;
+  register: UseFormRegister<TenantDetailsFormState>;
+  key: string;
+  tenantIndex: number;
+  index: number;
 }
 
-export function EmploymentItem({ formikReference }: EmploymentItemProps) {
+export function EmploymentItem({
+  register,
+  key,
+  tenantIndex,
+  index,
+}: EmploymentItemProps) {
   return (
-    <div className="subFormSegment__item">
+    <div className="employmentItem">
       <h3>Job</h3>
-      <LabelledInput
-        labelText="Title:"
-        id="employmentTitle"
-        name={`${formikReference}.employment.title`}
-        type="text"
-      />
-      <LabelledInput
-        labelText="Company:"
-        id="employmentCompany"
-        name={`${formikReference}.employment.company`}
-        type="text"
-      />
-      <EmploymentTypeSelect
-        formikReference={`${formikReference}.employment.type`}
-      />
-      <LabelledInput
-        labelText="Amount:"
-        id="employmentAmount"
-        name={`${formikReference}.employment.amount`}
-        type="number"
-      />
-      <PaymentFrequencySelect
-        formikReference={`${formikReference}.employment.frequency`}
-      />
       <div>
+        <LabelledInput
+          key={key}
+          label="Title: "
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.title`
+          )}
+        />
+        <LabelledInput
+          key={key}
+          label="Company:"
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.company`
+          )}
+        />
+        <EmploymentTypeSelect
+          key={key}
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.type`
+          )}
+        />
+        <LabelledInput
+          key={key}
+          label="Amount:"
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.amount`
+          )}
+        />
+        <LabelledInput
+          key={key}
+          label="Frequency:"
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.frequency`
+          )}
+        />
         <h4>Reference</h4>
         <LabelledInput
-          labelText="Name:"
-          id="referenceName"
-          name={`${formikReference}.employment.reference.name`}
-          type="text"
+          key={key}
+          label="Name:"
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.reference.name`
+          )}
         />
         <LabelledInput
-          labelText="Position:"
-          id="referencePosition"
-          name={`${formikReference}.employment.reference.position`}
-          type="text"
+          key={key}
+          label="Position:"
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.reference.position`
+          )}
         />
         <LabelledInput
-          labelText="Phone:"
-          id="referencePhone"
-          name={`${formikReference}.employment.reference.phone`}
-          type="text"
+          key={key}
+          label="Phone:"
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.reference.phone`
+          )}
         />
         <LabelledInput
-          labelText="Email:"
-          id="referenceEmail"
-          name={`${formikReference}.employment.reference.email`}
-          type="text"
+          key={key}
+          label="Email:"
+          registerReturn={register(
+            `tenants.${tenantIndex}.employment.${index}.reference.email`
+          )}
         />
       </div>
     </div>

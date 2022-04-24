@@ -1,17 +1,19 @@
-import LabelledSelect from "../../../components/common/LabelledSelect";
+import { UseFormRegisterReturn } from "react-hook-form";
+import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
 import { EmploymentType } from "../types";
 
 interface Props {
-  formikReference: string;
+  key: string;
+  registerReturn: UseFormRegisterReturn;
 }
 
-export function EmploymentTypeSelect({ formikReference }: Props) {
+export function EmploymentTypeSelect({ key, registerReturn }: Props) {
   return (
     <LabelledSelect
-      labelText="Type: "
-      id="employmentType"
-      name={formikReference}
+      key={key}
+      registerReturn={registerReturn}
       values={Object.values(EmploymentType)}
+      label="Type:"
     />
   );
 }
