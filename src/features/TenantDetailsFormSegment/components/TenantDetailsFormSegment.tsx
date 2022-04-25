@@ -1,5 +1,6 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
+import { GenderSelect } from "../../../components/common/GenderSelect";
 import { LabelledInput } from "../../../components/common/LabelledInputRHF";
 import {
   IncomeSupportFormSegment,
@@ -32,10 +33,7 @@ export function TenantDetailsFormSegment() {
             label="Fullname:"
             registerReturn={register(`tenants.${index}.fullname`)}
           />
-          <LabelledInput
-            label="Gender:"
-            registerReturn={register(`tenants.${index}.gender`)}
-          />
+          <GenderSelect registerReturn={register(`tenants.${index}.gender`)} />
           <LabelledInput
             type="date"
             label="Date of Birth:"
