@@ -1,55 +1,74 @@
-import LabelledInput from "../../../components/common/LabelledInput";
-import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelect";
-import { RentalReferenceTypeSelect } from "./RentalReferenceTypeSelect";
-import { RentalStatusSelect } from "./RentalStatusSelect";
+import { UseFormRegister } from "react-hook-form";
+import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
+import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelectRHF";
+import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
+import { RentalStatus, RentalReferenceType } from "../types";
 
 export interface RentalHistoryItemProps {
-  formikReference: string;
+  register: UseFormRegister<TenantDetailsFormState>;
+  tenantIndex: number;
+  index: number;
 }
 
-export function RentalHistoryItem({ formikReference }: RentalHistoryItemProps) {
+export function RentalHistoryItem({
+  register,
+  tenantIndex,
+  index,
+}: RentalHistoryItemProps) {
   return (
     <div className="subFormSegment__item">
-      <h3>Property</h3>
+      <h4>Property</h4>
       <LabelledInput
-        labelText="Address:"
-        id="rentalHistoryAddress"
-        name={`${formikReference}.rentalHistory.address`}
-        type="text"
+        label="Address:"
+        registerReturn={register(
+          `tenants.${tenantIndex}.rentalHistory.${index}.address`
+        )}
       />
-      <RentalStatusSelect
-        formikReference={`${formikReference}.rentalHistory.status`}
+      <LabelledSelect
+        label="Status:"
+        registerReturn={register(
+          `tenants.${tenantIndex}.rentalHistory.${index}.status`
+        )}
+        values={Object.values(RentalStatus)}
       />
       <LabelledInput
-        labelText="Rent:"
-        id="rentalHistoryRent"
-        name={`${formikReference}.rentalHistory.rent`}
-        type="amount"
+        label="Rent:"
+        type="number"
+        registerReturn={register(
+          `tenants.${tenantIndex}.rentalHistory.${index}.rent`
+        )}
       />
       <PaymentFrequencySelect
-        formikReference={`${formikReference}.rentalHistory.frequency`}
+        registerReturn={register(
+          `tenants.${tenantIndex}.rentalHistory.${index}.frequency`
+        )}
       />
-      <h4>Reference</h4>
+      <h4>Reference:</h4>
       <LabelledInput
-        labelText="Name:"
-        id="rentalHistoryReferenceName"
-        name={`${formikReference}.rentalHistory.reference.name`}
-        type="text"
+        label="Name:"
+        registerReturn={register(
+          `tenants.${tenantIndex}.rentalHistory.${index}.reference.name`
+        )}
       />
-      <RentalReferenceTypeSelect
-        formikReference={`${formikReference}.rentalHistory.reference.type`}
-      />
-      <LabelledInput
-        labelText="Phone:"
-        id="rentalHistoryReferencePhone"
-        name={`${formikReference}.rentalHistory.reference.phone`}
-        type="text"
+      <LabelledSelect
+        label="Type:"
+        registerReturn={register(
+          `tenants.${tenantIndex}.rentalHistory.${index}.reference.type`
+        )}
+        values={Object.values(RentalReferenceType)}
       />
       <LabelledInput
-        labelText="Email:"
-        id="rentalHistoryReferenceName"
-        name={`${formikReference}.rentalHistory.reference.email`}
-        type="text"
+        label="Phone:"
+        registerReturn={register(
+          `tenants.${tenantIndex}.rentalHistory.${index}.reference.phone`
+        )}
+      />
+      <LabelledInput
+        label="Email:"
+        registerReturn={register(
+          `tenants.${tenantIndex}.rentalHistory.${index}.reference.email`
+        )}
       />
     </div>
   );

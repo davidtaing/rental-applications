@@ -6,6 +6,7 @@ import {
   EmploymentHistoryFormSegment,
   RentalIncomeFormSegment,
 } from "../../IncomeFormSegment";
+import { RentalHistoryFormSegment } from "../../RentalHistoryFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
 
@@ -67,7 +68,11 @@ export function TenantDetailsFormSegment() {
             control={control}
             register={register}
           />
-          <h3>Rental History</h3>
+          <RentalHistoryFormSegment
+            tenantIndex={index}
+            control={control}
+            register={register}
+          />
         </div>
       ))}
       <FieldArrayButtons<Tenant>
