@@ -1,4 +1,4 @@
-import { UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
+import { UseFormRegisterReturn } from "react-hook-form";
 import { PaymentFrequency } from "../../types/PaymentFrequency";
 import { LabelledSelect } from "./LabelledSelect";
 
