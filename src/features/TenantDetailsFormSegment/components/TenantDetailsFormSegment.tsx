@@ -1,7 +1,7 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { LabelledInput } from "../../../components/common/LabelledInputRHF";
-import { EmploymentHistoryFormSegment } from "../../IncomeFormSegment/components/EmploymentHistoryFormSegment";
+import { EmploymentHistoryFormSegment } from "../../IncomeFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
 
