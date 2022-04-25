@@ -1,17 +1,17 @@
+import { UseFormRegisterReturn } from "react-hook-form";
 import { Gender } from "../../types/Gender";
-import LabelledSelect from "./LabelledSelect";
+import { LabelledSelect } from "./LabelledSelectRHF";
 
 interface Props {
-  formikReference: string;
+  registerReturn: UseFormRegisterReturn;
 }
 
-export function GenderSelect({ formikReference }: Props) {
+export function GenderSelect({ registerReturn }: Props) {
   return (
     <LabelledSelect
-      labelText="Gender: "
-      id="gender"
-      name={formikReference}
+      registerReturn={registerReturn}
       values={Object.values(Gender)}
+      label="Gender:"
     />
   );
 }
