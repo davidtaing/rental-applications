@@ -53,7 +53,11 @@ export function TenantDetailsFormSegment() {
             control={control}
             register={register}
           />
-          <h3>Income Support Payments</h3>
+          <IncomeSupportFormSegment
+            tenantIndex={index}
+            control={control}
+            register={register}
+          />
           <h3>Rental Income</h3>
           <h3>Rental History</h3>
         </div>

@@ -6,14 +6,12 @@ import { EmploymentTypeSelect } from "./EmploymentTypeSelect";
 
 export interface EmploymentItemProps {
   register: UseFormRegister<TenantDetailsFormState>;
-  key: string;
   tenantIndex: number;
   index: number;
 }
 
 export function EmploymentItem({
   register,
-  key,
   tenantIndex,
   index,
 }: EmploymentItemProps) {
