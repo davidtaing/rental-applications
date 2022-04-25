@@ -22,7 +22,7 @@ export function RentalIncomeFormSegment({
 
   return (
     <div className="rentalIncomeForm subFormSegment">
-      <h2>Real Estate Income</h2>
+      <h3>Real Estate Income</h3>
       {fields.map((field, index) => (
         <RentalIncomeItem
           key={field.id}

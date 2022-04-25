@@ -22,7 +22,7 @@ export function IncomeSupportFormSegment({
 
   return (
     <div className="incomeSupportForm subFormSegment">
-      <h2>Income Support</h2>
+      <h3>Income Support</h3>
       {fields.map((field, index) => (
         <IncomeSupportItem
           key={field.id}

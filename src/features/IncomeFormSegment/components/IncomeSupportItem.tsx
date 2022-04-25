@@ -16,7 +16,7 @@ export function IncomeSupportItem({
 }: IncomeSupportItemProps) {
   return (
     <div>
-      <h3>Payment</h3>
+      <h4>Payment</h4>
       <LabelledInput
         label={"Description:"}
         registerReturn={register(

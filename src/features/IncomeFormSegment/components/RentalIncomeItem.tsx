@@ -16,7 +16,7 @@ export function RentalIncomeItem({
 }: RentalIncomeItemProps) {
   return (
     <div className="subFormSegment__item">
-      <h3>Property</h3>
+      <h4>Property</h4>
       <LabelledInput
         label="Address:"
         registerReturn={register(

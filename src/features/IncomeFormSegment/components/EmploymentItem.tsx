@@ -17,7 +17,7 @@ export function EmploymentItem({
 }: EmploymentItemProps) {
   return (
     <div className="employmentItem">
-      <h3>Job</h3>
+      <h4>Job</h4>
       <div>
         <LabelledInput
           label="Title: "
