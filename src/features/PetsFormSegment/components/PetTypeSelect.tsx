@@ -3,14 +3,12 @@ import { LabelledSelect } from "../../../components/common/LabelledSelect";
 import { PetType } from "../types";
 
 interface Props {
-  key: string;
   registerReturn: UseFormRegisterReturn;
 }
 
-export function PetTypeSelect({ key, registerReturn }: Props) {
+export function PetTypeSelect({ registerReturn }: Props) {
   return (
     <LabelledSelect
-      fieldId={key}
       registerReturn={registerReturn}
       values={Object.values(PetType)}
       label="Type:"

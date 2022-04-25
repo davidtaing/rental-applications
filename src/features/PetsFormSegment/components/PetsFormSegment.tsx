@@ -18,18 +18,13 @@ export function PetsFormSegment() {
       {fields.map((field, index) => (
         <div key={index} className="petsDetailsForm__Item">
           <h3>Pets</h3>
-          <PetTypeSelect
-            key={field.id}
-            registerReturn={register(`pets.${index}.type`)}
-          />
+          <PetTypeSelect registerReturn={register(`pets.${index}.type`)} />
           <LabelledInput
             type="number"
-            key={field.id}
             label="Amount:"
             registerReturn={register(`pets.${index}.amount`)}
           />
           <LabelledInput
-            key={field.id}
             label="Comment:"
             registerReturn={register(`pets.${index}.comment`)}
           />
