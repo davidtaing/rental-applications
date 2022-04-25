@@ -47,9 +47,7 @@ export function EmploymentItem({
             `tenants.${tenantIndex}.employment.${index}.amount`
           )}
         />
-        <LabelledInput
-          fieldId={key}
-          label="Frequency:"
+        <PaymentFrequencySelect
           registerReturn={register(
             `tenants.${tenantIndex}.employment.${index}.frequency`
           )}
