@@ -1,11 +1,9 @@
-import { useFieldArray, useForm, UseFormRegister } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { GenderSelect } from "../../../components/common/GenderSelect";
 import { LabelledInput } from "../../../components/common/LabelledInput";
-import { Gender } from "../../../types/Gender";
-import { createTenant } from "../../TenantDetailsFormSegment";
 import { OtherOccupant, OtherOccupantsFormState } from "../types";
-import { createOtherOccupant, initOtherOccupantsFormState } from "../utils";
+import { createOtherOccupant } from "../utils";
 import { OtherOccupantRelationSelect } from "./OtherOccupantRelationSelect";
 
 /**
