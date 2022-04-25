@@ -1,17 +1,18 @@
-import { NestedTenantFieldArrayProps } from "../../TenantDetailsFormSegment";
 import { useFieldArray } from "react-hook-form";
 import { RentalHistoryItem } from "./RentalHistoryItem";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { createRentalHistory } from "../utils";
+import { NestedFieldArrayProps } from "../../../types/NestedFieldArrayProps";
+import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 
 export function RentalHistoryFormSegment({
-  tenantIndex,
+  index,
   control,
   register,
-}: NestedTenantFieldArrayProps) {
+}: NestedFieldArrayProps<TenantDetailsFormState>) {
   const { fields, append, remove } = useFieldArray({
     control,
-    name: `tenants.${tenantIndex}.rentalHistory`,
+    name: `tenants.${index}.rentalHistory`,
   });
 
   return (
@@ -21,7 +22,7 @@ export function RentalHistoryFormSegment({
         <RentalHistoryItem
           key={field.id}
           register={register}
-          parentIndex={tenantIndex}
+          parentIndex={index}
           index={index}
         />
       ))}

@@ -44,22 +44,22 @@ export function TenantItem({ control, register, tenantIndex }: Props) {
         registerReturn={register(`tenants.${tenantIndex}.email`)}
       />
       <EmploymentHistoryFormSegment
-        tenantIndex={tenantIndex}
+        index={tenantIndex}
         control={control}
         register={register}
       />
       <IncomeSupportFormSegment
-        tenantIndex={tenantIndex}
+        index={tenantIndex}
         control={control}
         register={register}
       />
       <RentalIncomeFormSegment
-        tenantIndex={tenantIndex}
+        index={tenantIndex}
         control={control}
         register={register}
       />
       <RentalHistoryFormSegment
-        tenantIndex={tenantIndex}
+        index={tenantIndex}
         control={control}
         register={register}
       />

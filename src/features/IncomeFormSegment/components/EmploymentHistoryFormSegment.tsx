@@ -1,18 +1,19 @@
 import { useFieldArray } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
-import { NestedTenantFieldArrayProps } from "../../TenantDetailsFormSegment";
+import { NestedFieldArrayProps } from "../../../types/NestedFieldArrayProps";
+import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 import { Employment } from "../types";
 import { createEmployment } from "../utils";
 import { EmploymentItem } from "./EmploymentItem";
 
 export function EmploymentHistoryFormSegment({
-  tenantIndex,
+  index,
   control,
   register,
-}: NestedTenantFieldArrayProps) {
+}: NestedFieldArrayProps<TenantDetailsFormState>) {
   const { fields, remove, append } = useFieldArray({
     control,
-    name: `tenants.${tenantIndex}.employment`,
+    name: `tenants.${index}.employment`,
   });
 
   return (
@@ -22,7 +23,7 @@ export function EmploymentHistoryFormSegment({
         <EmploymentItem
           key={field.id}
           register={register}
-          parentIndex={tenantIndex}
+          parentIndex={index}
           index={index}
         />
       ))}
