@@ -1,13 +1,5 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
-import { GenderSelect } from "../../../components/common/GenderSelect";
-import { LabelledInput } from "../../../components/common/LabelledInput";
-import {
-  IncomeSupportFormSegment,
-  EmploymentHistoryFormSegment,
-  RentalIncomeFormSegment,
-} from "../../IncomeFormSegment";
-import { RentalHistoryFormSegment } from "../../RentalHistoryFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
 import { TenantItem } from "./TenantItem";
