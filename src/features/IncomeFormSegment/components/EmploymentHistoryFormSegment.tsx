@@ -23,6 +23,7 @@ export function EmploymentHistoryFormSegment({
 
   return (
     <div className="employmentHistoryForm subFormSegment">
+      <h3>Employment</h3>
       {fields.map((field, index) => (
         <EmploymentItem
           key={field.id}

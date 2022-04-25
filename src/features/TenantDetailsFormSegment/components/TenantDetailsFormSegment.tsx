@@ -48,8 +48,6 @@ export function TenantDetailsFormSegment() {
             label="Email:"
             registerReturn={register(`tenants.${index}.email`)}
           />
-
-          <h3>Employment</h3>
           <EmploymentHistoryFormSegment
             tenantIndex={index}
             control={control}
