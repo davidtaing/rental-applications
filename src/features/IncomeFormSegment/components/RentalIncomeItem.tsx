@@ -3,36 +3,36 @@ import { LabelledInput } from "../../../components/common/LabelledInputRHF";
 import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelectRHF";
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 
-export interface RealEstateIncomeItemProps {
+export interface RentalIncomeItemProps {
   register: UseFormRegister<TenantDetailsFormState>;
   tenantIndex: number;
   index: number;
 }
 
-export function RealEstateIncomeItem({
+export function RentalIncomeItem({
   register,
   tenantIndex,
   index,
-}: RealEstateIncomeItemProps) {
+}: RentalIncomeItemProps) {
   return (
     <div className="subFormSegment__item">
       <h3>Property</h3>
       <LabelledInput
         label="Address:"
         registerReturn={register(
-          `tenants.${tenantIndex}.realEstateIncome.${index}.address`
+          `tenants.${tenantIndex}.rentalIncome.${index}.address`
         )}
       />
       <LabelledInput
         label="Rent:"
         type="number"
         registerReturn={register(
-          `tenants.${tenantIndex}.realEstateIncome.${index}.rent`
+          `tenants.${tenantIndex}.rentalIncome.${index}.rent`
         )}
       />
       <PaymentFrequencySelect
         registerReturn={register(
-          `tenants.${tenantIndex}.realEstateIncome.${index}.rent`
+          `tenants.${tenantIndex}.rentalIncome.${index}.rent`
         )}
       />
     </div>

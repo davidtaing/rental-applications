@@ -4,7 +4,7 @@ import { LabelledInput } from "../../../components/common/LabelledInputRHF";
 import {
   IncomeSupportFormSegment,
   EmploymentHistoryFormSegment,
-  RealEstateIncomeFormSegment,
+  RentalIncomeFormSegment,
 } from "../../IncomeFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
@@ -62,7 +62,7 @@ export function TenantDetailsFormSegment() {
             control={control}
             register={register}
           />
-          <RealEstateIncomeFormSegment
+          <RentalIncomeFormSegment
             tenantIndex={index}
             control={control}
             register={register}

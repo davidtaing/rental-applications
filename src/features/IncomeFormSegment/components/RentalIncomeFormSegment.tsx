@@ -1,10 +1,8 @@
 import { Control, UseFormRegister, useFieldArray } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
-import { LabelledInput } from "../../../components/common/LabelledInputRHF";
-import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelectRHF";
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
-import { createRealEstateIncome } from "../utils";
-import { RealEstateIncomeItem } from "./RealEstateIncomeItem";
+import { createRentalIncome } from "../utils";
+import { RentalIncomeItem } from "./RentalIncomeItem";
 
 interface Props {
   tenantIndex: number;
@@ -12,21 +10,21 @@ interface Props {
   register: UseFormRegister<TenantDetailsFormState>;
 }
 
-export function RealEstateIncomeFormSegment({
+export function RentalIncomeFormSegment({
   tenantIndex,
   control,
   register,
 }: Props) {
   const { fields, remove, append } = useFieldArray({
     control,
-    name: `tenants.${tenantIndex}.realEstateIncome`,
+    name: `tenants.${tenantIndex}.rentalIncome`,
   });
 
   return (
-    <div className="realEstateIncomeForm subFormSegment">
+    <div className="rentalIncomeForm subFormSegment">
       <h2>Real Estate Income</h2>
       {fields.map((field, index) => (
-        <RealEstateIncomeItem
+        <RentalIncomeItem
           key={field.id}
           register={register}
           tenantIndex={tenantIndex}
@@ -36,7 +34,7 @@ export function RealEstateIncomeFormSegment({
       <FieldArrayButtons
         append={append}
         remove={remove}
-        createItemFn={createRealEstateIncome}
+        createItemFn={createRentalIncome}
         arrayLength={fields.length}
       />
     </div>

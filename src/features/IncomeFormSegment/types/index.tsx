@@ -18,7 +18,7 @@ export interface IncomeSupport {
   frequency: string;
 }
 
-export interface RealEstateIncome {
+export interface RentalIncome {
   address: string;
   rent: number;
   frequency: string;
@@ -27,7 +27,7 @@ export interface RealEstateIncome {
 export interface IncomeFormState {
   employment: Array<Employment>;
   incomeSupport: Array<IncomeSupport>;
-  realEstateIncome: Array<RealEstateIncome>;
+  rentalIncome: Array<RentalIncome>;
 }
 
 export enum EmploymentType {

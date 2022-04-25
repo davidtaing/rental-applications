@@ -2,7 +2,7 @@ export * from "./validationSchema";
 import {
   Employment,
   IncomeSupport,
-  RealEstateIncome,
+  RentalIncome,
   IncomeFormState,
 } from "../types";
 
@@ -26,7 +26,7 @@ export const createIncomeSupport = (): IncomeSupport => ({
   frequency: "",
 });
 
-export const createRealEstateIncome = (): RealEstateIncome => ({
+export const createRentalIncome = (): RentalIncome => ({
   address: "",
   rent: 0,
   frequency: "",
@@ -35,5 +35,5 @@ export const createRealEstateIncome = (): RealEstateIncome => ({
 export const initIncomeFormState = (): IncomeFormState => ({
   employment: new Array<Employment>(),
   incomeSupport: new Array<IncomeSupport>(),
-  realEstateIncome: new Array<RealEstateIncome>(),
+  rentalIncome: new Array<RentalIncome>(),
 });
