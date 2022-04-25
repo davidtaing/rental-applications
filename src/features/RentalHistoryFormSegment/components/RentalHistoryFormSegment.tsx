@@ -17,7 +17,7 @@ export function RentalHistoryFormSegment({
 
   return (
     <div className="rentalHistoryForm subFormSegment">
-      <h2>Rental History</h2>
+      <h3>Rental History</h3>
       {fields.map((field, index) => (
         <RentalHistoryItem
           key={field.id}
