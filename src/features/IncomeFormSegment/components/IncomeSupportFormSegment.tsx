@@ -1,8 +1,7 @@
 import { Control, useFieldArray, UseFormRegister } from "react-hook-form";
-import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
+import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 import { createIncomeSupport } from "../utils";
-
 import { IncomeSupportItem } from "./IncomeSupportItem";
 
 interface Props {
@@ -18,17 +17,26 @@ export function IncomeSupportFormSegment({
 }: Props) {
   const { fields, remove, append } = useFieldArray({
     control,
-    name: `tenants.${tenantIndex}.employment`,
+    name: `tenants.${tenantIndex}.incomeSupport`,
   });
 
   return (
     <div className="incomeSupportForm subFormSegment">
       <h2>Income Support</h2>
       {fields.map((field, index) => (
-        <div key={field.id}>
-          <h3>Payment</h3>
-        </div>
+        <IncomeSupportItem
+          key={field.id}
+          register={register}
+          tenantIndex={tenantIndex}
+          index={index}
+        />
       ))}
+      <FieldArrayButtons
+        append={append}
+        remove={remove}
+        createItemFn={createIncomeSupport}
+        arrayLength={fields.length}
+      />
     </div>
   );
 }

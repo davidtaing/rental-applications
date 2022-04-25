@@ -1,28 +1,38 @@
-import LabelledInput from "../../../components/common/LabelledInput";
-import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelect";
+import { UseFormRegister } from "react-hook-form";
+import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelectRHF";
+import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 
 export interface IncomeSupportItemProps {
-  formikReference: string;
+  register: UseFormRegister<TenantDetailsFormState>;
+  tenantIndex: number;
+  index: number;
 }
 
-export function IncomeSupportItem({ formikReference }: IncomeSupportItemProps) {
+export function IncomeSupportItem({
+  register,
+  tenantIndex,
+  index,
+}: IncomeSupportItemProps) {
   return (
-    <div className="subFormSegment__item">
+    <div>
       <h3>Payment</h3>
       <LabelledInput
-        labelText="Description:"
-        id="incomeSupportDescription"
-        name={`${formikReference}.incomeSupport.description`}
-        type="text"
+        label={"Description:"}
+        registerReturn={register(
+          `tenants.${tenantIndex}.incomeSupport.${index}.description`
+        )}
       />
       <LabelledInput
-        labelText="Amount:"
-        id="incomeSupportAmount"
-        name={`${formikReference}.incomeSupport.amount`}
-        type="number"
+        label={"Amount:"}
+        registerReturn={register(
+          `tenants.${tenantIndex}.incomeSupport.${index}.amount`
+        )}
       />
       <PaymentFrequencySelect
-        formikReference={`${formikReference}.incomeSupport.freequency`}
+        registerReturn={register(
+          `tenants.${tenantIndex}.incomeSupport.${index}.frequency`
+        )}
       />
     </div>
   );
