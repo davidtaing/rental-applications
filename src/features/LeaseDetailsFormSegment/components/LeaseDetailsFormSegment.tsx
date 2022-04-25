@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { LabelledInput } from "../../../components/common/LabelledInput";
 import { LeaseDetailsState } from "../types";
 
 export function LeaseDetailsFormSegment() {

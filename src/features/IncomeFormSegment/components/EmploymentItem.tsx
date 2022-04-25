@@ -1,5 +1,5 @@
 import { UseFormRegister } from "react-hook-form";
-import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { LabelledInput } from "../../../components/common/LabelledInput";
 import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelectRHF";
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 import { EmploymentTypeSelect } from "./EmploymentTypeSelect";

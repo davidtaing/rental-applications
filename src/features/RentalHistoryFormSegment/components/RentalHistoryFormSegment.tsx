@@ -1,7 +1,7 @@
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 import { RentalReferenceType, RentalStatus } from "../types";
 import { Control, useFieldArray, UseFormRegister } from "react-hook-form";
-import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { LabelledInput } from "../../../components/common/LabelledInput";
 import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
 import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelectRHF";
 import { RentalHistoryItem } from "./RentalHistoryItem";

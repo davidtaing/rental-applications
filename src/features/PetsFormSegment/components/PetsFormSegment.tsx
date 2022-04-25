@@ -2,7 +2,7 @@ import { createPetCategory } from "../utils";
 import { useFieldArray, useForm } from "react-hook-form";
 import { PetCategory, PetsFormState } from "../types";
 import { PetTypeSelect } from "./PetTypeSelect";
-import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { LabelledInput } from "../../../components/common/LabelledInput";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 
 export function PetsFormSegment() {
