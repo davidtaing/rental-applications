@@ -1,5 +1,5 @@
 import { UseFormRegisterReturn } from "react-hook-form";
-import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
+import { LabelledSelect } from "../../../components/common/LabelledSelect";
 import { PetType } from "../types";
 
 interface Props {

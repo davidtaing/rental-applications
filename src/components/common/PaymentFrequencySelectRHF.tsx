@@ -1,6 +1,6 @@
 import { UseFormRegister, UseFormRegisterReturn } from "react-hook-form";
 import { PaymentFrequency } from "../../types/PaymentFrequency";
-import { LabelledSelect } from "./LabelledSelectRHF";
+import { LabelledSelect } from "./LabelledSelect";
 
 interface Props {
   fieldId?: string;

@@ -1,6 +1,6 @@
 import { UseFormRegisterReturn } from "react-hook-form";
 import { Gender } from "../../types/Gender";
-import { LabelledSelect } from "./LabelledSelectRHF";
+import { LabelledSelect } from "./LabelledSelect";
 
 interface Props {
   registerReturn: UseFormRegisterReturn;
