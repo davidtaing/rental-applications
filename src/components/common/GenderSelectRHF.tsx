@@ -11,7 +11,7 @@ export function GenderSelect({ registerReturn }: Props) {
     <LabelledSelect
       registerReturn={registerReturn}
       values={Object.values(Gender)}
-      label={"Gender:"}
+      label="Gender:"
     />
   );
 }
