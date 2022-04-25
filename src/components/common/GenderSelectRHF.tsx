@@ -3,14 +3,14 @@ import { Gender } from "../../types/Gender";
 import { LabelledSelect } from "./LabelledSelectRHF";
 
 interface Props {
-  key: string;
+  fieldId?: string;
   registerReturn: UseFormRegisterReturn;
 }
 
-export function GenderSelect({ key, registerReturn }: Props) {
+export function GenderSelect({ fieldId, registerReturn }: Props) {
   return (
     <LabelledSelect
-      fieldId={key}
+      fieldId={fieldId}
       registerReturn={registerReturn}
       values={Object.values(Gender)}
       label={"Gender:"}
