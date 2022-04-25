@@ -24,22 +24,18 @@ export function OtherOccupantsFormSegment() {
         <div key={field.id}>
           <h2>Occupant</h2>
           <LabelledInput
-            key={field.id}
             label="Full Name:"
             registerReturn={register(`otherOccupants.${index}.fullname`)}
           />
           <OtherOccupantRelationSelect
-            key={field.id}
             registerReturn={register(`otherOccupants.${index}.relation`)}
           />
           <LabelledInput
             type="number"
-            key={field.id}
             label="Age:"
             registerReturn={register(`otherOccupants.${index}.age`)}
           />
           <GenderSelect
-            key={field.id}
             registerReturn={register(`otherOccupants.${index}.gender`)}
           />
         </div>

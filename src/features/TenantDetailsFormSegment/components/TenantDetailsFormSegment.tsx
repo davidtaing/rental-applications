@@ -23,33 +23,27 @@ export function TenantDetailsFormSegment() {
         <div key={field.id}>
           <h2>Tenant</h2>
           <LabelledInput
-            key={field.id}
             label="Fullname:"
             registerReturn={register(`tenants.${index}.fullname`)}
           />
           <LabelledInput
-            key={field.id}
             label="Gender:"
             registerReturn={register(`tenants.${index}.gender`)}
           />
           <LabelledInput
             type="date"
             label="Date of Birth:"
-            key={field.id}
             registerReturn={register(`tenants.${index}.dob`)}
           />
           <LabelledInput
-            key={field.id}
             label="Mobile:"
             registerReturn={register(`tenants.${index}.mobile`)}
           />
           <LabelledInput
-            key={field.id}
             label="Phone:"
             registerReturn={register(`tenants.${index}.phone`)}
           />
           <LabelledInput
-            key={field.id}
             label="Email:"
             registerReturn={register(`tenants.${index}.email`)}
           />
