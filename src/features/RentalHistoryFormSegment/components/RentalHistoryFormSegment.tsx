@@ -21,7 +21,7 @@ export function RentalHistoryFormSegment({
         <RentalHistoryItem
           key={field.id}
           register={register}
-          tenantIndex={tenantIndex}
+          parentIndex={tenantIndex}
           index={index}
         />
       ))}

@@ -22,7 +22,7 @@ export function EmploymentHistoryFormSegment({
         <EmploymentItem
           key={field.id}
           register={register}
-          tenantIndex={tenantIndex}
+          parentIndex={tenantIndex}
           index={index}
         />
       ))}

@@ -1,37 +1,31 @@
-import { UseFormRegister } from "react-hook-form";
 import { LabelledInput } from "../../../components/common/LabelledInput";
 import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelect";
+import { NestedFieldItemProps } from "../../../types/NestedFieldItemProps";
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
-
-export interface IncomeSupportItemProps {
-  register: UseFormRegister<TenantDetailsFormState>;
-  tenantIndex: number;
-  index: number;
-}
 
 export function IncomeSupportItem({
   register,
-  tenantIndex,
+  parentIndex,
   index,
-}: IncomeSupportItemProps) {
+}: NestedFieldItemProps<TenantDetailsFormState>) {
   return (
     <div>
       <h4>Payment</h4>
       <LabelledInput
         label={"Description:"}
         registerReturn={register(
-          `tenants.${tenantIndex}.incomeSupport.${index}.description`
+          `tenants.${parentIndex}.incomeSupport.${index}.description`
         )}
       />
       <LabelledInput
         label={"Amount:"}
         registerReturn={register(
-          `tenants.${tenantIndex}.incomeSupport.${index}.amount`
+          `tenants.${parentIndex}.incomeSupport.${index}.amount`
         )}
       />
       <PaymentFrequencySelect
         registerReturn={register(
-          `tenants.${tenantIndex}.incomeSupport.${index}.frequency`
+          `tenants.${parentIndex}.incomeSupport.${index}.frequency`
         )}
       />
     </div>

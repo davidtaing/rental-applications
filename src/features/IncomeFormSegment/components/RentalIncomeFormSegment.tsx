@@ -21,7 +21,7 @@ export function RentalIncomeFormSegment({
         <RentalIncomeItem
           key={field.id}
           register={register}
-          tenantIndex={tenantIndex}
+          parentIndex={tenantIndex}
           index={index}
         />
       ))}

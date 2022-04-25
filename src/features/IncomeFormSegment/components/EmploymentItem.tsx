@@ -1,20 +1,14 @@
-import { UseFormRegister } from "react-hook-form";
 import { LabelledInput } from "../../../components/common/LabelledInput";
 import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelect";
+import { NestedFieldItemProps } from "../../../types/NestedFieldItemProps";
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 import { EmploymentTypeSelect } from "./EmploymentTypeSelect";
 
-export interface EmploymentItemProps {
-  register: UseFormRegister<TenantDetailsFormState>;
-  tenantIndex: number;
-  index: number;
-}
-
 export function EmploymentItem({
   register,
-  tenantIndex,
+  parentIndex,
   index,
-}: EmploymentItemProps) {
+}: NestedFieldItemProps<TenantDetailsFormState>) {
   return (
     <div className="employmentItem">
       <h4>Job</h4>
@@ -22,54 +16,54 @@ export function EmploymentItem({
         <LabelledInput
           label="Title: "
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.title`
+            `tenants.${parentIndex}.employment.${index}.title`
           )}
         />
         <LabelledInput
           label="Company:"
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.company`
+            `tenants.${parentIndex}.employment.${index}.company`
           )}
         />
         <EmploymentTypeSelect
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.type`
+            `tenants.${parentIndex}.employment.${index}.type`
           )}
         />
         <LabelledInput
           label="Amount:"
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.amount`
+            `tenants.${parentIndex}.employment.${index}.amount`
           )}
         />
         <PaymentFrequencySelect
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.frequency`
+            `tenants.${parentIndex}.employment.${index}.frequency`
           )}
         />
         <h4>Reference</h4>
         <LabelledInput
           label="Name:"
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.reference.name`
+            `tenants.${parentIndex}.employment.${index}.reference.name`
           )}
         />
         <LabelledInput
           label="Position:"
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.reference.position`
+            `tenants.${parentIndex}.employment.${index}.reference.position`
           )}
         />
         <LabelledInput
           label="Phone:"
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.reference.phone`
+            `tenants.${parentIndex}.employment.${index}.reference.phone`
           )}
         />
         <LabelledInput
           label="Email:"
           registerReturn={register(
-            `tenants.${tenantIndex}.employment.${index}.reference.email`
+            `tenants.${parentIndex}.employment.${index}.reference.email`
           )}
         />
       </div>
