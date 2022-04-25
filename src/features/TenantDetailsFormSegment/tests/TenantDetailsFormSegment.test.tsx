@@ -16,6 +16,27 @@ test("does not render 'Remove Tenant' button by default", () => {
   expect(removeButton).toBeFalsy();
 });
 
+test("does not render Employment Item", async () => {
+  render(<TenantDetailsFormSegment />);
+  const jobHeader = screen.queryByText(/^job$/i);
+
+  expect(jobHeader).toBeFalsy();
+});
+
+test("does not render Income Support Item", async () => {
+  render(<TenantDetailsFormSegment />);
+  const paymentHeader = screen.queryByText(/^payment$/i);
+
+  expect(paymentHeader).toBeFalsy();
+});
+
+test("does render Rental Income Item", async () => {
+  render(<TenantDetailsFormSegment />);
+  const propertyHeader = screen.queryByText(/^property$/i);
+
+  expect(propertyHeader).toBeTruthy();
+});
+
 test("Add Tenant and Remove Tenant buttons add and remove tenants when clicked", async () => {
   render(<TenantDetailsFormSegment />);
   const addButton = screen.getByText(/^add tenant$/i);
