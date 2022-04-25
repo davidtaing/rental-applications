@@ -2,14 +2,14 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { TenantDetailsFormSegment } from "../components/TenantDetailsFormSegment";
 
-test("Add Tenant button is rendered", () => {
+test("renders 'Add Tenant' button by default", () => {
   render(<TenantDetailsFormSegment />);
   const addButton = screen.getByText(/^add tenant$/i);
 
   expect(addButton).toBeTruthy();
 });
 
-test("Remove Tenant button is not rendered with 1 tenant", () => {
+test("does not render 'Remove Tenant' button by default", () => {
   render(<TenantDetailsFormSegment />);
   const removeButton = screen.queryByText(/^remove tenant$/i);
 
