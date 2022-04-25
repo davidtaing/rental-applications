@@ -1,62 +1,67 @@
+import { Control, UseFormRegister } from "react-hook-form";
 import { GenderSelect } from "../../../components/common/GenderSelect";
-import LabelledInput from "../../../components/common/LabelledInput";
-import { IncomeFormSegment } from "../../IncomeFormSegment";
+import { LabelledInput } from "../../../components/common/LabelledInput";
+import {
+  EmploymentHistoryFormSegment,
+  IncomeSupportFormSegment,
+  RentalIncomeFormSegment,
+} from "../../IncomeFormSegment";
 import { RentalHistoryFormSegment } from "../../RentalHistoryFormSegment";
-import { Tenant } from "../types";
+import { TenantDetailsFormState } from "../types";
 
 interface Props {
-  formikReference: string;
-  data: Tenant;
+  control: Control<TenantDetailsFormState, any>;
+  register: UseFormRegister<TenantDetailsFormState>;
+  tenantIndex: number;
 }
 
-export function TenantItem({ formikReference, data }: Props) {
-  const { rentalHistory } = data;
-
+export function TenantItem({ control, register, tenantIndex }: Props) {
   return (
     <div className="tenantItem">
       <h2>Tenant</h2>
-      {/* Full Name */}
       <LabelledInput
-        labelText="Full Name:"
-        id="tenantFullname"
-        name={`${formikReference}.fullname`}
-        type="text"
+        label="Fullname:"
+        registerReturn={register(`tenants.${tenantIndex}.fullname`)}
       />
-      {/* Gender */}
-      <GenderSelect formikReference={`${formikReference}.gender`} />
-      {/* Date of Birth */}
+      <GenderSelect
+        registerReturn={register(`tenants.${tenantIndex}.gender`)}
+      />
       <LabelledInput
-        labelText="Date of Birth:"
-        id="tenantDob"
-        name={`${formikReference}.dob`}
         type="date"
+        label="Date of Birth:"
+        registerReturn={register(`tenants.${tenantIndex}.dob`)}
       />
-      {/* Mobile */}
       <LabelledInput
-        labelText="Mobile:"
-        id="tenantMobile"
-        name={`${formikReference}.mobile`}
-        type="text"
+        label="Mobile:"
+        registerReturn={register(`tenants.${tenantIndex}.mobile`)}
       />
-      {/* Phone */}
       <LabelledInput
-        labelText="Phone:"
-        id="tenantPhone"
-        name={`${formikReference}.phone`}
-        type="text"
+        label="Phone:"
+        registerReturn={register(`tenants.${tenantIndex}.phone`)}
       />
-      {/* Email */}
       <LabelledInput
-        labelText="Email:"
-        id="tenantEmail"
-        name={`${formikReference}.email`}
-        type="email"
+        label="Email:"
+        registerReturn={register(`tenants.${tenantIndex}.email`)}
       />
-
-      <IncomeFormSegment formikReference={formikReference} tenantData={data} />
+      <EmploymentHistoryFormSegment
+        tenantIndex={tenantIndex}
+        control={control}
+        register={register}
+      />
+      <IncomeSupportFormSegment
+        tenantIndex={tenantIndex}
+        control={control}
+        register={register}
+      />
+      <RentalIncomeFormSegment
+        tenantIndex={tenantIndex}
+        control={control}
+        register={register}
+      />
       <RentalHistoryFormSegment
-        formikReference={formikReference}
-        data={rentalHistory}
+        tenantIndex={tenantIndex}
+        control={control}
+        register={register}
       />
     </div>
   );

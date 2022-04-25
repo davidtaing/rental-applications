@@ -10,6 +10,7 @@ import {
 import { RentalHistoryFormSegment } from "../../RentalHistoryFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
+import { TenantItem } from "./TenantItem";
 
 /**
  * Form Segment for Rent-Paying Occupants
@@ -27,51 +28,12 @@ export function TenantDetailsFormSegment() {
     <div className="tenantDetailsForm formSegment">
       <h1>Tenant Details</h1>
       {fields.map((field, index) => (
-        <div key={field.id}>
-          <h2>Tenant</h2>
-          <LabelledInput
-            label="Fullname:"
-            registerReturn={register(`tenants.${index}.fullname`)}
-          />
-          <GenderSelect registerReturn={register(`tenants.${index}.gender`)} />
-          <LabelledInput
-            type="date"
-            label="Date of Birth:"
-            registerReturn={register(`tenants.${index}.dob`)}
-          />
-          <LabelledInput
-            label="Mobile:"
-            registerReturn={register(`tenants.${index}.mobile`)}
-          />
-          <LabelledInput
-            label="Phone:"
-            registerReturn={register(`tenants.${index}.phone`)}
-          />
-          <LabelledInput
-            label="Email:"
-            registerReturn={register(`tenants.${index}.email`)}
-          />
-          <EmploymentHistoryFormSegment
-            tenantIndex={index}
-            control={control}
-            register={register}
-          />
-          <IncomeSupportFormSegment
-            tenantIndex={index}
-            control={control}
-            register={register}
-          />
-          <RentalIncomeFormSegment
-            tenantIndex={index}
-            control={control}
-            register={register}
-          />
-          <RentalHistoryFormSegment
-            tenantIndex={index}
-            control={control}
-            register={register}
-          />
-        </div>
+        <TenantItem
+          key={field.id}
+          control={control}
+          register={register}
+          tenantIndex={index}
+        />
       ))}
       <FieldArrayButtons<Tenant>
         append={append}
