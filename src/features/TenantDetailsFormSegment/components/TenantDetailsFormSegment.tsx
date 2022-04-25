@@ -1,7 +1,11 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { LabelledInput } from "../../../components/common/LabelledInputRHF";
-import { EmploymentHistoryFormSegment } from "../../IncomeFormSegment";
+import {
+  IncomeSupportFormSegment,
+  EmploymentHistoryFormSegment,
+  RealEstateIncomeFormSegment,
+} from "../../IncomeFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
 
@@ -58,7 +62,11 @@ export function TenantDetailsFormSegment() {
             control={control}
             register={register}
           />
-          <h3>Rental Income</h3>
+          <RealEstateIncomeFormSegment
+            tenantIndex={index}
+            control={control}
+            register={register}
+          />
           <h3>Rental History</h3>
         </div>
       ))}

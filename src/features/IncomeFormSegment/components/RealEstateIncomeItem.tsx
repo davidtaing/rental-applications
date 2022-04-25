@@ -1,30 +1,39 @@
-import LabelledInput from "../../../components/common/LabelledInput";
-import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelect";
+import { UseFormRegister } from "react-hook-form";
+import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelectRHF";
+import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 
 export interface RealEstateIncomeItemProps {
-  formikReference: string;
+  register: UseFormRegister<TenantDetailsFormState>;
+  tenantIndex: number;
+  index: number;
 }
 
 export function RealEstateIncomeItem({
-  formikReference,
+  register,
+  tenantIndex,
+  index,
 }: RealEstateIncomeItemProps) {
   return (
     <div className="subFormSegment__item">
       <h3>Property</h3>
       <LabelledInput
-        labelText="Address:"
-        id="realEstateAddress"
-        name={`${formikReference}.realEstate.address`}
-        type="text"
+        label="Address:"
+        registerReturn={register(
+          `tenants.${tenantIndex}.realEstateIncome.${index}.address`
+        )}
       />
       <LabelledInput
-        labelText="Rent:"
-        id="realEstateRent"
-        name={`${formikReference}.realEstate.rent`}
+        label="Rent:"
         type="number"
+        registerReturn={register(
+          `tenants.${tenantIndex}.realEstateIncome.${index}.rent`
+        )}
       />
       <PaymentFrequencySelect
-        formikReference={`${formikReference}.realEstate.frequency`}
+        registerReturn={register(
+          `tenants.${tenantIndex}.realEstateIncome.${index}.rent`
+        )}
       />
     </div>
   );
