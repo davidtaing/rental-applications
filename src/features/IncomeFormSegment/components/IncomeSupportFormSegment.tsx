@@ -1,35 +1,34 @@
-import dynamic from "next/dynamic";
+import { Control, useFieldArray, UseFormRegister } from "react-hook-form";
 import { FieldArrayFormSegment } from "../../../components/common/FieldArrayFormSegment";
-import { IncomeSupport } from "../types";
+import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 import { createIncomeSupport } from "../utils";
-import { IncomeSupportItemProps } from "./IncomeSupportItem";
 
-const IncomeSupportItem = dynamic<IncomeSupportItemProps>(() =>
-  import("./IncomeSupportItem").then((mod) => mod.IncomeSupportItem)
-);
+import { IncomeSupportItem } from "./IncomeSupportItem";
 
 interface Props {
-  formikReference: string;
-  data: Array<IncomeSupport>;
+  tenantIndex: number;
+  control: Control<TenantDetailsFormState, any>;
+  register: UseFormRegister<TenantDetailsFormState>;
 }
 
-export function IncomeSupportFormSegment({ formikReference, data }: Props) {
+export function IncomeSupportFormSegment({
+  tenantIndex,
+  control,
+  register,
+}: Props) {
+  const { fields, remove, append } = useFieldArray({
+    control,
+    name: `tenants.${tenantIndex}.employment`,
+  });
+
   return (
     <div className="incomeSupportForm subFormSegment">
       <h2>Income Support</h2>
-      <FieldArrayFormSegment
-        values={data}
-        formikReference={`${formikReference}.incomeSupport`}
-        createItemFn={createIncomeSupport}
-        buttonText="Income Support"
-      >
-        {data.map((item, idx) => (
-          <IncomeSupportItem
-            formikReference={`${formikReference}[${idx}]`}
-            key={idx}
-          />
-        ))}
-      </FieldArrayFormSegment>
+      {fields.map((field, index) => (
+        <div key={field.id}>
+          <h3>Payment</h3>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import { useFieldArray, useForm, UseFormRegister } from "react-hook-form";
+import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { GenderSelect } from "../../../components/common/GenderSelectRHF";
 import { LabelledInput } from "../../../components/common/LabelledInputRHF";
 import { Gender } from "../../../types/Gender";
-import { OtherOccupantsFormState } from "../types";
+import { createTenant } from "../../TenantDetailsFormSegment";
+import { OtherOccupant, OtherOccupantsFormState } from "../types";
 import { createOtherOccupant, initOtherOccupantsFormState } from "../utils";
 import { OtherOccupantRelationSelect } from "./OtherOccupantRelationSelect";
 
@@ -40,23 +42,14 @@ export function OtherOccupantsFormSegment() {
           />
         </div>
       ))}
-
-      <div className="fieldArray--btn-container">
-        <button
-          className="btn--secondary-outline"
-          type="button"
-          onClick={() => append(createOtherOccupant())}
-        >
-          Add Occupant
-        </button>
-        <button
-          className="btn--danger-outline"
-          type="button"
-          onClick={() => remove(fields.length - 1)}
-        >
-          Remove Occupant
-        </button>
-      </div>
+      <FieldArrayButtons<OtherOccupant>
+        append={append}
+        remove={remove}
+        createItemFn={createOtherOccupant}
+        arrayLength={fields.length}
+        buttonSize="large"
+        buttonText="Occupant"
+      />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import { Control, useFieldArray, UseFormRegister } from "react-hook-form";
+import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment/types";
+import { Employment } from "../types";
 import { createEmployment } from "../utils";
 import { EmploymentItem } from "./EmploymentItem";
 
@@ -29,22 +31,12 @@ export function EmploymentHistoryFormSegment({
           index={index}
         />
       ))}
-      <div className="fieldArray--btn-container">
-        <button
-          className="btn--secondary-outline"
-          type="button"
-          onClick={() => append(createEmployment())}
-        >
-          +
-        </button>
-        <button
-          className="btn--danger-outline"
-          type="button"
-          onClick={() => remove(fields.length - 1)}
-        >
-          -
-        </button>
-      </div>
+      <FieldArrayButtons<Employment>
+        append={append}
+        remove={remove}
+        createItemFn={createEmployment}
+        arrayLength={fields.length}
+      />
     </div>
   );
 }

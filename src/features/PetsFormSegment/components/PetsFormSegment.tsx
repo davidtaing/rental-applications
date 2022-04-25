@@ -1,8 +1,9 @@
 import { createPetCategory } from "../utils";
 import { useFieldArray, useForm } from "react-hook-form";
-import { PetsFormState } from "../types";
+import { PetCategory, PetsFormState } from "../types";
 import { PetTypeSelect } from "./PetTypeSelect";
 import { LabelledInput } from "../../../components/common/LabelledInputRHF";
+import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 
 export function PetsFormSegment() {
   const { control, register } = useForm<PetsFormState>();
@@ -34,22 +35,14 @@ export function PetsFormSegment() {
           />
         </div>
       ))}
-      <div className="fieldArray--btn-container">
-        <button
-          className="btn--secondary-outline"
-          type="button"
-          onClick={() => append(createPetCategory())}
-        >
-          Add Pets
-        </button>
-        <button
-          className="btn--danger-outline"
-          type="button"
-          onClick={() => remove(fields.length - 1)}
-        >
-          Remove Pets
-        </button>
-      </div>
+      <FieldArrayButtons<PetCategory>
+        append={append}
+        remove={remove}
+        createItemFn={createPetCategory}
+        arrayLength={fields.length}
+        buttonSize="large"
+        buttonText="Pet"
+      />
     </div>
   );
 }

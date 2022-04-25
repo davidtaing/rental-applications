@@ -1,4 +1,5 @@
 import { useFieldArray, useForm } from "react-hook-form";
+import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { LabelledInput } from "../../../components/common/LabelledInputRHF";
 import { EmploymentHistoryFormSegment } from "../../IncomeFormSegment/components/EmploymentHistoryFormSegment";
 import { Tenant, TenantDetailsFormState } from "../types";
@@ -59,22 +60,15 @@ export function TenantDetailsFormSegment() {
           <h3>Rental History</h3>
         </div>
       ))}
-      <div className="fieldArray--btn-container">
-        <button
-          className="btn--secondary-outline"
-          type="button"
-          onClick={() => append(createTenant())}
-        >
-          Add Tenant
-        </button>
-        <button
-          className="btn--danger-outline"
-          type="button"
-          onClick={() => remove(fields.length - 1)}
-        >
-          Remove Tenant
-        </button>
-      </div>
+      <FieldArrayButtons<Tenant>
+        append={append}
+        remove={remove}
+        createItemFn={createTenant}
+        arrayLength={fields.length}
+        buttonSize="large"
+        buttonText="Tenant"
+        minSize={1}
+      />
     </div>
   );
 }
