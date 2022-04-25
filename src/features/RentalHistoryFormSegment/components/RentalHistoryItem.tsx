@@ -4,6 +4,8 @@ import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
 import { PaymentFrequencySelect } from "../../../components/common/PaymentFrequencySelectRHF";
 import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
 import { RentalStatus, RentalReferenceType } from "../types";
+import { RentalReferenceTypeSelect } from "./RentalReferenceTypeSelect";
+import { RentalStatusSelect } from "./RentalStatusSelect";
 
 export interface RentalHistoryItemProps {
   register: UseFormRegister<TenantDetailsFormState>;
@@ -25,12 +27,10 @@ export function RentalHistoryItem({
           `tenants.${tenantIndex}.rentalHistory.${index}.address`
         )}
       />
-      <LabelledSelect
-        label="Status:"
+      <RentalStatusSelect
         registerReturn={register(
           `tenants.${tenantIndex}.rentalHistory.${index}.status`
         )}
-        values={Object.values(RentalStatus)}
       />
       <LabelledInput
         label="Rent:"
@@ -51,12 +51,10 @@ export function RentalHistoryItem({
           `tenants.${tenantIndex}.rentalHistory.${index}.reference.name`
         )}
       />
-      <LabelledSelect
-        label="Type:"
+      <RentalReferenceTypeSelect
         registerReturn={register(
           `tenants.${tenantIndex}.rentalHistory.${index}.reference.type`
         )}
-        values={Object.values(RentalReferenceType)}
       />
       <LabelledInput
         label="Phone:"

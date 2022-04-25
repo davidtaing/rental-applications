@@ -1,17 +1,17 @@
-import LabelledSelect from "../../../components/common/LabelledSelect";
+import { UseFormRegisterReturn } from "react-hook-form";
+import { LabelledSelect } from "../../../components/common/LabelledSelectRHF";
 import { RentalReferenceType } from "../types";
 
 interface Props {
-  formikReference: string;
+  registerReturn: UseFormRegisterReturn;
 }
 
-export function RentalReferenceTypeSelect({ formikReference }: Props) {
+export function RentalReferenceTypeSelect({ registerReturn }: Props) {
   return (
     <LabelledSelect
-      id="rentalHistoryReferenceType"
-      labelText="Type:"
-      name={formikReference}
+      registerReturn={registerReturn}
       values={Object.values(RentalReferenceType)}
+      label="Type:"
     />
   );
 }
