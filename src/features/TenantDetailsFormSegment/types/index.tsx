@@ -1,3 +1,4 @@
+export * from "./NestedTenantFieldArrayProps";
 import { IncomeFormState } from "../../IncomeFormSegment";
 import { RentalHistoryFormState } from "../../RentalHistoryFormSegment";
 

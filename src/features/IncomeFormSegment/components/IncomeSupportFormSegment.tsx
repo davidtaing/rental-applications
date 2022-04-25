@@ -1,20 +1,14 @@
-import { Control, useFieldArray, UseFormRegister } from "react-hook-form";
+import { useFieldArray } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
-import { TenantDetailsFormState } from "../../TenantDetailsFormSegment";
+import { NestedTenantFieldArrayProps } from "../../TenantDetailsFormSegment";
 import { createIncomeSupport } from "../utils";
 import { IncomeSupportItem } from "./IncomeSupportItem";
-
-interface Props {
-  tenantIndex: number;
-  control: Control<TenantDetailsFormState, any>;
-  register: UseFormRegister<TenantDetailsFormState>;
-}
 
 export function IncomeSupportFormSegment({
   tenantIndex,
   control,
   register,
-}: Props) {
+}: NestedTenantFieldArrayProps) {
   const { fields, remove, append } = useFieldArray({
     control,
     name: `tenants.${tenantIndex}.incomeSupport`,
