@@ -1,11 +1,12 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LabelledInput } from "../../../components/common/LabelledInput";
 import { FormNavigation } from "../../FormNavigation";
-import { LeaseDetailsState } from "../types";
+import { LeaseDetailsFormState } from "../types";
 
 export function LeaseDetailsFormSegment() {
-  const { register, handleSubmit, getValues } = useForm<LeaseDetailsState>();
-  const onSubmit: SubmitHandler<LeaseDetailsState> = (data) => {
+  const { register, handleSubmit, getValues } =
+    useForm<LeaseDetailsFormState>();
+  const onSubmit: SubmitHandler<LeaseDetailsFormState> = (data) => {
     console.log(data);
   };
 
@@ -31,7 +32,7 @@ export function LeaseDetailsFormSegment() {
         label="Lease Period (Month):"
         registerReturn={register("leaseDetails.period")}
       />
-      <FormNavigation<LeaseDetailsState>
+      <FormNavigation<LeaseDetailsFormState>
         nextUrl="/tenant-details"
         getValues={() => getValues()}
       />

@@ -1,16 +1,18 @@
 export * from "./validationSchema";
-import { LeaseDetailsState } from "../types";
+import { LeaseDetailsFormState, LeaseDetails } from "../types";
 
 export function initLeaseDetailsFormState({
   address,
   rent,
   startDate,
-  leasePeriod,
-}: Partial<LeaseDetailsState> = {}): LeaseDetailsState {
+  period,
+}: Partial<LeaseDetails> = {}): LeaseDetailsFormState {
   return {
-    address: address ?? "",
-    rent: rent ?? 0,
-    startDate: startDate ?? new Date(),
-    leasePeriod: leasePeriod ?? 0,
+    leaseDetails: {
+      address: address ?? "",
+      rent: rent ?? 0,
+      startDate: startDate ?? new Date(),
+      period: period ?? 0,
+    },
   };
 }
