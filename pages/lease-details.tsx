@@ -9,7 +9,6 @@ const LeaseDetails: NextPage = () => {
       <main>
         <div className="wrapper">
           <LeaseDetailsFormSegment />
-          <FormNavigation nextUrl="/tenant-details" />
         </div>
       </main>
     </div>

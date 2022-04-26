@@ -1,5 +1,6 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
+import { FormNavigation } from "../../FormNavigation";
 import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
 import { TenantItem } from "./TenantItem";
@@ -36,6 +37,7 @@ export function TenantDetailsFormSegment() {
         buttonText="Tenant"
         minSize={1}
       />
+      <FormNavigation prevUrl="/lease-details" nextUrl="/other-occupants" />
     </div>
   );
 }

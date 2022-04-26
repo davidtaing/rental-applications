@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LabelledInput } from "../../../components/common/LabelledInput";
+import { FormNavigation } from "../../FormNavigation";
 import { LeaseDetailsState } from "../types";
 
 export function LeaseDetailsFormSegment() {
@@ -27,6 +28,7 @@ export function LeaseDetailsFormSegment() {
         label="Lease Period (Month):"
         registerReturn={register("leasePeriod")}
       />
+      <FormNavigation nextUrl="/tenant-details" />
     </form>
   );
 }

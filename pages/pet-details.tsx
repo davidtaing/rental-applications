@@ -9,7 +9,6 @@ const PetDetails: NextPage = () => {
       <main>
         <div className="wrapper">
           <PetsFormSegment />
-          <FormNavigation prevUrl="/other-occupants" submit={true} />
         </div>
       </main>
     </div>

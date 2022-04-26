@@ -2,6 +2,7 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { GenderSelect } from "../../../components/common/GenderSelect";
 import { LabelledInput } from "../../../components/common/LabelledInput";
+import { FormNavigation } from "../../FormNavigation";
 import { OtherOccupant, OtherOccupantsFormState } from "../types";
 import { createOtherOccupant } from "../utils";
 import { OtherOccupantRelationSelect } from "./OtherOccupantRelationSelect";
@@ -48,6 +49,7 @@ export function OtherOccupantsFormSegment() {
         buttonSize="large"
         buttonText="Occupant"
       />
+      <FormNavigation prevUrl="/tenant-details" nextUrl="/pet-details" />
     </div>
   );
 }

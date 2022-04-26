@@ -4,6 +4,7 @@ import { PetCategory, PetsFormState } from "../types";
 import { PetTypeSelect } from "./PetTypeSelect";
 import { LabelledInput } from "../../../components/common/LabelledInput";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
+import { FormNavigation } from "../../FormNavigation";
 
 export function PetsFormSegment() {
   const { control, register } = useForm<PetsFormState>();
@@ -38,6 +39,7 @@ export function PetsFormSegment() {
         buttonSize="large"
         buttonText="Pet"
       />
+      <FormNavigation prevUrl="/other-occupants" submit={true} />
     </div>
   );
 }
