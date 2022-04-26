@@ -12,7 +12,7 @@ import { OtherOccupantRelationSelect } from "./OtherOccupantRelationSelect";
  * i.e. children and other adults.
  */
 export function OtherOccupantsFormSegment() {
-  const { control, register } = useForm<OtherOccupantsFormState>();
+  const { control, register, getValues } = useForm<OtherOccupantsFormState>();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "otherOccupants",
@@ -49,7 +49,11 @@ export function OtherOccupantsFormSegment() {
         buttonSize="large"
         buttonText="Occupant"
       />
-      <FormNavigation prevUrl="/tenant-details" nextUrl="/pet-details" />
+      <FormNavigation
+        prevUrl="/tenant-details"
+        nextUrl="/pet-details"
+        getValues={() => getValues()}
+      />
     </div>
   );
 }

@@ -9,7 +9,7 @@ import { TenantItem } from "./TenantItem";
  * Form Segment for Rent-Paying Occupants
  */
 export function TenantDetailsFormSegment() {
-  const { control, register } = useForm<TenantDetailsFormState>({
+  const { control, register, getValues } = useForm<TenantDetailsFormState>({
     defaultValues: initTenantDetailsFormState(),
   });
   const { fields, append, remove } = useFieldArray({
@@ -37,7 +37,11 @@ export function TenantDetailsFormSegment() {
         buttonText="Tenant"
         minSize={1}
       />
-      <FormNavigation prevUrl="/lease-details" nextUrl="/other-occupants" />
+      <FormNavigation
+        prevUrl="/lease-details"
+        nextUrl="/other-occupants"
+        getValues={() => getValues()}
+      />
     </div>
   );
 }

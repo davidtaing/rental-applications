@@ -4,7 +4,7 @@ import { FormNavigation } from "../../FormNavigation";
 import { LeaseDetailsState } from "../types";
 
 export function LeaseDetailsFormSegment() {
-  const { register, handleSubmit } = useForm<LeaseDetailsState>();
+  const { register, handleSubmit, getValues } = useForm<LeaseDetailsState>();
   const onSubmit: SubmitHandler<LeaseDetailsState> = (data) => {
     console.log(data);
   };
@@ -28,7 +28,10 @@ export function LeaseDetailsFormSegment() {
         label="Lease Period (Month):"
         registerReturn={register("leasePeriod")}
       />
-      <FormNavigation nextUrl="/tenant-details" />
+      <FormNavigation<LeaseDetailsState>
+        nextUrl="/tenant-details"
+        getValues={() => getValues()}
+      />
     </form>
   );
 }

@@ -7,7 +7,7 @@ import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons"
 import { FormNavigation } from "../../FormNavigation";
 
 export function PetsFormSegment() {
-  const { control, register } = useForm<PetsFormState>();
+  const { control, register, getValues } = useForm<PetsFormState>();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "pets",
@@ -39,7 +39,11 @@ export function PetsFormSegment() {
         buttonSize="large"
         buttonText="Pet"
       />
-      <FormNavigation prevUrl="/other-occupants" submit={true} />
+      <FormNavigation
+        prevUrl="/other-occupants"
+        submit={true}
+        getValues={() => getValues()}
+      />
     </div>
   );
 }
