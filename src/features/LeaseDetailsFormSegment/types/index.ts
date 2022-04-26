@@ -1,8 +1,10 @@
-export interface LeaseDetailsState {
-  leaseDetails: {
-    address: string;
-    rent: number;
-    startDate: Date;
-    period: number;
-  };
+export interface LeaseDetails {
+  address: string;
+  rent: number;
+  startDate: Date;
+  period: number;
+}
+
+export interface LeaseDetailsFormState {
+  leaseDetails: LeaseDetails;
 }
