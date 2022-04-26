@@ -17,16 +17,10 @@ export function FormNavigation<T>({
   submit,
 }: Props<T>) {
   const router = useRouter();
-  const onPrevClick = () => {
-    if (prevUrl) {
+  const onClick = (url: string) => {
+    if (url) {
       console.log(getValues());
-      router.push(prevUrl);
-    }
-  };
-  const onNextClick = () => {
-    if (nextUrl) {
-      console.log(getValues());
-      router.push(nextUrl);
+      router.push(url);
     }
   };
 
@@ -35,14 +29,18 @@ export function FormNavigation<T>({
       {prevUrl ? (
         <button
           className="btn--secondary-outline"
-          onClick={onPrevClick}
+          onClick={() => onClick(prevUrl)}
           type="button"
         >
           Prev
         </button>
       ) : null}
       {nextUrl ? (
-        <button className="btn--primary" onClick={onNextClick} type="button">
+        <button
+          className="btn--primary"
+          onClick={() => onClick(nextUrl)}
+          type="button"
+        >
           Next
         </button>
       ) : null}
