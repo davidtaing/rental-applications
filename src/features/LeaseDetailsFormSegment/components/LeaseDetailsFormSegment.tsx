@@ -12,21 +12,24 @@ export function LeaseDetailsFormSegment() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h1>Lease Details:</h1>
-      <LabelledInput label="Address:" registerReturn={register("address")} />
+      <LabelledInput
+        label="Address:"
+        registerReturn={register("leaseDetails.address")}
+      />
       <LabelledInput
         type="number"
         label="Rent Per Week:"
-        registerReturn={register("rent")}
+        registerReturn={register("leaseDetails.rent")}
       />
       <LabelledInput
         type="date"
         label="Start Date:"
-        registerReturn={register("startDate")}
+        registerReturn={register("leaseDetails.startDate")}
       />
       <LabelledInput
         type="number"
         label="Lease Period (Month):"
-        registerReturn={register("leasePeriod")}
+        registerReturn={register("leaseDetails.period")}
       />
       <FormNavigation<LeaseDetailsState>
         nextUrl="/tenant-details"
