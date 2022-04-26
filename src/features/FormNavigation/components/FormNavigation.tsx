@@ -17,9 +17,10 @@ export function FormNavigation<T>({
   submit,
 }: Props<T>) {
   const router = useRouter();
-  const onClick = (url: string) => {
+  const onClick = (url?: string) => {
+    console.log(getValues());
+
     if (url) {
-      console.log(getValues());
       router.push(url);
     }
   };
@@ -45,7 +46,11 @@ export function FormNavigation<T>({
         </button>
       ) : null}
       {submit ? (
-        <button className="btn--primary" type="button">
+        <button
+          className="btn--primary"
+          type="button"
+          onClick={() => onClick()}
+        >
           Submit
         </button>
       ) : null}
