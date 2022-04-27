@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { ApplicationFormProvider } from "../contexts/ApplicationFormCtx";
-import { ApplicationFormReducer } from "../reducers/ApplicationFormReducer";
+import { ApplicationFormReducer } from "../reducers/applicationFormReducer";
 import { initApplicationFormState } from "../utils";
 
 interface Props {
