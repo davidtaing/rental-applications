@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { FormNavigation } from "../components/FormNavigation";
 import { useRouter } from "next/router";
+import { ApplicationForm } from "../../ApplicationForm/components/ApplicationForm";
 
 jest.mock("next/router", () => {
   const push = jest.fn();
@@ -18,7 +19,9 @@ beforeEach(() => {
 });
 
 test("prev button does not render when no prevUrl is provided", () => {
-  render(<FormNavigation nextUrl="/next" getValues={jest.fn()} />);
+  render(<FormNavigation nextUrl="/next" getValues={jest.fn()} />, {
+    wrapper: ApplicationForm,
+  });
 
   const prevButton = screen.queryByText("Prev");
   const nextButton = screen.queryByText("Next");
@@ -28,7 +31,9 @@ test("prev button does not render when no prevUrl is provided", () => {
 });
 
 test("next button does not render when no nextUrl is provided", () => {
-  render(<FormNavigation prevUrl="/prev" getValues={jest.fn()} />);
+  render(<FormNavigation prevUrl="/prev" getValues={jest.fn()} />, {
+    wrapper: ApplicationForm,
+  });
 
   const prevButton = screen.queryByText("Prev");
   const nextButton = screen.queryByText("Next");
@@ -38,7 +43,9 @@ test("next button does not render when no nextUrl is provided", () => {
 });
 
 test("router.push('/next') is called when the Next button is clicked", async () => {
-  render(<FormNavigation nextUrl="/next" getValues={jest.fn()} />);
+  render(<FormNavigation nextUrl="/next" getValues={jest.fn()} />, {
+    wrapper: ApplicationForm,
+  });
   const nextButton = screen.getByText("Next");
 
   await userEvent.click(nextButton);
@@ -47,7 +54,9 @@ test("router.push('/next') is called when the Next button is clicked", async () 
 });
 
 test("router.push('/prev') is called when the Prev button is clicked", async () => {
-  render(<FormNavigation prevUrl="/prev" getValues={jest.fn()} />);
+  render(<FormNavigation prevUrl="/prev" getValues={jest.fn()} />, {
+    wrapper: ApplicationForm,
+  });
   const prevButton = screen.getByText("Prev");
 
   await userEvent.click(prevButton);
