@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import { updateAction } from "../../ApplicationForm/actions";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormCtx";
 
 interface Props<T> {
   prevUrl?: string;
@@ -16,10 +18,10 @@ export function FormNavigation<T>({
   getValues,
   submit,
 }: Props<T>) {
+  const [, dispatch] = useApplicationFormCtx();
   const router = useRouter();
   const onClick = (url?: string) => {
-    console.log(getValues());
-
+    dispatch(updateAction(getValues()));
     if (url) {
       router.push(url);
     }

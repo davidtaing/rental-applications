@@ -1,5 +1,6 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormCtx";
 import { FormNavigation } from "../../FormNavigation";
 import { Tenant, TenantDetailsFormState } from "../types";
 import { initTenantDetailsFormState, createTenant } from "../utils";
@@ -9,6 +10,7 @@ import { TenantItem } from "./TenantItem";
  * Form Segment for Rent-Paying Occupants
  */
 export function TenantDetailsFormSegment() {
+  const [{ tenants }] = useApplicationFormCtx();
   const { control, register, getValues } = useForm<TenantDetailsFormState>({
     defaultValues: initTenantDetailsFormState(),
   });

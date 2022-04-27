@@ -1,11 +1,14 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { LabelledInput } from "../../../components/common/LabelledInput";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormCtx";
 import { FormNavigation } from "../../FormNavigation";
 import { LeaseDetailsFormState } from "../types";
 
 export function LeaseDetailsFormSegment() {
-  const { register, handleSubmit, getValues } =
-    useForm<LeaseDetailsFormState>();
+  const [{ leaseDetails }] = useApplicationFormCtx();
+  const { register, handleSubmit, getValues } = useForm<LeaseDetailsFormState>({
+    defaultValues: { leaseDetails },
+  });
   const onSubmit: SubmitHandler<LeaseDetailsFormState> = (data) => {
     console.log(data);
   };

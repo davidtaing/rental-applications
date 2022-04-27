@@ -5,9 +5,15 @@ import { PetTypeSelect } from "./PetTypeSelect";
 import { LabelledInput } from "../../../components/common/LabelledInput";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { FormNavigation } from "../../FormNavigation";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormCtx";
 
 export function PetsFormSegment() {
-  const { control, register, getValues } = useForm<PetsFormState>();
+  const [{ pets }] = useApplicationFormCtx();
+  const { control, register, getValues } = useForm<PetsFormState>({
+    defaultValues: {
+      pets,
+    },
+  });
   const { fields, append, remove } = useFieldArray({
     control,
     name: "pets",

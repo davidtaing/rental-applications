@@ -18,7 +18,7 @@ beforeEach(() => {
 });
 
 test("prev button does not render when no prevUrl is provided", () => {
-  render(<FormNavigation nextUrl="/next" />);
+  render(<FormNavigation nextUrl="/next" getValues={jest.fn()} />);
 
   const prevButton = screen.queryByText("Prev");
   const nextButton = screen.queryByText("Next");
@@ -28,7 +28,7 @@ test("prev button does not render when no prevUrl is provided", () => {
 });
 
 test("next button does not render when no nextUrl is provided", () => {
-  render(<FormNavigation prevUrl="/prev" />);
+  render(<FormNavigation prevUrl="/prev" getValues={jest.fn()} />);
 
   const prevButton = screen.queryByText("Prev");
   const nextButton = screen.queryByText("Next");
@@ -38,7 +38,7 @@ test("next button does not render when no nextUrl is provided", () => {
 });
 
 test("router.push('/next') is called when the Next button is clicked", async () => {
-  render(<FormNavigation nextUrl="/next" />);
+  render(<FormNavigation nextUrl="/next" getValues={jest.fn()} />);
   const nextButton = screen.getByText("Next");
 
   await userEvent.click(nextButton);
@@ -47,7 +47,7 @@ test("router.push('/next') is called when the Next button is clicked", async () 
 });
 
 test("router.push('/prev') is called when the Prev button is clicked", async () => {
-  render(<FormNavigation prevUrl="/prev" />);
+  render(<FormNavigation prevUrl="/prev" getValues={jest.fn()} />);
   const prevButton = screen.getByText("Prev");
 
   await userEvent.click(prevButton);

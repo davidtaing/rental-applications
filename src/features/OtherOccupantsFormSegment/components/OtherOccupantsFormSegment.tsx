@@ -2,6 +2,7 @@ import { useFieldArray, useForm } from "react-hook-form";
 import { FieldArrayButtons } from "../../../components/common/FieldArrayButtons";
 import { GenderSelect } from "../../../components/common/GenderSelect";
 import { LabelledInput } from "../../../components/common/LabelledInput";
+import { useApplicationFormCtx } from "../../ApplicationForm/contexts/ApplicationFormCtx";
 import { FormNavigation } from "../../FormNavigation";
 import { OtherOccupant, OtherOccupantsFormState } from "../types";
 import { createOtherOccupant } from "../utils";
@@ -12,7 +13,12 @@ import { OtherOccupantRelationSelect } from "./OtherOccupantRelationSelect";
  * i.e. children and other adults.
  */
 export function OtherOccupantsFormSegment() {
-  const { control, register, getValues } = useForm<OtherOccupantsFormState>();
+  const [{ otherOccupants }] = useApplicationFormCtx();
+  const { control, register, getValues } = useForm<OtherOccupantsFormState>({
+    defaultValues: {
+      otherOccupants,
+    },
+  });
   const { fields, append, remove } = useFieldArray({
     control,
     name: "otherOccupants",
