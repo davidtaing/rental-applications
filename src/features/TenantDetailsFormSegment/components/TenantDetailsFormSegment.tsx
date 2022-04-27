@@ -12,7 +12,7 @@ import { TenantItem } from "./TenantItem";
 export function TenantDetailsFormSegment() {
   const [{ tenants }] = useApplicationFormCtx();
   const { control, register, getValues } = useForm<TenantDetailsFormState>({
-    defaultValues: initTenantDetailsFormState(),
+    defaultValues: { tenants },
   });
   const { fields, append, remove } = useFieldArray({
     control,
